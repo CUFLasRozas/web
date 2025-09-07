@@ -21,6 +21,6 @@ function generarJSON(directory) {
   return results;
 }
 
-const directory = 'C:\\dev\\Angular\\cuf-las-rozas\\public\\assets\\fotos';
+const directory = 'C:\\dev\\Angular\\CUFLasRozas\\public\\assets\\fotos';
 const data = generarJSON(directory);
-fs.writeFileSync('C:\\dev\\Angular\\cuf-las-rozas\\public\\assets\\jsons\\listadoFotos.json', JSON.stringify(data, null, 2));
+fs.writeFileSync('C:\\dev\\Angular\\CUFLasRozas\\public\\assets\\jsons\\listadoFotos.json', JSON.stringify(data, null, 2));
