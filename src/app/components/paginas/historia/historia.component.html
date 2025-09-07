@@ -1,0 +1,26 @@
+<div class="historia">
+    <h1>Historia</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus earum, deleniti culpa, iste officiis nobis
+        recusandae tenetur quos nemo ea libero quidem obcaecati quasi soluta atque exercitationem ipsum dolore eius!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus earum, deleniti culpa, iste officiis nobis
+        recusandae tenetur quos nemo ea libero quidem obcaecati quasi soluta atque exercitationem ipsum dolore eius!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus earum, deleniti culpa, iste officiis nobis
+        recusandae tenetur quos nemo ea libero quidem obcaecati quasi soluta atque exercitationem ipsum dolore eius!</p>
+
+
+    @if (this.infoClub && this.infoClub.secciones && this.infoClub.secciones.length) {
+
+    @for (seccion of this.infoClub.secciones; track $index) {
+    <h1>{{seccion.title}}</h1>
+    <div class="contenedor-junta">
+        @for (miembro of seccion.listadoMiembros; track $index) {
+        <div class="miembro">
+            <img class="img-junta" src="{{miembro.urlfoto}}" alt="">
+            <h3>{{miembro.nombre}}</h3>
+            <h4>{{miembro.cargo}}</h4>
+        </div>
+        }
+    </div>
+    }
+    }
+</div>

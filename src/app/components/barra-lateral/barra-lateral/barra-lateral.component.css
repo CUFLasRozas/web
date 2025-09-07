@@ -1,0 +1,46 @@
+.barra-lateral {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+}
+
+.logo-patrocinador {
+    display: flex;
+    align-items: center;
+}
+
+.img-patrocinador {
+    display: inline-block;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 5px;
+    width: 100%
+}
+
+.enlaceDocs {
+    color: black;
+    /* font-size: 30px; */
+    text-decoration: none;
+}
+
+.enlaceDocs:hover {
+    color: white;
+}
+
+li+li {
+    margin-top: 5px;
+}
+
+.seccion+.seccion {
+    margin-top: 30px;
+}
+
+.logos-redes {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: auto;
+    max-width: 18.75rem;
+    font-size: .625rem;
+
+}

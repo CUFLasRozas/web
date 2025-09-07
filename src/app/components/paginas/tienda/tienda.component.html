@@ -1,0 +1,51 @@
+@if (openModal) {
+<div class="tienda_modal">
+    <cuflr-modal [urlTienda]="urlTiendaSeleccionada" [producto]="productoSeleccionado" />
+
+</div>
+}
+
+<div class="tienda-general">
+
+    <h1>Tienda CUF Las Rozas</h1>
+    <h2>Equipaciones de jugador</h2>
+    <p>Las equipaciones de jugador (primera y segunda camiseta asi como pantalón) deberán ser solicitadas al club indicando la talla del jugador para
+        cada prenda. Puedes contactar con el Club por las siguientes vías: <a routerLink="/contacto">CONTACTAR</a></p>
+
+    <p>Además, si quieres adquirir alguna prenda extra, puedes visitar la tienda de la marca deportiva oficial del club:<a
+            href="https://cdeunihockey.luanviteam.club/tienda-del-club-2" target="_blank">Tienda Luanvi</a>
+    </p>
+    <!-- <p>IMPORTANTE, para iniciar sesion os solicitará el codigo de club, es CDEUNIHOCKEY24/25</p> -->
+
+
+
+    @if (otrosArticulosActive) {
+    <hr>
+    <h2>Otros Artículos</h2>
+    <p>A continuación puedes consultar los objetos y merchandising del Club que puedes adquirir.
+        Para poder comprar cualquiera de estos artículos debes ponerte en contacto directamente
+        con el Club y te informaremos del proceso de compra. <a routerLink="/contacto">CONTACTAR</a>
+    </p>
+
+    <div class="galeria-articulos">
+
+        @if(objetoTienda){
+        @for (producto of objetoTienda.listaObjetos; track $index) {
+        <div class="box">
+            <div class="sub-box">
+                <img (click)="abrirImagen(objetoTienda.rutaTienda, producto)"
+                    src={{objetoTienda.rutaTienda+producto.carpeta+producto.imagenPpal}}>
+            </div>
+            <span>{{producto.nombrePpal}} </span>
+            <span>{{producto.precio}}€</span>
+            <div class="colores">
+                @for (color of producto.colores; track $index) {
+                <div class="color" [ngStyle]="{'background-color': color}"></div>
+                }
+            </div>
+        </div>
+        }
+        }
+    </div>
+    }
+</div>

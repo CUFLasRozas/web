@@ -1,0 +1,28 @@
+<div class="modal">
+    <div class="cabecera-modal">
+        <h3 class="titulo-modal">{{productoSeleccionado.nombre}}</h3>
+        <button class="boton-cerrar" (click)="cerrarModal()">X</button>
+    </div>
+    <div class="modal-body">
+        
+        <div class="img-box">
+            @if (mostrarFlechas) {
+                <i (click)="cambioFotoIzda()"  class="fa-solid fa-arrow-left"></i>
+                <img class="imgFlechas" src={{urlTienda+producto.carpeta+imagenSeleccionada}}>
+                <i (click)="cambioFotoDcha()" class="fa-solid fa-arrow-right" ></i>
+
+            } @else {
+                <img class="imgSinFlechas" src={{urlTienda+producto.carpeta+productoSeleccionado.img[0]}}>
+            }
+
+        </div>
+        
+        <div class="colores" >
+            @for (color of producto.colores; track $index) {
+                <div class="color" [ngStyle]="{'background-color': color}" (click)="cambioArticulo($index)"></div>
+            }
+        </div>
+
+    </div>
+
+</div>

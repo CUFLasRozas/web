@@ -1,0 +1,116 @@
+.inscripcion {
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row+.row {
+    margin-top: 15px;
+}
+
+.contenedor_datos {
+    width: 28%;
+}
+
+label {
+    display: block;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input, select {
+    margin-left: 5px;
+    width: 80%;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.error {
+    margin-left: 10px;
+    color: red;
+    font-weight: bold;
+}
+
+.contenedor-boton {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton-enviar {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+}
+
+.boton-otroContacto {
+    margin-top: 15px;
+    padding: 10px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+}
+
+.inputPadron, .inputFotos {
+    width: 5%;
+}
+.inputPadron+.inputPadron, .inputFotos+.inputFotos{
+    margin-left: 20px ;
+}
+
+.contenedor-regimenInterno{
+    margin-top: 30px;
+    display:flex;
+    align-items: center;
+}
+
+.regimenInterno {
+    width: 20px;
+    margin-bottom: 15px;
+    height: 20px;
+}
+    
+.error-regimen {    
+    margin: 0;
+    margin-left: 10px;
+    color: red;
+    font-weight: bold;
+}
+
+a {
+    color: black
+}
+
+a:hover {
+    color: white
+}
+
+@media (max-width: 768px) {
+
+    input {
+        width: 90%;
+    }
+
+    .contenedor_datos {
+        width: 100%;
+    }
+
+    .row+.row {
+        margin-top: 10px;
+    }
+
+    .contenedor_datos+.contenedor_datos {
+        margin-top: 10px;
+    }
+}

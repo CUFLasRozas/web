@@ -1,0 +1,39 @@
+@if (this.infoEntrenos) {
+    <div class="entrenamientos">
+        <h1>{{this.infoEntrenos.title}}</h1>
+        <p>Nuestros entrenamientos se realizan en el CEIP Los Olivos de las Rozas así 
+            como en el Polideportivo Entremontes. Los horarios son los siguientes:</p>
+        
+        @if (this.infoEntrenos.listadoEntrenos.length > 0) {
+           <ul>
+            @for (entreno of this.infoEntrenos.listadoEntrenos; track $index) {
+                <li><b>{{entreno.equipo}}:</b> {{entreno.textoDiasHoras}}</li>
+            }        
+           </ul>
+        }
+    
+        <p>Si quieres venir a probar, ponte en contacto con nosotros <a routerLink="/contacto">CONTACTAR</a></p>
+        
+        <div class="mapas-entrenamientos">
+            <div class="olivos">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2744.3949276783933!2d-3.9228316245112373!3d40.52711154891457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd419d2379a65573%3A0xa7f205f2794a1a09!2sCEIP%20Los%20Olivos!5e1!3m2!1ses!2ses!4v1730127344668!5m2!1ses!2ses" 
+                    class="iframe-olivos" style="border:0;" allowfullscreen="" loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="entremontes">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1014.4796382717925!2d-3.916472923860583!3d40.51313158744221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd419cc506f9712f%3A0x2b2f70dbbf66a452!2sPolideportivo%20Municipal%20Entremontes!5e1!3m2!1ses!2ses!4v1757243923213!5m2!1ses!2ses"
+                 class="iframe-entremontes" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>  
+            
+        </div>
+    
+    </div>
+}
+
+
+
+
+
+
+

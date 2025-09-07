@@ -1,0 +1,113 @@
+.modal {
+    width: 100%;
+    border: 2px solid orange;
+    background-color: white;
+    border-radius: 10px;
+    padding:20px;
+    flex: auto;
+
+}
+
+.cabecera-modal {    
+    display: flex;
+    align-items: center;
+}
+.titulo-modal{
+    width: 90%;
+}
+.boton-cerrar {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    float: right
+}
+
+.modal-body {
+    width: 100%;
+}
+
+.img-box {    
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+i {
+    color: orange;
+    padding: 10px;
+    border:  1px solid black;
+    border-radius:5px;
+    align-content: center;
+    background-color: black;
+}
+
+.fa-arrow-left{
+    margin-right: 20px;
+}
+
+.fa-arrow-right{
+    margin-left: 20px;
+}
+
+.colores {
+    width: auto;
+    display: flex;
+    padding:20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.color {
+    width: 20px;
+    height: 20px;
+    margin: 0px 5px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.color:hover {
+    border-color: grey;
+    cursor: pointer;
+}
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+    .modal {
+        width: 90%;
+    }
+
+    i {
+        height: 30px;
+        width: 10px;
+    } 
+
+    .imgSinFlechas {
+        width: 100%;
+    }
+
+    .imgFlechas{
+        width: 80%;
+    }
+
+    .modal {
+        padding: 10px;
+    }
+
+    .fa-arrow-left{
+        margin-right: 10px;
+    }
+    
+    .fa-arrow-right{
+        margin-left: 10px;
+    }
+
+    .colores {
+        padding:10px;
+    }
+  }
+  

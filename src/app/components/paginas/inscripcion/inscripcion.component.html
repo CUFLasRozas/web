@@ -1,0 +1,189 @@
+<div class="inscripcion">
+    <h1>Inscripción</h1>
+
+    <p>¡Bienvenido al Club! Necesitamos que nos rellenes los siguientes datos para poder inscribirte como miembro</p>
+
+    <form [formGroup]="inscripcion" (ngSubmit)="onSubmit()">
+        <h3>Datos del jugador</h3>
+        <div class="row">
+            <div class="contenedor_datos">
+                <label for="nombrePpal">Nombre:</label>
+                <input type="text" name="nombrePpal" id="nombrePpal" formControlName="nombrePpal">
+                @if(submitted && inscripcion.controls['nombrePpal'].invalid ) {
+                <p class="error">El campo no es válido</p>
+                }
+            </div>
+            <div class="contenedor_datos">
+                <label for="apellidosPpal">Apellidos:</label>
+                <input type="text" name="apellidosPpal" id="apellidosPpal" formControlName="apellidosPpal">
+                @if(submitted && inscripcion.controls['apellidosPpal'].invalid ) {
+                <p class="error">El campo no es válido</p>
+                }
+            </div>
+            <div class="contenedor_datos">
+                <label for="emailppal">Email:</label>
+                <input type="text" name="emailppal" id="emailppal" formControlName="emailppal">
+                @if(submitted && inscripcion.controls['emailppal'].invalid ) {
+                <p class="error">El campo no es válido</p>
+                }
+            </div>
+        </div>
+        <div class="row">
+            <div class="contenedor_datos">
+                <label for="telefonoPpal">Telefono:</label>
+                <input type="text" name="telefonoPpal" id="telefonoPpal" formControlName="telefonoPpal" maxlength="9">
+                @if(submitted && inscripcion.controls['telefonoPpal'].invalid ) {
+                <p class="error">El campo no es válido</p>
+                }
+            </div>
+            <div class="contenedor_datos">
+                <label for="nacimiento">Fecha de Nacimiento:</label>
+                <input type="date" name="nacimiento" id="nacimiento" formControlName="nacimiento"
+                min="1950-01-01" max="{{hoy}}">
+                @if(submitted && inscripcion.controls['nacimiento'].invalid ) {
+                <p class="error">Selecciona una fecha de nacimiento</p>
+                }
+            </div>
+            <div class="contenedor_datos">
+                <label for="dni">DNI:</label>
+                <input type="text" name="dni" id="dni" formControlName="dni" maxlength="9">
+                @if(submitted && inscripcion.controls['dni'].invalid ) {
+                <p class="error">El campo no es válido</p>
+                }
+            </div>
+        </div>
+
+
+        <div class="row">
+        </div>
+
+        <div class="row">
+            <div class="contenedor_datos">
+                <label for="alergias">Alergias:</label>
+                <input type="text" name="alergias" id="alergias" formControlName="alergias">
+            </div>
+
+            <div class="contenedor_datos">
+                <label for="radioPadron">Estoy empadronado en Las Rozas:</label>
+                <div class="contenedor-radioPadron">
+                    <input class="inputPadron" formControlName="padron" type="radio" name="padron" id="si" value="true">
+                    Si
+                    <input class="inputPadron" formControlName="padron" type="radio" name="padron" id="no"
+                        value="false">No
+                </div>
+                @if(submitted && inscripcion.controls['padron'].hasError('required') ) {
+                <p class="error">Debe seleccionar una opción</p>
+                }
+            </div>
+        </div>
+
+
+        <h3>Datos de persona de contacto</h3>
+        <p>En el caso de los menores de edad dicha persona de contacto ha de ser padre, madre o tutor legal.</p>
+
+
+        @for (contacto of array_contactos; track $index) {
+        <div class="row" id="contacto">
+            <div class="contenedor_datos">
+                <label for="nombreContacto{{$index}}">Nombre y apellidos:</label>
+                <input type="text" name="nombreContacto{{$index}}" id="nombreContacto{{$index}}"
+                    formControlName="nombreContacto{{$index}}">
+                @if(submitted && inscripcion.controls['nombreContacto'+$index].invalid ) {
+                <p class="error">El campo no es válido</p>
+                }
+            </div>
+            <div class="contenedor_datos">
+                <label for="emailContacto{{$index}}">Email:</label>
+                <input type="text" name="emailContacto{{$index}}" id="emailContacto{{$index}}"
+                    formControlName="emailContacto{{$index}}">
+                @if(submitted && inscripcion.controls['emailContacto'+$index].invalid ) {
+                <p class="error">El campo no es válido</p>
+                }
+            </div>
+            <div class="contenedor_datos">
+                <label for="telefonoContacto{{$index}}">Telefono:</label>
+                <input type="text" name="telefonoContacto{{$index}}" id="telefonoContacto{{$index}}"
+                    formControlName="telefonoContacto{{$index}}" maxlength="9">
+                @if(submitted && inscripcion.controls['telefonoContacto'+$index].invalid ) {
+                <p class="error">El campo no es válido</p>
+                }
+            </div>
+        </div>
+        }
+
+
+        @if (contacto <3) { <button type="button" class="boton-otroContacto" (click)="anadirCampos()">Añadir otro
+            contacto</button>
+            }
+
+            <h3>Datos del equipo</h3>
+            <div class="row" id="contacto">
+                <div class="contenedor_datos">
+                    <label for="categoria">Categoría:</label>
+                    <select class="selectorEquipo" name="equipo" id="equipo">
+                        <option value="seniorMasc">Senior Masculino</option>
+                        <option value="seniorFem">Senior Femenino</option>
+                        <option value="seniorMasc">Senior Masculino</option>
+                        <option value="seniorFem">Senior Femenino</option>
+                    </select>
+
+                </div>
+                <div class="contenedor_datos">
+                    <label for="pago">Tipo de pago:</label>
+                    <select class="selectorEquipo" name="pago" id="pago">
+                        <option value="unico">único</option>
+                        <option value="seniorFem">Mensual</option>
+                    </select>
+                </div>
+                <div class="contenedor_datos">
+                    <label for="radioFotos">Autorizo a la publicación de imágenes:</label>
+                    <div class="contenedor-radioautFotos">
+                        <input class="inputFotos" formControlName="autFotos" type="radio" name="autFotos" id="si"
+                            value="true"> Si
+                        <input class="inputFotos" formControlName="autFotos" type="radio" name="autFotos" id="no"
+                            value="false">No
+                    </div>
+                    @if(submitted && inscripcion.controls['autFotos'].hasError('required') ) {
+                    <p class="error">Debe seleccionar una opción</p>
+                    }
+                </div>
+            </div>
+
+
+            <div class="contenedor-regimenInterno">
+                <input type="checkbox" class="regimenInterno" name="regimenInterno" id="regimenInterno" (change)="changeRegimenInterno()">
+                <label for="regimenInterno">He leido y acepto estar conforme con el <a href="">reglamento de régimen interno</a></label>
+            </div>
+            @if(submitted && !regimenInternoChecked) {
+            <p class="error-regimen">Debe aceptar el reglamento de régimen interno para poder formar parte del Club</p>
+            }
+
+
+
+
+
+            <!-- <div class="row">
+        <p></p>
+        <input type="radio" name="mayoriaEdad" id="true"  value="true"> Soy mayor de edad
+        <input type="radio" name="mayoriaEdad" id="false"  value="false">Soy menor de edad 
+
+        @if (mayoriaEdad == 'true') {
+            <p>Formulario mayor de edad</p>
+
+        } @else if (mayoriaEdad == 'false') {
+            <p>formulario menor de edad</p>
+        }
+    </div> -->
+
+
+
+
+            <!-- <label for="nombre"></label>
+    <input type="text" name="nombre" id="nombre" formControlName="nombre"> -->
+            <div class="contenedor-boton">
+                <button class="boton-enviar" type="submit">Enviar</button>
+
+            </div>
+    </form>
+
+</div>

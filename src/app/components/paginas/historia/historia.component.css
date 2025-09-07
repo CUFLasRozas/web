@@ -1,0 +1,45 @@
+.historia {
+    padding: 20px;
+}
+
+h1 {    
+    text-align: center;
+}
+
+p {
+    padding: 0px 5%;
+}
+
+.contenedor-junta{
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.miembro {
+    width: 28%;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.2) ;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1%;
+    margin: 10px;
+    text-align: center;
+}
+
+h4 {
+    color: #444444;
+}
+
+.img_junta {
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    .miembro {
+        width: 100%;
+        padding: 5%;
+    }
+}
+

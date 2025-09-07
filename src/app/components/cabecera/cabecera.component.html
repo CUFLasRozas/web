@@ -1,0 +1,30 @@
+@if (cabecera) {
+<div class="cabecera">
+    <div class="conjunto">
+
+        <div class="logo_cabecera">
+            <a routerLink="">
+                <img class="img_logo_cabecera" alt={{cabecera.logo.alt}} src={{cabecera.logo.src}}>
+            </a>
+        </div>
+
+        <button id="menu-toggle" class="menu-toggle" (click)="abrirMenu()">
+            @if (!menuChequed) {
+            <i class="fas fa-bars"></i>
+            } @else {
+            <i class="fas fa-times"></i> }
+        </button>
+
+    </div>
+    <div id="menu_cabecera" class="menu_cabecera">
+        <ul class="ul_principal">
+            @for (menu of cabecera.menu; track $index) {
+
+            <li class="li_principal">
+                <a (click)="cerrarMenu()" routerLink={{menu.link}}>{{menu.texto}}</a>
+            </li>
+            }
+        </ul>
+    </div>
+</div>
+}

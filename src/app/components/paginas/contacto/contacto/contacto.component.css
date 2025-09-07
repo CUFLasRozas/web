@@ -1,0 +1,47 @@
+.contacto-general {  
+    display: flex;
+    flex-wrap:wrap;
+    padding: 20px;
+}
+
+.contacta {
+    padding: 10px; 
+    width: 47%;
+}
+
+.encuentranos {
+    padding: 10px; 
+    width: 47%;
+}
+
+.telefono, .whatsapp, .email  {  
+    margin: 20px;
+}
+
+.contenedor-iframe-map{
+    position: relative;
+    overflow: hidden;
+}
+
+.iframe-map {
+    width: 375px;
+    height: 300px;
+    border: 0;
+}
+
+@media (max-width: 768px) {
+
+    .contacta {
+        padding: 10px; 
+        width: 100%;
+    }
+    
+    .encuentranos {
+        padding: 10px; 
+        width: 100%;
+    }
+    .iframe-map {
+        width: 100%;
+        border: 0;
+    }
+}

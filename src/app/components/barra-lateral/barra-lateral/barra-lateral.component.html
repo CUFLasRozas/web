@@ -1,0 +1,89 @@
+@if (this.infoBarraLateral) {
+    <div class="barra-lateral">
+
+        @if(this.infoBarraLateral.proximosPartidos && this.infoBarraLateral.proximosPartidos.view &&
+        this.infoBarraLateral.proximosPartidos.objects.length > 0){
+        <div class="seccion">
+            <h3>{{this.infoBarraLateral.proximosPartidos.title}}</h3>
+            <ul>
+                @for (proximoPartido of this.infoBarraLateral.proximosPartidos.objects; track $index) {
+                <li>
+                    <a href="{{proximoPartido.url}}" class="enlaceDocs" target="_blank">
+                        <b>{{proximoPartido.equipo}}:</b><br>
+                        {{proximoPartido.fecha}}
+                    </a>
+                </li>
+                }
+            </ul>
+        </div>
+        } @else {
+            <h3>{{this.infoBarraLateral.proximosPartidos.title}}</h3>
+            <p>Próximamente</p>
+        }
+    
+    
+    
+        @if(this.infoBarraLateral.documentos && this.infoBarraLateral.documentos.view &&
+        this.infoBarraLateral.documentos.objects.length > 0){
+        <div class="seccion">
+            <h3>{{this.infoBarraLateral.documentos.title}}</h3>
+            <ul>
+                @for (documento of this.infoBarraLateral.documentos.objects; track $index) {
+                <li>
+                    <a href="{{documento.url}}" class="enlaceDocs" target="_blank">
+                        {{documento.literal}}
+                    </a>
+                </li>
+                }
+            </ul>
+        </div>
+        }
+    
+    
+        @if(this.infoBarraLateral.patrocinadores && this.infoBarraLateral.patrocinadores.view &&
+        this.infoBarraLateral.patrocinadores.objects.length > 0){
+        <div class="seccion">
+            @if (this.infoBarraLateral.patrocinadores.objects.length == 1) {
+            <h3>Patrocinador</h3>
+            }@else {
+            <h3>Patrocinadores</h3>
+            }
+    
+            @for (patrocinador of this.infoBarraLateral.patrocinadores.objects; track $index) {
+            <div class="logo-patrocinador">
+                <a href="{{patrocinador.url}}" target="_blank">
+                    <img class="img-patrocinador" alt={{patrocinador.alt}} src={{patrocinador.imagen}}>
+                </a>
+            </div>
+            }
+        </div>
+        }
+    
+        @if(this.infoBarraLateral.redes && this.infoBarraLateral.redes.view && this.infoBarraLateral.redes.objects.length >
+        0){
+        <div class="seccion">
+            <h3>{{this.infoBarraLateral.redes.title}}</h3>
+    
+            <div class="logos-redes">
+                @for (red of this.infoBarraLateral.redes.objects; track $index) {
+                <div class="logo-red">
+                    <a href="{{red.url}}" target="_blank">
+                        <img class="img-logo" alt={{red.alt}} src={{red.imagen}}>
+                    </a>
+                </div>
+                }
+            </div> 
+        </div>
+        }
+    
+    </div>
+}
+
+
+
+
+
+
+
+
+
