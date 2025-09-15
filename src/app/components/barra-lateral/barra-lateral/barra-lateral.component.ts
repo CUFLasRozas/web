@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { UtilesService } from '../../../service/utiles/utiles.service';
 import { BarraLateral } from '../../../models/barraLateral';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'cuflr-barra-lateral',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './barra-lateral.component.html',
   styleUrl: './barra-lateral.component.css'
 })

@@ -35,7 +35,7 @@ export interface ProximosPartidos {
 }
 
 export interface partidoObject {
-    equipo: string;
+    titulo: string;
     fecha:  string;
     url:    string;
 }

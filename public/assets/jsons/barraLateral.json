@@ -1,17 +1,12 @@
 {
     "proximosPartidos": {
-        "view": false,
-        "title": "Calendario de Partidos",
+        "view": true,
+        "title": "Partidos y eventos",
         "objects": [
             {
-                "equipo": "Senior Masculino",
-                "fecha": " Domingo 15 - 16:00",
-                "url": "https://www.unihockey.es/liga_plata_24_25/resumen"
-            },
-            {
-                "equipo": "Senior Femenino",
-                "fecha": "Domingo 15 - 18:00",
-                "url": "https://www.unihockey.es/liga_femenina_24_25/resumen"
+                "titulo": "Street Floorball - Las Rozas",
+                "fecha": " 24 Septiembre - 18:00",
+                "url": "https://www.floorball.es/noticia/447/24-de-septiembre-el-street-floorball-toma-las-rozas-en-la-semana-europea-del-deporte-2025"
             }
         ]
     },
