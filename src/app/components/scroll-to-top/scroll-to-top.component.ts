@@ -9,7 +9,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class ScrollToTopComponent implements OnInit  {
 
-   showButton = true;
+   showButton = false;
   private alturaMinima = 200; // Altura en píxeles para mostrar el botón
 
   constructor() { }
