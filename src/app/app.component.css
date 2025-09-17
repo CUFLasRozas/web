@@ -32,7 +32,8 @@
 
  .app_footer{
   width: 100%;
-  background-color: black;
+  /* background-color: black; */
+    background-image: linear-gradient( orange -30%, black);
  }
 
 
