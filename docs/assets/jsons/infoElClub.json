@@ -1,0 +1,59 @@
+{
+    "secciones": [
+    {
+        "title": "Junta Directiva",
+        "listadoMiembros": [
+            {
+                "nombre": "Nicolás Sanchez-Ferragut Gajate",
+                "cargo": "Presidente",
+                "urlfoto": "assets/image/staff/nico.webp"
+            },
+            {
+                "nombre": "Fernando García-Mauriño González-Conde",
+                "cargo": "Secretario",
+                "urlfoto": "assets/image/staff/fer.webp"
+            },
+            {
+                "nombre": "Nuño Marín Cabello",
+                "cargo": "Tesorero",
+                "urlfoto": "assets/image/staff/nuno.webp" 
+            },
+            {
+                "nombre": "David Mulero Arias",
+                "cargo": "Área de comunicación y publicidad",
+                "urlfoto": "assets/image/staff/david.webp"
+            }
+        ]
+    },
+    {
+        "title": "Entrenadores",
+        "listadoMiembros": [
+            {
+                "nombre": "Juan Antonio Roldán",
+                "cargo": "Senior masculino",
+                "urlfoto": "assets/image/staff/juanan.webp"
+            },
+            {
+                "nombre": "Rodrigo Lavin",
+                "cargo": "Preparador físico Senior maculino",
+                "urlfoto": "assets/image/desconocido.png"
+            },
+            {
+                "nombre": "Nico Sanchez-Ferragut Gajate",
+                "cargo": "Benjamines",
+                "urlfoto": "assets/image/staff/nico.webp"
+            },
+            {
+                "nombre": "Elena Marín Cabello",
+                "cargo": "Alevines",
+                "urlfoto": "assets/image/desconocido.png"
+            },
+            {
+                "nombre": "Alejandro Carbajo",
+                "cargo": "Infantiles",
+                "urlfoto": "assets/image/staff/alex.webp"
+            }
+        ]
+    }
+]
+}
