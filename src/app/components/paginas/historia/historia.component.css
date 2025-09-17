@@ -32,8 +32,8 @@ h4 {
     color: #444444;
 }
 
-.img_junta {
-    width: 50%;
+.img-junta {
+    width: 150px;
 }
 
 @media (max-width: 768px) {
