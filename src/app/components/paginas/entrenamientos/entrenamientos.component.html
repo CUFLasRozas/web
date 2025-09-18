@@ -7,7 +7,13 @@
         @if (this.infoEntrenos.listadoEntrenos.length > 0) {
            <ul>
             @for (entreno of this.infoEntrenos.listadoEntrenos; track $index) {
-                <li><b>{{entreno.equipo}}:</b> {{entreno.textoDiasHoras}}</li>
+                <li class="li-entrenos"><b>{{entreno.equipo}}:</b>
+                    <ul  class="ul-dias">
+                        @for (dia of entreno.dias; track $index) {
+                            <li>{{dia}}</li>
+                        }
+                    </ul>
+                </li>
             }        
            </ul>
         }

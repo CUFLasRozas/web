@@ -22,6 +22,16 @@ a {
      height:300px
 }
 
+.li-entrenos {
+    margin-top: 15px;
+}
+
+.ul-dias {
+    list-style-type: none;
+    margin: 5px;
+    padding: 0;
+}
+
 @media (max-width: 768px) {
     .olivos, .entremontes {
         width: 100%;

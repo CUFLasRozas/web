@@ -3,19 +3,32 @@
     "listadoEntrenos" : [
         {
             "equipo" : "Senior y Cadete",
-            "textoDiasHoras": "Martes de 19:00 a 20:30, Jueves de 19:30 a 21:00 y Viernes de 21:00 a 22:30 en Entremontes."
+            "dias":[
+                "Martes: 19:00 a 20:30 Entremontes",
+                "Jueves: 19:30 a 21:00 Entremontes",
+                "Viernes: 21:00 a 22:30 Entremontes"
+            ] 
         },
         {
             "equipo" : "Infantil",
-            "textoDiasHoras": "Martes de 18:00 a 19:00 y Viernes de 19:30 a 21:00 en Entremontes"
+            "dias":[
+                "Martes: 18:00 a 19:00 Entremontes",
+                "Viernes: 19:30 a 21:00 Entremontes"
+            ] 
         },
         {
             "equipo" : "Alevín",
-            "textoDiasHoras": "Jueves de 18:30 a 19:30 en Los Olivos. Viernes de 18:30 a 19:30 en Entremontes."
+            "dias":[
+                "Jueves: 18:30 a 19:30 Los Olivos",
+                "Viernes: 18:30 a 19:30 Entremontes"
+            ] 
         },
         {
             "equipo" : "Benjamín",
-            "textoDiasHoras": "Jueves 17:30 a 18:30 en Los Olivos. Viernes de 17:30 a 18:30 en Entremontes"
+            "dias":[
+                "Jueves: 17:30 a 18:30 Los Olivos",
+                "Viernes: 17:30 a 18:30 Entremontes"
+            ] 
         }
     ]
 }

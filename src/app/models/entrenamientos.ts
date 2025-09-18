@@ -1,9 +1,9 @@
 export interface Entrenamientos {
-    title:   string;
+    title: string;
     listadoEntrenos: EntrenoEquipo[];
 }
 
 export interface EntrenoEquipo {
-    equipo:         string;
-    textoDiasHoras: string;
+    equipo: string;
+    dias: string[];
 }
