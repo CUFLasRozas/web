@@ -2,11 +2,7 @@
     "title": "Entrenamientos",
     "listadoEntrenos" : [
         {
-            "equipo" : "Senior Masculino",
-            "textoDiasHoras": "Martes de 19:00 a 20:30, Jueves de 19:30 a 21:00 y Viernes de 21:00 a 22:30 en Entremontes."
-        },
-        {
-            "equipo" : "Senior Femenino",
+            "equipo" : "Senior y Cadete",
             "textoDiasHoras": "Martes de 19:00 a 20:30, Jueves de 19:30 a 21:00 y Viernes de 21:00 a 22:30 en Entremontes."
         },
         {

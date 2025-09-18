@@ -1,9 +1,57 @@
 .footer-general {
     padding: 5px;
-    color: white;    
+    color: white;
 }
 
-p {
+a {
+    color: white
+}
+
+a:hover {
+    color: orange
+}
+.centrar {
     text-align: center;
 }
 
+.patrocinadores-collection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.img-patrocinador {
+    height: 40px;
+}
+
+.pie {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center; 
+        gap: 15px;
+        margin-top: 10px
+}
+
+.pie p {
+    font-size: 30px;
+}
+
+.logo_cuf {
+    height: 60px;
+}
+
+
+@media (max-width: 768px) {
+    .enlace {
+        display: flex;
+        justify-content: center;
+    }
+    .patrocinadores-collection {
+        gap:15px;
+    }
+
+    .logo-patrocinador {
+        width: 40%;
+    }
+}

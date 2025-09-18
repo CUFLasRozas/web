@@ -29,33 +29,13 @@
             @for (documento of this.infoBarraLateral.documentos.objects; track $index) {
             <li>
                 <a href="{{documento.url}}" target="_blank">
-                    {{documento.literal}}
+                   <b>{{documento.literal}}</b>
                 </a>
             </li>
             }
         </ul>
     </div>
     }
-
-
-    <div class="seccion">
-        <h3>Patrocinadores</h3>
-        @if(this.infoBarraLateral.patrocinadores && this.infoBarraLateral.patrocinadores.view &&
-        this.infoBarraLateral.patrocinadores.objects.length > 0){
-
-
-        @for (patrocinador of this.infoBarraLateral.patrocinadores.objects; track $index) {
-        <div class="logo-patrocinador">
-            <a href="{{patrocinador.url}}" target="_blank">
-                <img class="img-patrocinador" alt={{patrocinador.alt}} src={{patrocinador.imagen}}>
-            </a>
-        </div>
-        }
-        }
-        <p>Si quieres patrocinar o colaborar con el Club no dudes en ponerte en contacto con nosotros <a
-                routerLink="/contacto"><b>CONTACTAR</b></a></p>
-    </div>
-
 
 
     @if(this.infoBarraLateral.redes && this.infoBarraLateral.redes.view && this.infoBarraLateral.redes.objects.length >

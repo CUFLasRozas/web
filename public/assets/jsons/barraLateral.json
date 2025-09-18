@@ -29,22 +29,6 @@
             }
         ]
     },
-    "patrocinadores": {
-        "view": true,
-        "title": "Patrocinadores",
-        "objects": [
-            {
-                "url": "https://altin.es/",
-                "imagen": "assets/image/altin.png",
-                "alt": "Logo patrocinador Altin solutions"
-            },
-            {
-                "url": "https://www.izertis.com/es/",
-                "imagen": "assets/image/izertis.png",
-                "alt": "Logo patrocinador Izertis"
-            }
-        ]
-    },
     "redes": {
         "view": true,
         "title": "Redes",

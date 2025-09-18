@@ -1,7 +1,6 @@
 export interface BarraLateral {
     proximosPartidos:     ProximosPartidos;
     documentos:           Documentos;
-    patrocinadores:       ImagenesEnlazadas;
     redes:            ImagenesEnlazadas;
 }
 
@@ -40,4 +39,3 @@ export interface partidoObject {
     url:    string;
 }
 
-// export interfaceinfoClub

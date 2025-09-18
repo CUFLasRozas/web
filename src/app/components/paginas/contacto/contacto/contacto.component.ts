@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DATOS_CLUB } from '../../../generales.constants';
+
 
 @Component({
   selector: 'cuflr-contacto',
@@ -8,5 +10,5 @@ import { Component } from '@angular/core';
   styleUrl: './contacto.component.css'
 })
 export class ContactoComponent {
-
+  datos_club = DATOS_CLUB;
 }

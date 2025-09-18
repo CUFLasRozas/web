@@ -1,3 +1,28 @@
 <div class="footer-general">
-    <p>CUF Las Rozas</p>
+    <div class="patrocinadores">
+
+        <p class="centrar">Si quieres patrocinar o colaborar con el Club no dudes en ponerte en contacto con nosotros <a
+                routerLink="/contacto"><b>CONTACTAR</b></a></p>
+
+        @if(this.patrocinadores){
+        <div class="patrocinadores-collection">
+            @for (patrocinador of this.patrocinadores.patrocinadores; track $index) {
+            <div class="logo-patrocinador">
+                <a class="enlace" href="{{patrocinador.url}}" target="_blank">
+                    <img class="img-patrocinador" alt={{patrocinador.alt}} src={{patrocinador.imagen}}>
+                </a>
+            </div>
+            }
+        </div>
+        }
+    </div>
+    <div class="pie">
+
+       
+            <img class="logo_cuf" alt="Logo CUF Las Rozas principal" src="assets/image/Logo_CUF_Las_Rozas.png">
+   
+            <p>CUF Las Rozas</p>
+      
+
+    </div>
 </div>

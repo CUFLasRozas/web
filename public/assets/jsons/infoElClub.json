@@ -30,22 +30,17 @@
         "listadoMiembros": [
             {
                 "nombre": "Juan Antonio Roldán",
-                "cargo": "Senior masculino",
+                "cargo": "Senior y Cadete",
                 "urlfoto": "assets/image/staff/juanan.webp"
             },
             {
                 "nombre": "Rodrigo Lavin",
-                "cargo": "Preparador físico Senior maculino",
+                "cargo": "Preparador físico Senior y Cadete",
                 "urlfoto": "assets/image/desconocido.png"
             },
             {
-                "nombre": "Nico Sanchez-Ferragut Gajate",
-                "cargo": "Benjamines",
-                "urlfoto": "assets/image/staff/nico.webp"
-            },
-            {
                 "nombre": "Elena Marín Cabello",
-                "cargo": "Alevines",
+                "cargo": "Benjamines y Alevines",
                 "urlfoto": "assets/image/desconocido.png"
             },
             {
