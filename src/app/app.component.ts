@@ -4,6 +4,7 @@ import { CabeceraComponent } from "./components/cabecera/cabecera.component";
 import { BarraLateralComponent } from "./components/barra-lateral/barra-lateral/barra-lateral.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,14 @@ import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.c
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
+
 export class AppComponent {
-  title = 'CUFLasRozas';
+  // title = 'CUF Las Rozas';
+
+  constructor(private meta: Meta) { }
+
+  ngOnInit(): void {
+  this.meta.updateTag({ name: 'description', content: 'Aqui podrás ver toda la información del CUF Las Rozas, asi como estar al tanto de los ultimos partidos y eventos' });
+}
 }
