@@ -1,15 +1,12 @@
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>Redireccionando...</title>
   <script>
-    var path = window.location.pathname;
-    var hash = window.location.hash;
-    
-    // Esta línea construye la nueva URL para que Angular la procese
-    // window.location.replace('/' + path + hash);
-    routerLink=hash
+    sessionStorage.redirect = location.href;
   </script>
+  <meta http-equiv="refresh" content="0;URL='index.html'">
 </head>
 <body>
+  <p>Si no eres redirigido automáticamente, haz clic <a href='index.html'>aquí</a>.</p>
 </body>
 </html>
