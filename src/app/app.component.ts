@@ -16,11 +16,16 @@ import { Meta } from '@angular/platform-browser';
 
 
 export class AppComponent {
-  // title = 'CUF Las Rozas';
+  title = 'CUF Las Rozas';
 
-  constructor(private meta: Meta) { }
+  constructor(
+    private meta: Meta) { }
 
   ngOnInit(): void {
-  this.meta.updateTag({ name: 'description', content: 'Aqui podrás ver toda la información del CUF Las Rozas, asi como estar al tanto de los ultimos partidos y eventos' });
+  this.meta.addTags([
+    { name: 'description', content: 'Aqui podrás ver toda la información del CUF Las Rozas, asi como estar al tanto de los ultimos partidos y eventos' },
+    {name:'author', content:'Nuño Marín'},
+    {name:'keywords', content:'CUF Las Rozas, Unihockey, Floorball'}
+  ]);
 }
 }
