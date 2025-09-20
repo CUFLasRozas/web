@@ -1,0 +1,15 @@
+<head>
+  <meta charset="utf-8">
+  <title>Redirigiendo...</title>
+  <script>
+    var path = location.pathname;
+    if (path.endsWith('/')) {
+      path = path.slice(0, -1);
+    }
+    sessionStorage.redirect = path;
+    location.pathname = '/';
+  </script>
+</head>
+<body>
+</body>
+</html>
