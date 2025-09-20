@@ -1,12 +1,13 @@
+<!DOCTYPE html>
+<html>
 <head>
   <meta charset="utf-8">
   <title>Redirigiendo...</title>
   <script>
-    var path = location.pathname;
-    if (path.endsWith('/')) {
-      path = path.slice(0, -1);
-    }
-    sessionStorage.redirect = path;
+    // Guarda la ruta original del navegador en sessionStorage
+    sessionStorage.redirect = location.pathname;
+
+    // Redirige a la raíz del sitio (index.html)
     location.pathname = '/';
   </script>
 </head>
