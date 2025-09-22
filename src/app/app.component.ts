@@ -26,11 +26,6 @@ export class AppComponent {
     private meta: Meta) { }
 
   ngOnInit(): void {
-  this.meta.addTags([
-    { name: 'description', content: 'Aqui podrás ver toda la información del CUF Las Rozas, asi como estar al tanto de los ultimos partidos y eventos' },
-    {name:'author', content:'Nuño Marín'},
-    {name:'keywords', content:'CUF Las Rozas, Unihockey, Floorball'}
-  ]);
   // Comprobar si existe una ruta guardada en sessionStorage
     const redirectPath = this.document.defaultView?.sessionStorage.getItem('redirect');
 
