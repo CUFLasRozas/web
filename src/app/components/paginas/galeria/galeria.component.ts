@@ -18,9 +18,9 @@ export class GaleriaComponent {
   ){}
 
   ngOnInit(){
-    this.utilesService.obtenerJson('controlGaleria.json').subscribe((data: any)=> {
-      this.controlGaleria = data;
-    });
+    // this.utilesService.obtenerJson('controlGaleria.json').subscribe((data: any)=> {
+    //   this.controlGaleria = data;
+    // });
      this.utilesService.obtenerJson("galeria/antiguas.json").subscribe((data : any) =>{
       this.galeria = data;
     })

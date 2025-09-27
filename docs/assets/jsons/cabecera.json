@@ -19,6 +19,10 @@
     {
       "link": "/contacto",
       "texto": "Contacto"
+    },
+    {
+      "link": "/galeria",
+      "texto": "Galeria"
     }
   ]
 }
