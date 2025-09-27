@@ -15,13 +15,6 @@ export class UtilesService {
     return this.http.get('assets/jsons/' + nombre)
   }
 
-  getImages(direccion: string) {
-    this.obtenerJson('listadoFotos.json').subscribe(data => {
-      console.log(data);
-    }
-    )
-  }
-
   $modalTienda = new EventEmitter<boolean>();
 
   $productoTienda = new EventEmitter<{dir:string, obj:ListaObjeto}>()

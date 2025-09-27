@@ -1,0 +1,41 @@
+<div class="fotos-principal">
+    <div>
+        <h1>Galería de fotos</h1>
+        <!-- @if(controlGaleria){
+
+        <select name="temporadas" (change)="anioElegido($event)">
+            @for (control of controlGaleria.temporadas; track $index) {
+            <option value="{{control.value}}">{{control.literal}}</option>
+            }
+        </select>
+        } -->
+
+    </div>
+
+    @if (controlGaleria && controlGaleria.filtroActived) {
+    <div class="filtro">
+        <button class="filtro-btn active" data-categoria="todas">Todas</button>
+        <button class="filtro-btn" data-categoria="entrenamientos">Entrenamientos</button>
+        <button class="filtro-btn" data-categoria="partidos">Partidos</button>
+        <button class="filtro-btn" data-categoria="eventos">Eventos</button>
+        <select name="equipos">
+            <option value="todos">todos</option>
+            <option value="srmasc">Senior Masculino</option>
+            <option value="srfem">Senior Femenino</option>
+        </select>
+    </div>
+    }
+
+
+    @if (controlGaleria && controlGaleria.mostrarAnyo) {
+    <div class="galeria">
+        @for (imagen of galeria; track $index) {
+        <figure class="foto">
+            <a href="{{imagen.url}}"><img src="{{imagen.url}}" alt="{{imagen.alt}}"></a>
+            <figcaption class="pie-foto">{{imagen.pie}}</figcaption>
+        </figure>
+        }
+    </div>
+    }
+
+</div>

@@ -11,6 +11,11 @@
 
 .foto {
     width: 30%;
+    margin: 10px 0px;
+}
+
+.pie-foto {
+    text-align: center;
 }
 
 img {
