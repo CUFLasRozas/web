@@ -1,0 +1,140 @@
+[
+    {
+        "url": "assets/galeria/antiguas/fiesta_final_204-25.webp",
+        "navigateTo": "",
+        "alt": "",
+        "categoria":"evento",
+        "equipo":"",
+        "pie": "Fin de Temporada 2024/25"
+    },{
+        "url": "assets/galeria/antiguas/torneo_unkmadrid_2024-25.2.webp",
+        "navigateTo": "",
+        "alt": "",
+        "categoria":"evento",
+        "equipo":"",
+        "pie": "Torneo 25ª UHK Madrid 2024/25"
+    },
+    {
+        "url": "assets/galeria/antiguas/torneo_uhkmadrid_2024-25.webp",
+        "navigateTo": "",
+        "alt": "",
+        "categoria":"evento",
+        "equipo":"",
+        "pie": "Torneo 25ª UHK Madrid 2024/25"
+    },
+    {
+        "url": "assets/galeria/antiguas/partido_senior_2024-25.webp",
+        "navigateTo": "",
+        "alt": "",
+        "categoria":"partido",
+        "equipo":"srmas",
+        "pie": "Partido Senior Masculino 2024/25"
+    },
+    {
+        "url": "assets/galeria/antiguas/torneo_fuengirola_2024-25.webp",
+        "navigateTo": "",
+        "alt": "",
+        "categoria":"evento",
+        "equipo":"",
+        "pie": "Torneo Costa Blanca 2024/25"
+    },
+    {
+        "url": "assets/galeria/antiguas/feliz_navidad_2024-25.webp",
+        "navigateTo": "",
+        "alt": "",
+        "categoria":"evento",
+        "equipo":"",
+        "pie": "Feliz Navidad 2024/25"
+    },
+    {
+        "url": "assets/galeria/antiguas/senior_masculino_2024-25.webp",
+        "navigateTo": "",
+        "alt": "",
+        "categoria":"partido",
+        "equipo":"srmas",
+        "pie": "Partido liga Senior Masculino 2024/25"
+    },
+    {
+        "url": "assets/galeria/antiguas/liga_infantil_2024-25.webp",
+        "navigateTo": "",
+        "alt": "",
+        "categoria":"partido",
+        "equipo":"infantil",
+        "pie": "Partido liga Infantiles 2024/25"
+    },
+    {
+        "url": "assets/galeria/antiguas/liga_alevin_2024-25.webp",
+        "navigateTo": "",
+        "alt": "",
+        "categoria":"partido",
+        "equipo":"alevin",
+        "pie": "Partido liga Alevines 2024/25"
+    },
+    {
+        "url": "assets/galeria/antiguas/liga_alevin_2024-25.webp",
+        "navigateTo": "",
+        "alt": "",
+        "categoria":"amistoso",
+        "equipo":"alevin",
+        "pie": "Partido liga Alevines 2024/25"
+    },
+    {
+        "url": "assets/galeria/antiguas/amistoso_benjamin_2024-25.webp",
+        "navigateTo": "",
+        "alt": "",
+        "categoria":"amistoso",
+        "equipo":"benjamin",
+        "pie": "Partido amistoso Benjamines 2024/25"
+    },
+    {
+        "url": "assets/galeria/antiguas/1.jpg",
+        "navigateTo": "",
+        "alt": "",
+        "categoria":"evento",
+        "equipo":"alevin",
+        "pie": "Equipo alevin 2023/24"
+    },{
+        "url": "assets/galeria/antiguas/2.jpg",
+        "navigateTo": "",
+        "alt": "",
+        "categoria":"partido",
+        "equipo":"srmas",
+        "pie": "Equipo Senior Masculino 2023/24"
+    },{
+        "url": "assets/galeria/antiguas/3.jpg",
+        "navigateTo": "",
+        "alt": "",
+        "categoria":"partido",
+        "equipo":"srfem",
+        "pie": "Equipo Senior Femenino 2023/24"
+    },
+    {
+        "url": "assets/galeria/antiguas/4.jpg",
+        "navigateTo": "",
+        "alt": "",
+        "categoria":"partido",
+        "equipo":"srmas",
+        "pie": "Equipo Senior Masculino 2023/24"
+    },{
+        "url": "assets/galeria/antiguas/5.jpg",
+        "navigateTo": "",
+        "alt": "",
+        "categoria":"partido",
+        "equipo":"srfem",
+        "pie": "Andrea García. Portera 2023/24"
+    },{
+        "url": "assets/galeria/antiguas/6.jpg",
+        "navigateTo": "",
+        "alt": "",
+        "categoria":"evento",
+        "equipo":"",
+        "pie": "Felicitacion Navidad 2023/24"
+    },{
+        "url": "assets/galeria/antiguas/7.jpg",
+        "navigateTo": "",
+        "alt": "",
+        "categoria":"evento",
+        "equipo":"",
+        "pie": "Comida fin de temporada 2023/24"
+    }
+]
