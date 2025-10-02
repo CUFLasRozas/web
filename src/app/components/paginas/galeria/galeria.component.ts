@@ -26,18 +26,17 @@ export class GaleriaComponent {
      
   }
 
+  anioElegido(evento : Event){
+    const anio = (evento.target as HTMLSelectElement).value;
+    this.cargarGaleria(anio);
+    console.log("has seleccionado el año:", anio)
+  }
+
   cargarGaleria(anio:string){
     this.anioSelected = anio;
     const archivo = "galeria/"+anio+".json";
     this.utilesService.obtenerJson(archivo).subscribe((data : any) =>{
       this.galeria = data;
     })
-  }
-  
-
-  anioElegido(evento : Event){
-    const anio = (evento.target as HTMLSelectElement).value;
-    this.cargarGaleria(anio);
-    console.log("has seleccionado el año:", anio)
-  }
+  }  
 }
