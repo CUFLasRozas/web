@@ -12,22 +12,22 @@ export class GaleriaComponent {
   controlGaleria!: ControlGaleria;
   filtroActived: boolean = false;
   galeria!:Imagenes[];
+  anioSelected! : string;
 
   constructor(
     private utilesService: UtilesService
   ){}
 
   ngOnInit(){
-    // this.utilesService.obtenerJson('controlGaleria.json').subscribe((data: any)=> {
-    //   this.controlGaleria = data;
-    // });
-     this.utilesService.obtenerJson("galeria/antiguas.json").subscribe((data : any) =>{
-      this.galeria = data;
-    })
+    this.utilesService.obtenerJson('controlGaleria.json').subscribe((data: any)=> {
+      this.controlGaleria = data;
+      this.cargarGaleria( this.controlGaleria.mostrarAnyo);
+    });
      
   }
 
   cargarGaleria(anio:string){
+    this.anioSelected = anio;
     const archivo = "galeria/"+anio+".json";
     this.utilesService.obtenerJson(archivo).subscribe((data : any) =>{
       this.galeria = data;

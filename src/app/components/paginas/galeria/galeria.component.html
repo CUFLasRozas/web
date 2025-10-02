@@ -1,14 +1,24 @@
 <div class="fotos-principal">
-    <div>
-        <h1>Galería de fotos</h1>
-        <!-- @if(controlGaleria){
+    <div class="cabecera_galeria">
+        <div>
 
-        <select name="temporadas" (change)="anioElegido($event)">
-            @for (control of controlGaleria.temporadas; track $index) {
-            <option value="{{control.value}}">{{control.literal}}</option>
+            <h1>Galería de fotos</h1>
+        </div>
+        <div class="div_temporadas">
+            @if(controlGaleria){
+
+            <select class="select_temp" name="temporadas" (change)="anioElegido($event)">
+                @for (control of controlGaleria.temporadas; track $index) {
+                    @if (control.value != "") {
+                    <option class="option_temp" value="{{control.value}}">{{control.literal}}</option>
+                    } @else {
+                    <option value="option_temp" selected disabled hidden>{{control.literal}}</option>
+                    }
+                }
+            </select>
             }
-        </select>
-        } -->
+        </div>
+
 
     </div>
 
@@ -27,15 +37,21 @@
     } -->
 
 
-    <!-- @if (controlGaleria && controlGaleria.mostrarAnyo) { -->
+    @if (controlGaleria && controlGaleria.mostrarAnyo) {
+    <h2>Temporada: {{anioSelected}}</h2>
     <div class="galeria">
         @for (imagen of galeria; track $index) {
         <figure class="foto">
-            <a href="{{imagen.url}}"><img src="{{imagen.url}}" alt="{{imagen.alt}}"></a>
+            @if (imagen.navigateTo && imagen.navigateTo != "") {
+            <a href="{{imagen.navigateTo}}" target="_blank"><img src="{{imagen.url}}" alt="{{imagen.alt}}"></a>
             <figcaption class="pie-foto">{{imagen.pie}}</figcaption>
+            } @else {
+            <img src="{{imagen.url}}" alt="{{imagen.alt}}">
+            <figcaption class="pie-foto">{{imagen.pie}}</figcaption>
+            }
         </figure>
         }
     </div>
-    <!-- } -->
+    }
 
 </div>

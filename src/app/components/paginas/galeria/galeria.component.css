@@ -1,3 +1,30 @@
+.cabecera_galeria {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.div_temporadas {
+    margin-right: 30px;
+}
+
+.select_temp {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding:5px;
+    background-color: white;
+    font-size: medium;
+}
+
+.option_temp {
+    border: 2px solid black;
+    font-size: medium;
+
+}
+
+
 .fotos-principal {
     padding: 20px;
 }

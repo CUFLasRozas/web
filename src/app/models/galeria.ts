@@ -12,6 +12,7 @@ export interface Temporada {
 
 export interface Imagenes {
     url: String,
+    navigateTo: String,
     alt: String,
     categoria: String,
     equipo: String,
