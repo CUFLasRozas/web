@@ -23,6 +23,10 @@
     {
       "link": "/galeria",
       "texto": "Galeria"
+    },
+    {
+      "link": "/tienda",
+      "texto": "Tienda"
     }
   ]
 }
