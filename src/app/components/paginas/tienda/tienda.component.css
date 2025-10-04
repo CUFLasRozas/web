@@ -43,18 +43,6 @@ span {
     font-weight: bold;
 }
 
-@media (min-width: 481px) and (max-width: 768px) {
-    .box {
-        width: 50%;
-    }
-}
-
-@media (max-width: 480px) {
-    .box {
-        width: 100%;
-    }
-}
-
 .tienda_modal{
     position: fixed;
     top: 0;
@@ -66,6 +54,7 @@ span {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .colores {
@@ -82,4 +71,21 @@ span {
     margin: 0px 5px;
     border: 1px solid black;
     border-radius: 50%;
+}
+
+
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .box {
+        width: 50%;
+    }
+    .tienda_modal{
+        display:contents;
+    }
+}
+
+@media (max-width: 480px) {
+    .box {
+        width: 100%;
+    }
 }
