@@ -8,7 +8,7 @@
             "nombrePpal": "Taza",
             "precio": 10,
             "colores": [
-                "white","orange","black"
+                "white","#F75A0B","black"
             ],
             "ObjetosIndividual": [
                 {
@@ -21,7 +21,7 @@
                     "img": ["taza_naranja.webp"],
                     "nombre": "Taza",
                     "precio": 10,
-                    "color": "orange"
+                    "color": "#F75A0B"
                 },
                 {
                     "img": ["taza_negra.webp"],
@@ -37,7 +37,7 @@
             "nombrePpal": "Taza Personalizada",
             "precio": 10,
             "colores": [
-                "white","orange","black"
+                "white","#F75A0B","black"
             ],
             "ObjetosIndividual": [
                 {
@@ -50,7 +50,7 @@
                     "img": ["taza_personalizada_naranja.webp"],
                     "nombre": "Taza",
                     "precio": 10,
-                    "color": "orange"
+                    "color": "#F75A0B"
                 },
                 {
                     "img": ["taza_personalizada_negra.webp"],
@@ -66,14 +66,14 @@
             "nombrePpal": "Bufanda",
             "precio": 10,
             "colores": [
-                "orange"
+                "#F75A0B"
             ],
             "ObjetosIndividual": [
                 {
                     "img": ["bufanda_completa.webp","bufanda_detalle.webp","bufanda_doblada.webp"],
                     "nombre": "Bufanda",
                     "precio": 10,
-                    "color": "orange"
+                    "color": "#F75A0B"
                 }
             ]
         }
