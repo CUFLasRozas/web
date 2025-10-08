@@ -17,16 +17,12 @@
       "texto": "Tienda"
     },
     {
-      "link": "/contacto",
-      "texto": "Contacto"
-    },
-    {
       "link": "/galeria",
       "texto": "Galeria"
     },
     {
-      "link": "/tienda",
-      "texto": "Tienda"
+      "link": "/contacto",
+      "texto": "Contacto"
     }
   ]
 }

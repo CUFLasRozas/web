@@ -1,7 +1,6 @@
 .cabecera {
     font-size: 30px;
     background-color: black;
-    /* background-image: linear-gradient( black, orange 160%); */
     display: flex;
     align-items: center;
     color: white;
@@ -43,7 +42,7 @@ a {
 }
 
 a:hover {    
-    color: orange;
+    color: #F75A0B;
 }
 
 .menu-toggle {
