@@ -33,7 +33,6 @@
 .app_footer {
   width: 100%;
   background-color: black;
-  /* background-image: linear-gradient( orange -30%, black); */
 }
 
 
@@ -54,5 +53,5 @@
 }
 
   h1 {
-    color: orange !important;
+    color: #F75A0B !important;
   }

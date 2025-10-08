@@ -4,11 +4,11 @@
 }
 
 a {
-    color: white
+    color: white;
 }
 
 a:hover {
-    color: orange
+    color: #F75A0B;
 }
 .centrar {
     text-align: center;
