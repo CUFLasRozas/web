@@ -1,0 +1,18 @@
+{
+  "filtroActived": false,
+  "mostrarAnyo": "Antiguas",
+  "temporadas": [
+     {
+      "value":"",
+      "literal":"Seleccione año"
+    },
+    {
+      "value":"2025-26",
+      "literal":"2025-26"
+    },
+    {
+      "value":"Antiguas",
+      "literal":"Antiguas"
+    }
+  ]
+}
