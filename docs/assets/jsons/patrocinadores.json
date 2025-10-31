@@ -2,12 +2,22 @@
     "patrocinadores": [
             {
                 "url": "https://altin.es/",
-                "imagen": "assets/image/altin.png",
+                "imagen": "assets/image/patrocinadores/altin.png",
                 "alt": "Logo patrocinador Altin solutions"
             },
             {
+                "url": "https://luanvi.com/",
+                "imagen": "assets/image/patrocinadores/luanvi.png",
+                "alt": "Logo colaborador Luanvi"
+            },
+            {
+                "url": "https://monsterstamping.es/",
+                "imagen": "assets/image/patrocinadores/monsterstamping_blanco.png",
+                "alt": "Logo colaborador MonsterStamping"
+            },
+            {
                 "url": "https://www.izertis.com/es/",
-                "imagen": "assets/image/izertis.png",
+                "imagen": "assets/image/patrocinadores/izertis.png",
                 "alt": "Logo patrocinador Izertis"
             }
         ]

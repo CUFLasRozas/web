@@ -1,0 +1,142 @@
+{
+    "rutaTienda": "assets/tienda/",
+    "otrosArticulosActive": true,
+    "listaObjetos": [
+        {
+            "carpeta": "cam-logo-grande/",
+            "imagenPpal": "cam-logo-grande-blanco.jpg",
+            "nombrePpal": "Camiseta Logo Grande",
+            "precio": 20,
+            "colores": [
+                "white",
+                "orange",
+                "black"
+            ],
+            "ObjetosIndividual": [
+                {
+                    "img": ["cam-logo-grande-blanco.jpg"],
+                    "nombre": "Camiseta Logo Grande Blanco",
+                    "precio": 20,
+                    "color": "white"
+                },
+                {
+                    "img": ["cam-logo-grande-naranja.jpg"],
+                    "nombre": "Camiseta Logo Grande Naranja",
+                    "precio": 20,
+                    "color": "orange"
+                },
+                {
+                    "img": ["cam-logo-grande-negro.jpg"],
+                    "nombre": "Camiseta Logo Grande Negro",
+                    "precio": 20,
+                    "color": "black"
+                }
+            ]
+        },
+        {
+            "carpeta": "cam-logo-peq/",
+            "imagenPpal": "cam-logo-peq-naranja.jpg",
+            "nombrePpal": "Camiseta Logo Pequeño",
+            "precio": 20,
+            "colores": [
+                "white",
+                "orange",
+                "black"
+            ],
+            "ObjetosIndividual": [
+                {
+                    "img": ["cam-logo-peq-blanco.jpg"],
+                    "nombre": "Camiseta Logo Pequeño Blanco",
+                    "precio": 20,
+                    "color": "white"
+                },
+                {
+                    "img": ["cam-logo-peq-naranja.jpg"],
+                    "nombre": "Camiseta Logo Pequeño Naranja",
+                    "precio": 20,
+                    "color": "orange"
+                },
+                {
+                    "img": ["cam-logo-peq-negro.jpg"],
+                    "nombre": "Camiseta Logo Pequeño Negro",
+                    "precio": 20,
+                    "color": "black"
+                }
+            ]
+        },
+        {
+            "carpeta": "gorra/",
+            "imagenPpal": "gorra.png",
+            "nombrePpal": "Gorra",
+            "precio": 20,
+            "colores": [
+                "black"
+            ],
+            "ObjetosIndividual": [
+                {
+                    "img": ["gorra.png"],
+                    "nombre": "Gorra",
+                    "precio": 20,
+                    "color": "black"
+                }
+            ]
+        },
+        {
+            "carpeta": "taza/",
+            "imagenPpal": "taza-frontal.jpg",
+            "nombrePpal": "Taza",
+            "precio": 20,
+            "colores": [
+                "white"
+            ],
+            "ObjetosIndividual": [
+                {
+                    "img": ["taza-frontal.jpg","taza-general.jpg"],
+                    "nombre": "Taza",
+                    "precio": 20,
+                    "color": "white"
+                }
+            ]
+        },
+        {
+            "carpeta": "chapa/",
+            "imagenPpal": "chapa.png",
+            "nombrePpal": "Chapa",
+            "precio": 20,
+            "colores": [
+                "black"
+            ],
+            "ObjetosIndividual": [
+                {
+                    "img": ["chapa.png"],
+                    "nombre": "Chapa",
+                    "precio": 20,
+                    "color": "black"
+                }
+            ]
+        },{
+            "carpeta": "mochila/",
+            "imagenPpal": "mochila-negro.jpg",
+            "nombrePpal": "Mochila",
+            "precio": 20,
+            "colores": [
+                "white",
+                "black"
+            ],
+            "ObjetosIndividual": [
+                {
+                    "img": ["mochila-blanco.jpg"],
+                    "nombre": "Mochila Blanco",
+                    "precio": 20,
+                    "color": "white"
+                },
+                {
+                    "img": ["mochila-negro.jpg"],
+                    "nombre": "Mochila Negro",
+                    "precio": 20,
+                    "color": "black"
+                }
+            ]
+        }
+    ]
+}

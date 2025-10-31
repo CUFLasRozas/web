@@ -7,6 +7,7 @@ import { EntrenamientosComponent } from './components/paginas/entrenamientos/ent
 import { TiendaComponent } from './components/paginas/tienda/tienda.component';
 import { HistoriaComponent } from './components/paginas/historia/historia.component';
 import { InscripcionComponent } from './components/paginas/inscripcion/inscripcion.component';
+import { PromosComponent } from './components/paginas/promos/promos.component';
 
 export const routes: Routes = [
     {path: '', component: InicioComponent},
@@ -17,5 +18,6 @@ export const routes: Routes = [
     {path: 'tienda', component: TiendaComponent},
     {path: 'historia', component: HistoriaComponent},
     {path: 'inscripcion', component: InscripcionComponent},
+    {path: 'promociones', component: PromosComponent},
     {path: '**', component: NotFoundComponent},
 ];

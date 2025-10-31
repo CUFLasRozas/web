@@ -1,0 +1,25 @@
+.promos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:  flex-start;
+}
+
+.promo {
+    width: 15%;
+    margin: 10px;
+}
+
+.img_promo {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+.promos {
+    justify-content:  space-evenly;
+}
+
+    .promo {
+    width: 40%;
+}
+}

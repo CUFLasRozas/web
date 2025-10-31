@@ -76,6 +76,57 @@
                     "color": "#F75A0B"
                 }
             ]
+        },
+        {
+            "carpeta": "pegatina/",
+            "imagenPpal": "pegatina.webp",
+            "nombrePpal": "Pegatina",
+            "precio": 1,
+            "colores": [
+                "#F75A0B"
+            ],
+            "ObjetosIndividual": [
+                {
+                    "img": ["pegatina.webp","pegatinas.webp"],
+                    "nombre": "Pegatina",
+                    "precio": 1,
+                    "color": "#F75A0B"
+                }
+            ]
+        },
+        {
+            "carpeta": "pegatina/",
+            "imagenPpal": "pegatinas.webp",
+            "nombrePpal": "Pack 3 pegatinas",
+            "precio": 2,
+            "colores": [
+                "#F75A0B"
+            ],
+            "ObjetosIndividual": [
+                {
+                    "img": ["pegatina.webp","pegatinas.webp"],
+                    "nombre": "Pack 3 pegatinas",
+                    "precio": 2,
+                    "color": "#F75A0B"
+                }
+            ]
+        },
+        {
+            "carpeta": "llavero/",
+            "imagenPpal": "llavero1.webp",
+            "nombrePpal": "Llavero",
+            "precio": 2,
+            "colores": [
+                "#F75A0B"
+            ],
+            "ObjetosIndividual": [
+                {
+                    "img": ["llavero1.webp","llavero2.webp","llavero3.webp"],
+                    "nombre": "Llavero",
+                    "precio": 2,
+                    "color": "#F75A0B"
+                }
+            ]
         }
     ]
 }

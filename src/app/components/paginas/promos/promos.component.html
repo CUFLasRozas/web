@@ -1,0 +1,15 @@
+<h1>Promociones</h1>
+<p>Aquí podrás encontrar todas las promociones, descuentos y ofertas exclusivas que podrás obtener por ser parte del Club.</p>
+<p>Para poder disfrutar de ellas, solo deberás demostrar que eres miembro del Club enseñando tu ficha de jugador en la página web de la AEUF o mostrando tu cromo personalizado en cualquiera de los establecimientos asociados.</p>
+
+@if (this.promos) {
+    <div class="promos">
+    @for (promo of this.promos; track $index) {
+       <div class="promo">
+                <a class="enlace" href="{{promo.url}}" target="_blank">
+                    <img class="img_promo" alt={{promo.alt}} src={{promo.imagen}}>
+                </a>
+            </div>
+    }
+    </div>
+}
