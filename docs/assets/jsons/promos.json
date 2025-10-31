@@ -1,0 +1,53 @@
+{
+    "promos": [
+            {
+                "url": "https://www.izertis.com/es/",
+                "imagen": "assets/image/promos/pizzepo.png",
+                "alt": "Logo patrocinador Izertis"
+            },
+            {
+                "url": "https://altin.es/",
+                "imagen": "assets/image/promos/horno_abuela.png",
+                "alt": "Por la compra de 12 pasteles o pastas, 2 gratis"
+            },
+            {
+                "url": "https://luanvi.com/",
+                "imagen": "assets/image/promos/kawanda.png",
+                "alt": "10% descuento en comida para perros y gatos"
+            },
+            {
+                "url": "https://monsterstamping.es/",
+                "imagen": "assets/image/promos/sabores_mexico.png",
+                "alt": "Logo colaborador MonsterStamping"
+            },
+            {
+                "url": "https://www.izertis.com/es/",
+                "imagen": "assets/image/promos/pitiflus.png",
+                "alt": "Logo patrocinador Izertis"
+            },{
+                "url": "https://www.izertis.com/es/",
+                "imagen": "assets/image/promos/pizzepo.png",
+                "alt": "Logo patrocinador Izertis"
+            },
+            {
+                "url": "https://altin.es/",
+                "imagen": "assets/image/promos/horno_abuela.png",
+                "alt": "Por la compra de 12 pasteles o pastas, 2 gratis"
+            },
+            {
+                "url": "https://luanvi.com/",
+                "imagen": "assets/image/promos/kawanda.png",
+                "alt": "10% descuento en comida para perros y gatos"
+            },
+            {
+                "url": "https://monsterstamping.es/",
+                "imagen": "assets/image/promos/sabores_mexico.png",
+                "alt": "Logo colaborador MonsterStamping"
+            },
+            {
+                "url": "https://www.izertis.com/es/",
+                "imagen": "assets/image/promos/pitiflus.png",
+                "alt": "Logo patrocinador Izertis"
+            }
+        ]
+}

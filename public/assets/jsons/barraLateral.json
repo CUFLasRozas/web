@@ -3,24 +3,6 @@
         "view": true,
         "title": "Partidos y eventos",
         "objects": [
-            {
-                "titulo": "Benjamín - San Lorenzo",
-                "fecha": "25 Octubre - 16:00",
-                "url": "https://www.unihockey.es/liga_benjamin_25_26/resumen"
-            },{
-                "titulo": "Alevín - El Escorial",
-                "fecha": "26 Octubre - 15:00 y 16:10",
-                "url": "https://www.unihockey.es/liga_alevin_25_26/resumen"
-            },{
-                "titulo": "Infantil - Las Rozas",
-                "fecha": "26 Octubre - 16:00 y 17:00",
-                "url": "https://www.unihockey.es/liga_infantil_25_26/resumen"
-            },
-            {
-                "titulo": "Senior Masculino - Arganzuela",
-                "fecha": "26 Octubre - 19:05",
-                "url": "https://www.floorball.es/liga_plata_25_26/resumen"
-            }
         ]
     },
     "documentos": {
