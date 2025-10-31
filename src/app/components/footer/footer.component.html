@@ -1,9 +1,5 @@
 <div class="footer-general">
     <div class="patrocinadores">
-
-        <p class="centrar">Si quieres patrocinar o colaborar con el Club no dudes en ponerte en contacto con nosotros <a
-                routerLink="/contacto"><b>CONTACTAR</b></a></p>
-
         @if(this.patrocinadores){
         <div class="patrocinadores-collection">
             @for (patrocinador of this.patrocinadores.patrocinadores; track $index) {
@@ -15,14 +11,15 @@
             }
         </div>
         }
+
+        <p class="centrar">Si quieres patrocinar o colaborar con el Club no dudes en ponerte en contacto con nosotros <a
+                routerLink="/contacto"><b>CONTACTAR</b></a></p>
     </div>
     <div class="pie">
+        <img class="logo_cuf" alt="Logo CUF Las Rozas principal" src="assets/image/Logo_CUF_Las_Rozas.webp">
 
-       
-            <img class="logo_cuf" alt="Logo CUF Las Rozas principal" src="assets/image/Logo_CUF_Las_Rozas.webp">
-   
-            <p>CUF Las Rozas</p>
-      
+        <p>CUF Las Rozas</p>
+
 
     </div>
 </div>
