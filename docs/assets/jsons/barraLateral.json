@@ -2,7 +2,7 @@
     "proximosPartidos": {
         "view": true,
         "title": "Partidos y eventos",
-        "objects": [
+         "objects":  [
          {
            "titulo":"Padres vs. Hijos",
            "fecha":"21 Diciembre - 10:00",

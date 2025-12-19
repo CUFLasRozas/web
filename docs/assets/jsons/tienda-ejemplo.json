@@ -137,6 +137,23 @@
                     "color": "black"
                 }
             ]
+        },
+        {
+            "carpeta": "libro-solidario/",
+            "imagenPpal": "libro-solidario-mini.webp",
+            "nombrePpal": "Libro",
+            "precio": 10,
+            "colores": [
+                "#93c88a"
+            ],
+            "ObjetosIndividual": [
+                {
+                    "img": ["libro-solidario.webp"],
+                    "nombre": "Libro",
+                    "precio": 10,
+                    "color": "#93c88a"
+                }
+            ]
         }
     ]
 }
