@@ -2,7 +2,22 @@
     "proximosPartidos": {
         "view": true,
         "title": "Partidos y eventos",
-        "objects": [
+         "objects":  [
+         {
+           "titulo":"Padres vs. Hijos",
+           "fecha":"21 Diciembre - 10:00",
+           "url":""
+         },          
+         {
+           "titulo":"Senior y viejas glorias",
+           "fecha":"21 Diciembre - 12:00",
+           "url":""
+         },          
+         {
+           "titulo":"Comida Navidad",
+           "fecha":"21 Diciembre - 14:30",
+           "url":""
+         }
         ]
     },
     "documentos": {

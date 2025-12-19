@@ -7,10 +7,16 @@
         <ul>
             @for (proximoPartido of this.infoBarraLateral.proximosPartidos.objects; track $index) {
             <li>
-                <a href="{{proximoPartido.url}}" target="_blank">
+                @if (proximoPartido.url && proximoPartido.url != "") {
+                    <a href="{{proximoPartido.url}}" target="_blank">
                     <b>{{proximoPartido.titulo}}:</b><br>
                     {{proximoPartido.fecha}}
                 </a>
+                }                
+                @else {
+                    <b>{{proximoPartido.titulo}}:</b><br>
+                    {{proximoPartido.fecha}}
+                }
             </li>
             }
         </ul>
