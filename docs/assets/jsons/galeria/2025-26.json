@@ -1,4 +1,20 @@
 [
+      {
+        "url": "assets/galeria/2025-26/torneo_navidad.webp",
+        "navigateTo": "https://www.instagram.com/p/DSkmTBpDD2i/?img_index=1",
+        "alt": "imagen con enlace a instagram del evento torneo navidad Las Rozas",
+        "categoria":"evento",
+        "equipo":"",
+        "pie": "Jornada Navideña Las Rozas 2025/25"
+    },
+    {
+        "url": "assets/galeria/2025-26/inicio_temporada_infantil.webp",
+        "navigateTo": "",
+        "alt": "la imagen muestra a la plantilla infantil tras la primera jornada",
+        "categoria":"evento",
+        "equipo":"",
+        "pie": "Inicio temporada equipo infantil 2025-2026"
+    },
     {
         "url": "assets/galeria/2025-26/inicio_temporada_senior_masculino.webp",
         "navigateTo": "",
