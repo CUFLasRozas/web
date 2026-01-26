@@ -3,16 +3,7 @@
         "view": true,
         "title": "Partidos y eventos",
          "objects":  [
-           {
-           "titulo":"Alevín - Guadarrama",
-           "fecha":"24 Enero - 12:00 y 12:50",
-           "url":"https://www.unihockey.es/liga_alevin_25_26/resumen"
-         },  
-           {
-           "titulo":"Senior - Las Rozas",
-           "fecha":"25 Enero - 18:00",
-           "url":"https://www.unihockey.es/liga_plata_25_26/resumen"
-         }
+           
         ]
     },
     "documentos": {
