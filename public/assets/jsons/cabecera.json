@@ -23,6 +23,10 @@
     {
       "link": "/contacto",
       "texto": "Contacto"
+    },
+    {
+      "link": "/senderismo",
+      "texto": "Senderismo"
     }
   ]
 }

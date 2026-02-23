@@ -1,0 +1,20 @@
+.socio {
+    padding: 20px;
+}
+
+.simple-table {
+    width: 100%;
+    border: 1px solid #C9CDCF;
+    border-spacing: 0;
+}
+
+.cell {
+	padding: 10px 6px;
+    border-right: 1px solid #C9CDCF;
+    border-bottom: 1px solid #C9CDCF;
+    background-color: #FFFFFF;
+    text-align: center;
+}
+.cabecera_tabla {
+    background-color: #F8F8F8;
+}

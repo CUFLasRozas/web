@@ -1,0 +1,10 @@
+.senderismo-ppal {
+        padding: 20px;
+}
+.actividad {
+    border: 1px solid black;
+    border-radius: 10px;
+    /* background-color: #f7d3c1; */
+    padding: 10px;
+    margin: 5px 0px;
+}
