@@ -4,19 +4,19 @@
         "title": "Partidos y eventos",
          "objects":  [
          {
-           "titulo":"Padres vs. Hijos",
-           "fecha":"21 Diciembre - 10:00",
-           "url":""
+           "titulo":"Benjamín - San Lorenzo",
+           "fecha":"28 Febrero - 18:15 y 19:15",
+           "url":"https://www.unihockey.es/liga_benjamin_25_26/resumen"
          },          
          {
-           "titulo":"Senior y viejas glorias",
-           "fecha":"21 Diciembre - 12:00",
-           "url":""
+           "titulo":"Alevín - El Escorial",
+           "fecha":"28 Febrero - 16:00 y 17:00",
+           "url":"https://www.unihockey.es/liga_alevin_25_26/resumen"
          },          
          {
-           "titulo":"Comida Navidad",
-           "fecha":"21 Diciembre - 14:30",
-           "url":""
+           "titulo":"Senior - San Chinarro",
+           "fecha":"1 Marzo - 19:30",
+           "url":"https://www.unihockey.es/liga_plata_25_26/resumen"
          }
         ]
     },
@@ -31,6 +31,10 @@
             {
                 "literal": "Reglamento régimen interno",
                 "url": "/assets/documentos/Reglamento_regimen_interno_CUF_LAS_ROZAS.pdf"
+            },
+            {
+                "literal": "Como elegir palo",
+                "url": "/assets/documentos/como_elegir_palo.pdf"
             }
         ]
     },
