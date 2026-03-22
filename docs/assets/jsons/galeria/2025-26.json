@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "url": "assets/galeria/2025-26/equipo_padres.webp",
         "navigateTo": "",
         "alt": "Equipo de padres",
@@ -7,6 +8,8 @@
         "equipo":"padres",
         "pie": "Entrenamiento padres 2025-2026"
     },{
+=======
+>>>>>>> bad96bfd9b24756286a5931946b01a877cca1d11
         "url": "assets/galeria/2025-26/copa_nacional_infantil_1.webp",
         "navigateTo": "https://www.instagram.com/p/DUbEXBgjArO/?img_index=1",
         "alt": "imagen con enlace a instagram de la copa nacional infantil de floorball",
@@ -19,7 +22,11 @@
         "navigateTo": "https://www.instagram.com/p/DSkmTBpDD2i/?img_index=1",
         "alt": "imagen con enlace a instagram del evento torneo navidad Las Rozas",
         "categoria":"evento",
+<<<<<<< HEAD
         "equipo":"todos",
+=======
+        "equipo":"",
+>>>>>>> bad96bfd9b24756286a5931946b01a877cca1d11
         "pie": "Jornada Navideña Las Rozas 2025-2026"
     },
     {
