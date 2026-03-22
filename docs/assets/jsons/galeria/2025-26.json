@@ -18,12 +18,9 @@
         "url": "assets/galeria/2025-26/torneo_navidad.webp",
         "navigateTo": "https://www.instagram.com/p/DSkmTBpDD2i/?img_index=1",
         "alt": "imagen con enlace a instagram del evento torneo navidad Las Rozas",
-        "categoria":"evento",
-<<<<<<< HEAD
+        "categoria":"evento", 
         "equipo":"todos",
-=======
         "equipo":"",
->>>>>>> bad96bfd9b24756286a5931946b01a877cca1d11
         "pie": "Jornada Navideña Las Rozas 2025-2026"
     },
     {
