@@ -3,21 +3,7 @@
         "view": true,
         "title": "Partidos y eventos",
          "objects":  [
-         {
-           "titulo":"Benjamín - San Lorenzo",
-           "fecha":"28 Febrero - 18:15 y 19:15",
-           "url":"https://www.unihockey.es/liga_benjamin_25_26/resumen"
-         },          
-         {
-           "titulo":"Alevín - El Escorial",
-           "fecha":"28 Febrero - 16:00 y 17:00",
-           "url":"https://www.unihockey.es/liga_alevin_25_26/resumen"
-         },          
-         {
-           "titulo":"Senior - San Chinarro",
-           "fecha":"1 Marzo - 19:30",
-           "url":"https://www.unihockey.es/liga_plata_25_26/resumen"
-         }
+        
         ]
     },
     "documentos": {

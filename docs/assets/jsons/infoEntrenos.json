@@ -29,6 +29,12 @@
                 "Jueves: 17:30 a 18:30 Los Olivos",
                 "Viernes: 17:30 a 18:30 Entremontes"
             ] 
+        },
+        {
+            "equipo" : "Padres",
+            "dias":[
+                "Viernes: 18:00 a 19:30 Entremontes"
+            ] 
         }
     ]
 }
