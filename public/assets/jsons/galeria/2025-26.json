@@ -16,11 +16,42 @@
         "pie": "Inicio temporada equipo infantil 2025-2026"
     },
     {
+        "url": "assets/galeria/2025-26/equipo_padres.webp",
+        "navigateTo": "",
+        "alt": "Equipo de padres",
+        "categoria":"evento",
+        "equipo":"padres",
+        "pie": "Entrenamiento padres 2025-2026"
+    },{
+        "url": "assets/galeria/2025-26/copa_nacional_infantil_1.webp",
+        "navigateTo": "https://www.instagram.com/p/DUbEXBgjArO/?img_index=1",
+        "alt": "imagen con enlace a instagram de la copa nacional infantil de floorball",
+        "categoria":"evento",
+        "equipo":"",
+        "pie": "Copa Nacional infantil 2025-2026"
+    },
+    {
+        "url": "assets/galeria/2025-26/torneo_navidad.webp",
+        "navigateTo": "https://www.instagram.com/p/DSkmTBpDD2i/?img_index=1",
+        "alt": "imagen con enlace a instagram del evento torneo navidad Las Rozas",
+        "categoria":"evento",
+        "equipo":"todos",
+        "pie": "Jornada Navideña Las Rozas 2025-2026"
+    },
+    {
+        "url": "assets/galeria/2025-26/inicio_temporada_infantil.webp",
+        "navigateTo": "",
+        "alt": "la imagen muestra a la plantilla infantil tras la primera jornada",
+        "categoria":"partido",
+        "equipo":"infantil",
+        "pie": "Inicio temporada equipo infantil 2025-2026"
+    },
+    {
         "url": "assets/galeria/2025-26/inicio_temporada_senior_masculino.webp",
         "navigateTo": "",
         "alt": "la imagen muestra a la plantilla senior masculino tras la primera victoria",
-        "categoria":"evento",
-        "equipo":"",
+        "categoria":"partido",
+        "equipo":"senior",
         "pie": "Inicio temporada Senior Masculino 2025-2026"
     },
       {
@@ -28,7 +59,7 @@
         "navigateTo": "https://www.instagram.com/p/DPG62GyDAYu/?img_index=1",
         "alt": "imagen con enlace a instagram del evento street floorball Las Rozas",
         "categoria":"evento",
-        "equipo":"",
+        "equipo":"todos",
         "pie": "Street Floorball Las Rozas 2025/25"
     }
 ]

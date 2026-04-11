@@ -19,14 +19,12 @@
 
 .app_pag_princ {
   width: 80%;
-  float: left;
   background-color: white;
 }
 
 .app_info_extra {
   width: 20%;
   height: max-content;
-  float: right;
   background-color: white;
 }
 
@@ -37,6 +35,10 @@
 
 
 @media (max-width: 768px) {
+  .app_main {
+    flex-direction: column;
+  }
+
   .app_pag_princ {
     width: 100%;
   }

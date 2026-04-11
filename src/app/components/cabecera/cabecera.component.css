@@ -78,6 +78,7 @@ a:hover {
     
     .cabecera {
         display: block;
+        position: relative;
     }
 
     .menu-toggle {
@@ -95,15 +96,34 @@ a:hover {
 
     .menu_cabecera {
         width: 100%;
-        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: black;
+        z-index: 99;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease-out;
     }
 
     .ul_principal {
         flex-direction: column;
+        padding-left: 0;
+        margin: 0;
+    }
+
+    .li_principal {
+        width: 100%;
+    }
+
+    .li_principal a {
+        display: block;
+        padding: 15px;
+        text-align: center;
     }
 
    .mostrar_menu_cabecera {
-    display: block;
+        max-height: 500px;
    }
 
  

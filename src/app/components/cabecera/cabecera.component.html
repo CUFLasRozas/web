@@ -1,5 +1,5 @@
 @if (cabecera) {
-<div class="cabecera">
+<header class="cabecera">
     <div class="conjunto">
 
         <div class="logo_cabecera">
@@ -8,15 +8,15 @@
             </a>
         </div>
 
-        <button id="menu-toggle" class="menu-toggle" (click)="abrirMenu()">
+        <button id="menu-toggle" class="menu-toggle" (click)="abrirMenu()" aria-label="Abrir menú de navegación" [attr.aria-expanded]="menuChequed">
             @if (!menuChequed) {
-            <i class="fas fa-bars"></i>
+            <i class="fas fa-bars" aria-hidden="true"></i>
             } @else {
-            <i class="fas fa-times"></i> }
+            <i class="fas fa-times" aria-hidden="true"></i> }
         </button>
 
     </div>
-    <div id="menu_cabecera" class="menu_cabecera">
+    <nav id="menu_cabecera" class="menu_cabecera">
         <ul class="ul_principal">
             @for (menu of cabecera.menu; track $index) {
 
@@ -25,6 +25,6 @@
             </li>
             }
         </ul>
-    </div>
-</div>
+    </nav>
+</header>
 }

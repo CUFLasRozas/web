@@ -49,15 +49,15 @@ img {
     width: 100%;
 }
 
-@media (max-device-width: 760px) {
+@media (max-width: 768px) {
     .foto {
         width: 48%;
     }
 }
 
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media (max-width: 480px) {
     .foto {
-        width: auto;
+        width: 100%;
     }
 }
