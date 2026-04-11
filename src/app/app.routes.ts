@@ -1,23 +1,14 @@
 import { Routes } from '@angular/router';
-import { InicioComponent } from './components/paginas/inicio/inicio.component';
-import { GaleriaComponent } from './components/paginas/galeria/galeria.component';
-import { NotFoundComponent } from './components/paginas/not-found/not-found.component';
-import { ContactoComponent } from './components/paginas/contacto/contacto/contacto.component';
-import { EntrenamientosComponent } from './components/paginas/entrenamientos/entrenamientos.component';
-import { TiendaComponent } from './components/paginas/tienda/tienda.component';
-import { HistoriaComponent } from './components/paginas/historia/historia.component';
-import { InscripcionComponent } from './components/paginas/inscripcion/inscripcion.component';
-import { PromosComponent } from './components/paginas/promos/promos.component';
 
 export const routes: Routes = [
-    {path: '', component: InicioComponent},
-    {path: 'inicio', component: InicioComponent},
-    {path: 'galeria', component: GaleriaComponent},
-    {path: 'contacto', component: ContactoComponent},
-    {path: 'entrenamientos', component: EntrenamientosComponent},
-    {path: 'tienda', component: TiendaComponent},
-    {path: 'historia', component: HistoriaComponent},
-    {path: 'inscripcion', component: InscripcionComponent},
-    {path: 'promociones', component: PromosComponent},
-    {path: '**', component: NotFoundComponent},
+    {path: '', loadComponent: () => import('./components/paginas/inicio/inicio.component').then(m => m.InicioComponent)},
+    {path: 'inicio', loadComponent: () => import('./components/paginas/inicio/inicio.component').then(m => m.InicioComponent)},
+    {path: 'galeria', loadComponent: () => import('./components/paginas/galeria/galeria.component').then(m => m.GaleriaComponent)},
+    {path: 'contacto', loadComponent: () => import('./components/paginas/contacto/contacto/contacto.component').then(m => m.ContactoComponent)},
+    {path: 'entrenamientos', loadComponent: () => import('./components/paginas/entrenamientos/entrenamientos.component').then(m => m.EntrenamientosComponent)},
+    {path: 'tienda', loadComponent: () => import('./components/paginas/tienda/tienda.component').then(m => m.TiendaComponent)},
+    {path: 'historia', loadComponent: () => import('./components/paginas/historia/historia.component').then(m => m.HistoriaComponent)},
+    {path: 'inscripcion', loadComponent: () => import('./components/paginas/inscripcion/inscripcion.component').then(m => m.InscripcionComponent)},
+    {path: 'promociones', loadComponent: () => import('./components/paginas/promos/promos.component').then(m => m.PromosComponent)},
+    {path: '**', loadComponent: () => import('./components/paginas/not-found/not-found.component').then(m => m.NotFoundComponent)},
 ];
