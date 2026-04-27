@@ -1,5 +1,9 @@
 <div class="inscripcion">
+    @if (precios_temporada) {
     <h1>Inscripción temporada {{precios_temporada.temporada}}</h1>
+    } @else {
+    <h1>Inscripción</h1>
+    }
 
     <p>¡Bienvenido al Club! Necesitamos que nos rellenes los siguientes datos para poder inscribirte como miembro.</p>
 
@@ -152,7 +156,7 @@
             }
         </div>
 
-        @if (contactos.length < 3) { <button type="button" class="boton-otroContacto" (click)="anadirContacto()"
+        @if (contactos.length < 2) { <button type="button" class="boton-otroContacto" (click)="anadirContacto()"
             [disabled]="contactos.at(contactos.length - 1).invalid">Añadir otro contacto</button>
             }
 
