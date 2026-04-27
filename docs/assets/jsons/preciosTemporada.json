@@ -1,0 +1,103 @@
+{
+    "temporada": "2025/2026",
+    "tarifas": [
+        {
+            "id": "senior_masculino",
+            "categoria": "Senior Masculino",
+            "opciones": {
+                "mensual": {
+                    "precio": 36,
+                    "ahorro": 0
+                },
+                "anual": {
+                    "precio": 274,
+                    "ahorro": 50
+                }
+            }
+        },
+        {
+            "id": "senior_femenino",
+            "categoria": "Senior Femenino",
+            "opciones": {
+                "mensual": {
+                    "precio": 36,
+                    "ahorro": 0
+                },
+                "anual": {
+                    "precio": 274,
+                    "ahorro": 50
+                }
+            }
+        },
+        {
+            "id": "cadete",
+            "categoria": "Cadete",
+            "opciones": {
+                "mensual": {
+                    "precio": 31,
+                    "ahorro": 0
+                },
+                "anual": {
+                    "precio": 229,
+                    "ahorro": 50
+                }
+            }
+        },
+        {
+            "id": "infantil",
+            "categoria": "Infantil",
+            "opciones": {
+                "mensual": {
+                    "precio": 30,
+                    "ahorro": 0
+                },
+                "anual": {
+                    "precio": 220,
+                    "ahorro": 50
+                }
+            }
+        },
+        {
+            "id": "alevin",
+            "categoria": "Alevín",
+            "opciones": {
+                "mensual": {
+                    "precio": 30,
+                    "ahorro": 0
+                },
+                "anual": {
+                    "precio": 220,
+                    "ahorro": 50
+                }
+            }
+        },
+        {
+            "id": "benjamin",
+            "categoria": "Benjamín",
+            "opciones": {
+                "mensual": {
+                    "precio": 30,
+                    "ahorro": 0
+                },
+                "anual": {
+                    "precio": 220,
+                    "ahorro": 50
+                }
+            }
+        },
+        {
+            "id": "padres_veteranos",
+            "categoria": "Padres/Veteranos",
+            "opciones": {
+                "mensual": {
+                    "precio": 25,
+                    "ahorro": 0
+                },
+                "anual": {
+                    "precio": 175,
+                    "ahorro": 50
+                }
+            }
+        }
+    ]
+}
