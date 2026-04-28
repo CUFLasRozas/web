@@ -51,7 +51,7 @@
                 }
                 @if((inscripcion.controls['telefonoPpal'].touched || submitted) &&
                 inscripcion.controls['telefonoPpal'].hasError('pattern')) {
-                <p class="error">Introduce un teléfono válido (9 dígitos, empezando por 6, 7, 8 o 9)</p>
+                <p class="error">Introduce un teléfono válido</p>
                 }
             </div>
             <div class="contenedor_datos">
@@ -143,7 +143,7 @@
                     }
                     @if((contacto.get('telefonoContacto')?.touched || submitted) &&
                     contacto.get('telefonoContacto')?.hasError('pattern')) {
-                    <p class="error">Introduce un teléfono válido (9 dígitos, empezando por 6, 7, 8 o 9)</p>
+                    <p class="error">Introduce un teléfono válido</p>
                     }
                 </div>
                 @if (!$first) {
