@@ -145,7 +145,7 @@ export class InscripcionComponent {
 
   async generarPDF() {
     const formValue = this.inscripcion.value;
-    const templatePath = 'assets/ficha_inscripcion_campos.pdf';
+    const templatePath = 'assets/documentos/ficha_inscripcion_CUF_Las_Rozas.pdf';
 
     try {
       const response = await fetch(templatePath);
@@ -212,7 +212,7 @@ export class InscripcionComponent {
 
       const precio = this.detallePago?.precio;
       if (precio !== undefined) {
-        setField('precio', `${precio}€`, true);
+        setField('precio', `${precio}€ ${formValue.pago}. Ahorras ${this.detallePago?.ahorro}€`, true);
       }
 
       // Otros campos
