@@ -74,6 +74,9 @@
                 inscripcion.controls['dni'].hasError('invalidDni')) {
                 <p class="error">El DNI/NIE introducido no es válido</p>
                 }
+                @if(inscripcion.hasError('dniDuplicadoP1') || inscripcion.hasError('dniDuplicadoP2')) {
+                <p class="error">No puede ser igual al de los progenitores</p>
+                }
             </div>
         </div>
 
@@ -238,6 +241,120 @@
                 }
             </div>
 
+            <div class="seccion-firmas">
+                <h3>Firmas y Autorizaciones</h3>
+
+                @if (!esMenor) {
+                <div class="contenedor-firma-jugador">
+                    <p>Firma del Jugador (Obligatoria para mayores de edad):</p>
+                    <div class="canvas-wrapper">
+                        <canvas #canvasJugador width="400" height="150"
+                            (mousedown)="startDrawing($event, 'canvasJugador')"
+                            (mousemove)="draw($event, 'canvasJugador')" (mouseup)="stopDrawing('canvasJugador')"
+                            (mouseleave)="stopDrawing('canvasJugador')"
+                            (touchstart)="startDrawing($event, 'canvasJugador')"
+                            (touchmove)="draw($event, 'canvasJugador')" (touchend)="stopDrawing('canvasJugador')">
+                        </canvas>
+                    </div>
+                    <button type="button" class="boton-limpiar" (click)="clearSignature('canvasJugador')">Limpiar
+                        firma</button>
+                    @if(submitted && inscripcion.get('firmaJugador')?.hasError('required')) {
+                    <p class="error">La firma del jugador es obligatoria</p>
+                    }
+                </div>
+                } @else {
+                <div class="contenedor-firmas-progenitores">
+                    <p>Al ser menor de edad, se requieren las firmas de AMBOS progenitores o tutores legales:</p>
+
+                    <div class="progenitor-firma">
+                        <h4>Progenitor 1</h4>
+                        <div class="row">
+                            <div class="contenedor_datos">
+                                <label for="nombreP1">Nombre y Apellidos:</label>
+                                <input type="text" id="nombreP1" formControlName="nombreP1">
+                                @if((inscripcion.get('nombreP1')?.touched || submitted) &&
+                                inscripcion.get('nombreP1')?.hasError('required')) {
+                                <p class="error">El nombre es obligatorio</p>
+                                }
+                            </div>
+                            <div class="contenedor_datos">
+                                <label for="dniP1">DNI / NIE:</label>
+                                <input type="text" id="dniP1" formControlName="dniP1" maxlength="9">
+                                @if((inscripcion.get('dniP1')?.touched || submitted) &&
+                                inscripcion.get('dniP1')?.hasError('required')) {
+                                <p class="error">El DNI es obligatorio</p>
+                                }
+                                @if(inscripcion.get('dniP1')?.hasError('invalidDni')) {
+                                <p class="error">DNI / NIE no válido</p>
+                                }
+                                @if(inscripcion.hasError('dniDuplicadoP1')) {
+                                <p class="error">No puede ser igual al del jugador</p>
+                                }
+                            </div>
+                        </div>
+                        <div class="canvas-wrapper">
+                            <canvas #canvasP1 width="400" height="150" (mousedown)="startDrawing($event, 'canvasP1')"
+                                (mousemove)="draw($event, 'canvasP1')" (mouseup)="stopDrawing('canvasP1')"
+                                (mouseleave)="stopDrawing('canvasP1')" (touchstart)="startDrawing($event, 'canvasP1')"
+                                (touchmove)="draw($event, 'canvasP1')" (touchend)="stopDrawing('canvasP1')">
+                            </canvas>
+                        </div>
+                        <button type="button" class="boton-limpiar" (click)="clearSignature('canvasP1')">Limpiar
+                            firma</button>
+                        @if(submitted && inscripcion.get('firmaP1')?.hasError('required')) {
+                        <p class="error">La firma del progenitor 1 es obligatoria</p>
+                        }
+                    </div>
+
+                    <div class="progenitor-firma">
+                        <h4>Progenitor 2</h4>
+                        <div class="row">
+                            <div class="contenedor_datos">
+                                <label for="nombreP2">Nombre y Apellidos:</label>
+                                <input type="text" id="nombreP2" formControlName="nombreP2">
+                                @if((inscripcion.get('nombreP2')?.touched || submitted) &&
+                                inscripcion.get('nombreP2')?.hasError('required')) {
+                                <p class="error">El nombre es obligatorio</p>
+                                }
+                                @if(inscripcion.hasError('nombresDuplicados')) {
+                                <p class="error">No puede ser igual al Progenitor 1</p>
+                                }
+                            </div>
+                            <div class="contenedor_datos">
+                                <label for="dniP2">DNI / NIE:</label>
+                                <input type="text" id="dniP2" formControlName="dniP2" maxlength="9">
+                                @if((inscripcion.get('dniP2')?.touched || submitted) &&
+                                inscripcion.get('dniP2')?.hasError('required')) {
+                                <p class="error">El DNI es obligatorio</p>
+                                }
+                                @if(inscripcion.get('dniP2')?.hasError('invalidDni')) {
+                                <p class="error">DNI / NIE no válido</p>
+                                }
+                                @if(inscripcion.hasError('dniDuplicadoP2')) {
+                                <p class="error">No puede ser igual al del jugador</p>
+                                }
+                                @if(inscripcion.hasError('dniDuplicadoProgenitores')) {
+                                <p class="error">No puede ser igual al Progenitor 1</p>
+                                }
+                            </div>
+                        </div>
+                        <div class="canvas-wrapper">
+                            <canvas #canvasP2 width="400" height="150" (mousedown)="startDrawing($event, 'canvasP2')"
+                                (mousemove)="draw($event, 'canvasP2')" (mouseup)="stopDrawing('canvasP2')"
+                                (mouseleave)="stopDrawing('canvasP2')" (touchstart)="startDrawing($event, 'canvasP2')"
+                                (touchmove)="draw($event, 'canvasP2')" (touchend)="stopDrawing('canvasP2')">
+                            </canvas>
+                        </div>
+                        <button type="button" class="boton-limpiar" (click)="clearSignature('canvasP2')">Limpiar
+                            firma</button>
+                        @if(submitted && inscripcion.get('firmaP2')?.hasError('required')) {
+                        <p class="error">La firma del progenitor 2 es obligatoria</p>
+                        }
+                    </div>
+                </div>
+                }
+            </div>
+
 
             <div class="contenedor-regimenInterno">
                 <input type="checkbox" class="regimenInterno" name="regimenInterno" id="regimenInterno"
@@ -247,7 +364,7 @@
                         target="_blank">reglamento de régimen interno</a></label>
             </div>
             @if(submitted && !regimenInternoChecked) {
-            <p class="error-regimen">Debe aceptar el reglamento de régimen interno para poder formar parte del Club</p>
+            <p class="error">Debe aceptar el reglamento de régimen interno para poder formar parte del Club</p>
             }
 
             <div class="contenedor-boton">

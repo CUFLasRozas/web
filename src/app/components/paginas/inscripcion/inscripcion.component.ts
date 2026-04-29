@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, FormArray, ReactiveFormsModule, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { UtilesService } from '../../../service/utiles/utiles.service';
 import { PreciosTemporada } from '../../../models/precios_temporada';
@@ -21,6 +21,33 @@ export class InscripcionComponent {
   hoy: string = "2024-12-12";
   regimenInternoChecked: boolean = false;
   precios_temporada?: PreciosTemporada;
+  esMenor: boolean = false;
+
+  private _canvasJugador?: ElementRef<HTMLCanvasElement>;
+  private _canvasP1?: ElementRef<HTMLCanvasElement>;
+  private _canvasP2?: ElementRef<HTMLCanvasElement>;
+
+  @ViewChild('canvasJugador') set canvasJugador(content: ElementRef<HTMLCanvasElement>) {
+    if (content) {
+      this._canvasJugador = content;
+      this.initCanvas('canvasJugador');
+    }
+  }
+  @ViewChild('canvasP1') set canvasP1(content: ElementRef<HTMLCanvasElement>) {
+    if (content) {
+      this._canvasP1 = content;
+      this.initCanvas('canvasP1');
+    }
+  }
+  @ViewChild('canvasP2') set canvasP2(content: ElementRef<HTMLCanvasElement>) {
+    if (content) {
+      this._canvasP2 = content;
+      this.initCanvas('canvasP2');
+    }
+  }
+
+  private ctx: { [key: string]: CanvasRenderingContext2D | null } = {};
+  private drawing = false;
 
   constructor(
     private utilesService: UtilesService,
@@ -44,7 +71,14 @@ export class InscripcionComponent {
       categoria: ['', Validators.required],
       pago: ['', Validators.required],
       autFotos: ['', Validators.required],
-    });
+      firmaJugador: ['', []],
+      firmaP1: ['', []],
+      nombreP1: ['', []],
+      dniP1: ['', []],
+      firmaP2: ['', []],
+      nombreP2: ['', []],
+      dniP2: ['', []]
+    }, { validators: [this.uniquenessValidator] });
     this.inscripcion.get('nacimiento')?.valueChanges.subscribe(() => this.updateAgeDependentValidators());
 
     this.inscripcion.get('categoria')?.valueChanges.subscribe(() => {
@@ -92,31 +126,79 @@ export class InscripcionComponent {
     const age = this.getAge();
 
     const dniControl = this.inscripcion.get('dni');
+    const dniP1 = this.inscripcion.get('dniP1');
+    const dniP2 = this.inscripcion.get('dniP2');
+
     if (dniControl) {
       if (age !== null && age < 14) {
-        dniControl.clearValidators();
         dniControl.setValidators([this.dniValidator]);
       } else {
         dniControl.setValidators([Validators.required, Validators.minLength(9), this.dniValidator]);
       }
-      dniControl.updateValueAndValidity();
+      // No llamamos a updateValueAndValidity aquí para evitar bucles infinitos con el validador de grupo
     }
 
     const emailControl = this.inscripcion.get('emailppal');
     const telefonoControl = this.inscripcion.get('telefonoPpal');
 
-    if (emailControl && telefonoControl) {
-      if (age !== null && age < 18) {
-        emailControl.setValidators([Validators.email]);
-        telefonoControl.setValidators([Validators.pattern(/^[6-9]\d{8}$/)]);
-      } else {
-        emailControl.setValidators([Validators.required, Validators.email]);
-        telefonoControl.setValidators([Validators.required, Validators.pattern(/^[6-9]\d{8}$/)]);
-      }
-      emailControl.updateValueAndValidity();
-      telefonoControl.updateValueAndValidity();
+    const firmaJugador = this.inscripcion.get('firmaJugador');
+    const firmaP1 = this.inscripcion.get('firmaP1');
+    const nombreP1 = this.inscripcion.get('nombreP1');
+    const firmaP2 = this.inscripcion.get('firmaP2');
+    const nombreP2 = this.inscripcion.get('nombreP2');
+
+    if (age !== null && age < 18) {
+      this.esMenor = true;
+      emailControl?.setValidators([Validators.email]);
+      telefonoControl?.setValidators([Validators.pattern(/^[6-9]\d{8}$/)]);
+
+      firmaJugador?.setValidators([]);
+      firmaJugador?.setValue(''); // Limpiar firma de adulto si pasa a ser menor
+      firmaP1?.setValidators([Validators.required]);
+      nombreP1?.setValidators([Validators.required]);
+      dniP1?.setValidators([Validators.required, this.dniValidator]);
+      firmaP2?.setValidators([Validators.required]);
+      nombreP2?.setValidators([Validators.required]);
+      dniP2?.setValidators([Validators.required, this.dniValidator]);
+    } else {
+      this.esMenor = false;
+      emailControl?.setValidators([Validators.required, Validators.email]);
+      telefonoControl?.setValidators([Validators.required, Validators.pattern(/^[6-9]\d{8}$/)]);
+
+      firmaJugador?.setValidators([Validators.required]);
+      firmaP1?.setValidators([]);
+      firmaP1?.setValue(''); // Limpiar firmas de progenitores si pasa a ser adulto
+      nombreP1?.setValidators([]);
+      nombreP1?.setValue('');
+      dniP1?.setValidators([]);
+      dniP1?.setValue('');
+      firmaP2?.setValidators([]);
+      firmaP2?.setValue('');
+      nombreP2?.setValidators([]);
+      nombreP2?.setValue('');
+      dniP2?.setValidators([]);
+      dniP2?.setValue('');
     }
+
+    [emailControl, telefonoControl, firmaJugador, firmaP1, nombreP1, dniP1, firmaP2, nombreP2, dniP2].forEach(c => c?.updateValueAndValidity({ emitEvent: false }));
   }
+
+  private uniquenessValidator = (group: AbstractControl): ValidationErrors | null => {
+    const dniPpal = group.get('dni')?.value?.toUpperCase().trim();
+    const dniP1 = group.get('dniP1')?.value?.toUpperCase().trim();
+    const dniP2 = group.get('dniP2')?.value?.toUpperCase().trim();
+    const nombreP1 = group.get('nombreP1')?.value?.toLowerCase().trim();
+    const nombreP2 = group.get('nombreP2')?.value?.toLowerCase().trim();
+
+    const errors: any = {};
+
+    if (dniPpal && dniP1 && dniPpal === dniP1) errors.dniDuplicadoP1 = true;
+    if (dniPpal && dniP2 && dniPpal === dniP2) errors.dniDuplicadoP2 = true;
+    if (dniP1 && dniP2 && dniP1 === dniP2) errors.dniDuplicadoProgenitores = true;
+    if (nombreP1 && nombreP2 && nombreP1 === nombreP2 && nombreP1 !== '') errors.nombresDuplicados = true;
+
+    return Object.keys(errors).length > 0 ? errors : null;
+  };
 
   get contactos(): FormArray {
     return this.inscripcion.get('contactos') as FormArray;
@@ -145,7 +227,7 @@ export class InscripcionComponent {
 
   async generarPDF() {
     const formValue = this.inscripcion.value;
-    const templatePath = 'assets/documentos/ficha_inscripcion_CUF_Las_Rozas.pdf';
+    const templatePath = 'assets/documentos/ficha_inscripcion CUF_LAS ROZAS.pdf';
 
     try {
       const response = await fetch(templatePath);
@@ -177,65 +259,128 @@ export class InscripcionComponent {
 
       // Temporada
       if (this.precios_temporada && this.precios_temporada.temporada) {
-        setField('Temporada', this.precios_temporada.temporada);
+        setField('text_1cphl', this.precios_temporada.temporada);
       }
 
       // Datos del jugador
-      setField('nombre', formValue.nombrePpal);
-      setField('apellidos_ppal', formValue.apellidosPpal);
-      setField('telefono', formValue.telefonoPpal);
-      setField('email_ppal', formValue.emailppal);
-      setField('fnac_ppal', formValue.nacimiento);
-      setField('dni_ppal', formValue.dni);
-      setField('empadronado', (formValue.padron === 'true' || formValue.padron === true) ? 'SI' : 'NO');
-      setField('alergias', formValue.alergias);
+      setField('text_4yseo', formValue.nombrePpal);
+      setField('text_5irno', formValue.apellidosPpal);
+      setField('text_2mvyr', formValue.telefonoPpal);
+      setField('text_6lrjz', formValue.emailppal);
+      
+      // Formatear fecha de nacimiento a DD/MM/YYYY
+      let fechaNacimientoFormateada = formValue.nacimiento;
+      if (formValue.nacimiento) {
+        const parts = formValue.nacimiento.split('-');
+        if (parts.length === 3) {
+          fechaNacimientoFormateada = `${parts[2]}/${parts[1]}/${parts[0]}`;
+        }
+      }
+      setField('text_3mxup', fechaNacimientoFormateada);
+      
+      setField('text_7ysih', formValue.dni);
+      setField('text_21dnuq', formValue.dni); // Segundo campo de DNI
+      setField('text_9wrtk', (formValue.padron === 'true' || formValue.padron === true) ? 'SI' : 'NO');
+      setField('textarea_8mlky', formValue.alergias);
 
       // Contactos
       if (formValue.contactos && formValue.contactos.length > 0) {
         const c1 = formValue.contactos[0];
-        setField('nombre_contacto1', c1.nombreContacto);
-        setField('email_contacto1', c1.emailContacto);
-        setField('telefono_contacto1', c1.telefonoContacto);
+        setField('text_12eeqy', c1.nombreContacto);
+        setField('text_10lfap', c1.emailContacto);
+        setField('text_11koiw', c1.telefonoContacto);
 
         if (formValue.contactos.length > 1) {
           const c2 = formValue.contactos[1];
-          setField('nombre_contacto2', c2.nombreContacto);
-          setField('email_contacto_2', c2.emailContacto);
-          setField('telefono_contacto2', c2.telefonoContacto);
+          setField('text_13zrui', c2.nombreContacto);
+          setField('text_14yiwp', c2.emailContacto);
+          setField('text_15nyoa', c2.telefonoContacto);
         }
       }
 
       // Datos del equipo
       const categoriaLabel = this.precios_temporada?.tarifas.find(t => t.id === formValue.categoria)?.categoria || formValue.categoria;
-      setField('categoria', categoriaLabel);
-      setField('tipo_pago', formValue.pago);
+      setField('text_16udpw', categoriaLabel);
+      setField('text_17hbph', formValue.pago);
 
       const precio = this.detallePago?.precio;
       if (precio !== undefined) {
-        setField('precio', `${precio}€ ${formValue.pago}. Ahorras ${this.detallePago?.ahorro}€`, true);
+        setField('text_18tsus', `${precio}€ ${formValue.pago}`, true);
       }
 
       // Otros campos
       if (this.seguroYtasasCategoria !== null) {
-        setField('tasayseguro', `${this.seguroYtasasCategoria}€`, true);
+        // No hay campo específico para tasayseguro en el mapeo proporcionado,
+        // podrías añadirlo si encuentras un hueco.
       }
 
       if (this.precios_temporada && this.precios_temporada.instalaciones) {
-        setField('ayuntamiento', `${this.precios_temporada.instalaciones}€`, true);
+        setField('text_19bgfd', `${this.precios_temporada.instalaciones}€`, true);
       }
 
-      setField('imagenes', formValue.autFotos === 'true' ? 'SI' : 'NO');
+      setField('text_20cptf', formValue.autFotos === 'true' ? 'SI' : 'NO');
 
-      // Rellenar DNIs en la parte de firmas para facilitar el trabajo
-      setField('dni_jugador', formValue.dni);
-      if (formValue.contactos && formValue.contactos.length > 0) {
-        // Asumimos que el primer contacto es el tutor 1
-        // Si el formulario tuviera campo DNI para contactos, lo usaríamos aquí
+      // Datos de Progenitores (en zona de firmas)
+      setField('text_22rjgw', formValue.nombreP1);
+      setField('text_24ands', formValue.dniP1);
+      setField('text_23uzdf', formValue.nombreP2);
+      setField('text_25dnol', formValue.dniP2);
+
+      // Incrustar firmas usando los campos de firma del PDF para las coordenadas
+      const embedSignatureInField = async (base64Data: string, fieldName: string) => {
+        if (!base64Data) return;
+        try {
+          const field = form.getField(fieldName);
+          const widgets = field.acroField.getWidgets();
+          if (widgets.length > 0) {
+            const widget = widgets[0];
+            const rect = widget.getRectangle();
+            const signatureImageBytes = await fetch(base64Data).then(res => res.arrayBuffer());
+            const signatureImage = await pdfDoc.embedPng(signatureImageBytes);
+            
+            // Dibujamos la imagen sobre el rectángulo del campo de firma
+            firstPage.drawImage(signatureImage, {
+              x: rect.x,
+              y: rect.y,
+              width: rect.width,
+              height: rect.height,
+            });
+          }
+        } catch (e) {
+          console.warn(`No se pudo incrustar la firma en el campo ${fieldName}:`, e);
+        }
+      };
+
+      // Asignamos las firmas según la edad actual
+      if (!this.esMenor) {
+        if (formValue.firmaJugador) await embedSignatureInField(formValue.firmaJugador, 'signature_29sugo');
+      } else {
+        if (formValue.firmaP1) await embedSignatureInField(formValue.firmaP1, 'signature_30ixuf');
+        if (formValue.firmaP2) await embedSignatureInField(formValue.firmaP2, 'signature_31durh');
       }
 
-      // Marcamos el PDF para que el visor genere las apariencias de los campos.
-      // Esto mantiene los campos de firma intactos y visibles.
-      form.acroForm.dict.set(PDFName.of('NeedAppearances'), PDFBool.True);
+      // Rellenar y Bloquear el PDF
+      try {
+        const fields = form.getFields();
+        fields.forEach(field => {
+          try {
+            // Generamos apariencia para todos los campos antes de aplanar
+            if ('setText' in field) {
+              (field as any).updateAppearances(font);
+            }
+          } catch (e) { }
+        });
+
+        // Bloqueamos el PDF definitivamente
+        form.flatten();
+      } catch (e) {
+        console.warn('Error al aplanar, aplicando solo lectura:', e);
+        try {
+          form.getFields().forEach(f => {
+            if ('enableReadOnly' in f) (f as any).enableReadOnly();
+          });
+        } catch (err) { }
+      }
 
       const pdfBytes = await pdfDoc.save();
       const blob = new Blob([pdfBytes.buffer as ArrayBuffer], { type: 'application/pdf' });
@@ -296,4 +441,88 @@ export class InscripcionComponent {
     return tarifa ? tarifa.seguroYtasas : null;
   }
 
+  // --- Lógica de Firma (Canvas) ---
+
+  ngAfterViewInit() {
+    // Las inicializaciones se manejan ahora mediante los setters de @ViewChild
+  }
+
+  private initCanvas(id: string) {
+    const canvas = id === 'canvasJugador' ? this._canvasJugador?.nativeElement :
+      id === 'canvasP1' ? this._canvasP1?.nativeElement :
+        this._canvasP2?.nativeElement;
+
+    if (canvas) {
+      this.ctx[id] = canvas.getContext('2d');
+      if (this.ctx[id]) {
+        this.ctx[id]!.lineWidth = 2;
+        this.ctx[id]!.lineJoin = 'round';
+        this.ctx[id]!.lineCap = 'round';
+        this.ctx[id]!.strokeStyle = '#000';
+      }
+    }
+  }
+
+  startDrawing(event: MouseEvent | TouchEvent, id: string) {
+    this.drawing = true;
+    const pos = this.getPos(event, id);
+    this.ctx[id]?.beginPath();
+    this.ctx[id]?.moveTo(pos.x, pos.y);
+    event.preventDefault();
+  }
+
+  draw(event: MouseEvent | TouchEvent, id: string) {
+    if (!this.drawing) return;
+    const pos = this.getPos(event, id);
+    this.ctx[id]?.lineTo(pos.x, pos.y);
+    this.ctx[id]?.stroke();
+    event.preventDefault();
+  }
+
+  stopDrawing(id: string) {
+    if (this.drawing) {
+      this.drawing = false;
+      this.saveSignature(id);
+    }
+  }
+
+  private getPos(event: any, id: string) {
+    const canvas = id === 'canvasJugador' ? this._canvasJugador?.nativeElement :
+      id === 'canvasP1' ? this._canvasP1?.nativeElement :
+        this._canvasP2?.nativeElement;
+    if (!canvas) return { x: 0, y: 0 };
+    const rect = canvas.getBoundingClientRect();
+    const clientX = event.touches ? event.touches[0].clientX : event.clientX;
+    const clientY = event.touches ? event.touches[0].clientY : event.clientY;
+    return {
+      x: clientX - rect.left,
+      y: clientY - rect.top
+    };
+  }
+
+  private saveSignature(id: string) {
+    const canvas = id === 'canvasJugador' ? this._canvasJugador?.nativeElement :
+      id === 'canvasP1' ? this._canvasP1?.nativeElement :
+        this._canvasP2?.nativeElement;
+    const controlName = id === 'canvasJugador' ? 'firmaJugador' :
+      id === 'canvasP1' ? 'firmaP1' : 'firmaP2';
+
+    if (canvas) {
+      const dataUrl = canvas.toDataURL('image/png');
+      this.inscripcion.get(controlName)?.setValue(dataUrl);
+    }
+  }
+
+  clearSignature(id: string) {
+    const canvas = id === 'canvasJugador' ? this._canvasJugador?.nativeElement :
+      id === 'canvasP1' ? this._canvasP1?.nativeElement :
+        this._canvasP2?.nativeElement;
+    const controlName = id === 'canvasJugador' ? 'firmaJugador' :
+      id === 'canvasP1' ? 'firmaP1' : 'firmaP2';
+
+    if (canvas && this.ctx[id]) {
+      this.ctx[id]!.clearRect(0, 0, canvas.width, canvas.height);
+      this.inscripcion.get(controlName)?.setValue('');
+    }
+  }
 }
