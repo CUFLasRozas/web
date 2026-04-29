@@ -24,12 +24,20 @@ a {
 
 .li-entrenos {
     margin-top: 15px;
+    display: flex;
+    align-items: center;
 }
 
 .ul-dias {
     list-style-type: none;
     margin: 5px;
     padding: 0;
+}
+
+.logo-camiseta {
+    width: 14px;
+    height: 14px;
+    margin-left: 5px;
 }
 
 @media (max-width: 768px) {

@@ -1,40 +1,49 @@
 {
     "title": "Entrenamientos",
-    "listadoEntrenos" : [
+    "listadoEntrenos": [
         {
-            "equipo" : "Senior y Cadete",
-            "dias":[
-                "Martes: 19:00 a 20:30 Entremontes",
-                "Jueves: 19:30 a 21:00 Entremontes",
-                "Viernes: 21:00 a 22:30 Entremontes"
-            ] 
+            "equipo": "Senior y Cadete",
+            "dias": [
+                {
+                    "dia": "Martes: 19:00 a 20:30 Entremontes",
+                    "camiseta": "assets/logos/icon-camisa-azul.png"
+                },
+                {
+                    "dia": "Jueves: 19:30 a 21:00 Entremontes",
+                    "camiseta": "assets/logos/icon-camisa-amarilla.png"
+                },
+                {
+                    "dia": "Viernes: 21:00 a 22:30 Entremontes",
+                    "camiseta": "assets/logos/icon-camisa-azul.png"
+                }
+            ]
         },
         {
-            "equipo" : "Infantil",
-            "dias":[
-                "Martes: 18:00 a 19:00 Entremontes",
-                "Viernes: 19:30 a 21:00 Entremontes"
-            ] 
+            "equipo": "Infantil",
+            "dias": [
+                {"dia":"Martes: 18:00 a 19:00 Entremontes"},
+                {"dia":"Viernes: 19:30 a 21:00 Entremontes"}
+            ]
         },
         {
-            "equipo" : "Alevín",
-            "dias":[
-                "Jueves: 18:30 a 19:30 Los Olivos",
-                "Viernes: 18:30 a 19:30 Entremontes"
-            ] 
+            "equipo": "Alevín",
+            "dias": [
+                {"dia":"Jueves: 18:30 a 19:30 Los Olivos"},
+                {"dia":"Viernes: 18:30 a 19:30 Entremontes"}    
+            ]
         },
         {
-            "equipo" : "Benjamín",
-            "dias":[
-                "Jueves: 17:30 a 18:30 Los Olivos",
-                "Viernes: 17:30 a 18:30 Entremontes"
-            ] 
+            "equipo": "Benjamín",
+            "dias": [
+                {"dia":"Jueves: 17:30 a 18:30 Los Olivos"},
+                {"dia":"Viernes: 17:30 a 18:30 Entremontes"}
+            ]
         },
         {
-            "equipo" : "Padres",
-            "dias":[
-                "Viernes: 18:00 a 19:30 Entremontes"
-            ] 
+            "equipo": "Padres",
+            "dias": [
+                {"dia":"Viernes: 18:00 a 19:30 Entremontes"}
+            ]
         }
     ]
 }
