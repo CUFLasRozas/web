@@ -1,5 +1,21 @@
 [
     {
+        "url": "assets/galeria/2025-26/presentacion_mundial_3v3_floorball.webp",
+        "navigateTo": "https://www.instagram.com/p/DXjdwzNFicA/?img_index=1",
+        "alt": "presentación oficial del Mundial 3v3 de Floorball 2026",
+        "categoria":"evento",
+        "equipo":"",
+        "pie": "presentación del Mundial 3v3 de Floorball 2026"
+    },
+    {
+        "url": "assets/galeria/2025-26/Copa_nacional_Almodovar.webp",
+        "navigateTo": "https://www.instagram.com/p/DW_4C8BjCzx/?img_index=1",
+        "alt": "Copa Nacional Almodovar del Campo 2025-2026",
+        "categoria":"evento",
+        "equipo":"",
+        "pie": "Copa Nacional Almodovar del Campo 2025-2026"
+    },
+    {
         "url": "assets/galeria/2025-26/equipo_padres.webp",
         "navigateTo": "",
         "alt": "Equipo de padres",
