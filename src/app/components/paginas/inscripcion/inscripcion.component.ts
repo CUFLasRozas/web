@@ -157,9 +157,9 @@ export class InscripcionComponent {
       firmaP1?.setValidators([Validators.required]);
       nombreP1?.setValidators([Validators.required]);
       dniP1?.setValidators([Validators.required, this.dniValidator]);
-      firmaP2?.setValidators([Validators.required]);
-      nombreP2?.setValidators([Validators.required]);
-      dniP2?.setValidators([Validators.required, this.dniValidator]);
+      firmaP2?.setValidators([]); // Opcional
+      nombreP2?.setValidators([]); // Opcional
+      dniP2?.setValidators([this.dniValidator]); // Opcional, pero valida formato si se rellena
     } else {
       this.esMenor = false;
       emailControl?.setValidators([Validators.required, Validators.email]);
@@ -227,7 +227,7 @@ export class InscripcionComponent {
 
   async generarPDF() {
     const formValue = this.inscripcion.value;
-    const templatePath = 'assets/documentos/ficha_inscripcion CUF_LAS ROZAS.pdf';
+    const templatePath = 'assets/documentos/ficha_inscripcion_CUF_LAS_ROZAS.pdf';
 
     try {
       const response = await fetch(templatePath);
@@ -259,15 +259,15 @@ export class InscripcionComponent {
 
       // Temporada
       if (this.precios_temporada && this.precios_temporada.temporada) {
-        setField('text_1cphl', this.precios_temporada.temporada);
+        setField('temporada', this.precios_temporada.temporada);
       }
 
       // Datos del jugador
-      setField('text_4yseo', formValue.nombrePpal);
-      setField('text_5irno', formValue.apellidosPpal);
-      setField('text_2mvyr', formValue.telefonoPpal);
-      setField('text_6lrjz', formValue.emailppal);
-      
+      setField('nombreppal', formValue.nombrePpal);
+      setField('apelidosppal', formValue.apellidosPpal);
+      setField('telefonoppal', formValue.telefonoPpal);
+      setField('emailppal', formValue.emailppal);
+
       // Formatear fecha de nacimiento a DD/MM/YYYY
       let fechaNacimientoFormateada = formValue.nacimiento;
       if (formValue.nacimiento) {
@@ -276,55 +276,53 @@ export class InscripcionComponent {
           fechaNacimientoFormateada = `${parts[2]}/${parts[1]}/${parts[0]}`;
         }
       }
-      setField('text_3mxup', fechaNacimientoFormateada);
-      
-      setField('text_7ysih', formValue.dni);
-      setField('text_21dnuq', formValue.dni); // Segundo campo de DNI
-      setField('text_9wrtk', (formValue.padron === 'true' || formValue.padron === true) ? 'SI' : 'NO');
-      setField('textarea_8mlky', formValue.alergias);
+      setField('fecha_nacimientoppal', fechaNacimientoFormateada);
+
+      setField('dnippal', formValue.dni);
+      setField('dinppalfirma', formValue.dni); // Segundo campo de DNI en firmas
+      setField('padronppal', (formValue.padron === 'true' || formValue.padron === true) ? 'SI' : 'NO');
+      setField('alergias', formValue.alergias);
 
       // Contactos
       if (formValue.contactos && formValue.contactos.length > 0) {
         const c1 = formValue.contactos[0];
-        setField('text_12eeqy', c1.nombreContacto);
-        setField('text_10lfap', c1.emailContacto);
-        setField('text_11koiw', c1.telefonoContacto);
+        setField('nombreapellidos contacto1', c1.nombreContacto);
+        setField('email contacto1', c1.emailContacto);
+        setField('telefono contacto1', c1.telefonoContacto);
 
         if (formValue.contactos.length > 1) {
           const c2 = formValue.contactos[1];
-          setField('text_13zrui', c2.nombreContacto);
-          setField('text_14yiwp', c2.emailContacto);
-          setField('text_15nyoa', c2.telefonoContacto);
+          setField('nombreapellidos contacto2', c2.nombreContacto);
+          setField('email contacto2', c2.emailContacto);
+          setField('telefonocontacto2', c2.telefonoContacto);
         }
       }
 
       // Datos del equipo
       const categoriaLabel = this.precios_temporada?.tarifas.find(t => t.id === formValue.categoria)?.categoria || formValue.categoria;
-      setField('text_16udpw', categoriaLabel);
-      setField('text_17hbph', formValue.pago);
+      setField('categoria', categoriaLabel);
+      setField('tipopago', formValue.pago);
 
       const precio = this.detallePago?.precio;
       if (precio !== undefined) {
-        setField('text_18tsus', `${precio}€ ${formValue.pago}`, true);
+        setField('precio', `${precio}€ ${formValue.pago}`, true);
       }
 
-      // Otros campos
       if (this.seguroYtasasCategoria !== null) {
-        // No hay campo específico para tasayseguro en el mapeo proporcionado,
-        // podrías añadirlo si encuentras un hueco.
+        setField('seguroytasas', `${this.seguroYtasasCategoria}€`, true);
       }
 
       if (this.precios_temporada && this.precios_temporada.instalaciones) {
-        setField('text_19bgfd', `${this.precios_temporada.instalaciones}€`, true);
+        setField('ayuntamiento', `${this.precios_temporada.instalaciones}€`, true);
       }
 
-      setField('text_20cptf', formValue.autFotos === 'true' ? 'SI' : 'NO');
+      setField('consentimiento', formValue.autFotos === 'true' ? 'SI' : 'NO');
 
       // Datos de Progenitores (en zona de firmas)
-      setField('text_22rjgw', formValue.nombreP1);
-      setField('text_24ands', formValue.dniP1);
-      setField('text_23uzdf', formValue.nombreP2);
-      setField('text_25dnol', formValue.dniP2);
+      setField('nombreapellidos tutor1', formValue.nombreP1);
+      setField('dnitutor1', formValue.dniP1);
+      setField('nombreyapellidos tutor2', formValue.nombreP2);
+      setField('dnitutor2', formValue.dniP2);
 
       // Incrustar firmas usando los campos de firma del PDF para las coordenadas
       const embedSignatureInField = async (base64Data: string, fieldName: string) => {
@@ -337,7 +335,7 @@ export class InscripcionComponent {
             const rect = widget.getRectangle();
             const signatureImageBytes = await fetch(base64Data).then(res => res.arrayBuffer());
             const signatureImage = await pdfDoc.embedPng(signatureImageBytes);
-            
+
             // Dibujamos la imagen sobre el rectángulo del campo de firma
             firstPage.drawImage(signatureImage, {
               x: rect.x,
@@ -353,10 +351,10 @@ export class InscripcionComponent {
 
       // Asignamos las firmas según la edad actual
       if (!this.esMenor) {
-        if (formValue.firmaJugador) await embedSignatureInField(formValue.firmaJugador, 'signature_29sugo');
+        await embedSignatureInField(formValue.firmaJugador, 'firmappal');
       } else {
-        if (formValue.firmaP1) await embedSignatureInField(formValue.firmaP1, 'signature_30ixuf');
-        if (formValue.firmaP2) await embedSignatureInField(formValue.firmaP2, 'signature_31durh');
+        await embedSignatureInField(formValue.firmaP1, 'firmatutor1');
+        await embedSignatureInField(formValue.firmaP2, 'firmatutor2');
       }
 
       // Rellenar y Bloquear el PDF

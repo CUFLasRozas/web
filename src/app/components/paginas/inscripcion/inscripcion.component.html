@@ -264,10 +264,13 @@
                 </div>
                 } @else {
                 <div class="contenedor-firmas-progenitores">
-                    <p>Al ser menor de edad, se requieren las firmas de AMBOS progenitores o tutores legales:</p>
+                    <p>Atención: En el caso de los menores de edad, es obligatoria la autorización de ambos progenitores
+                        si ostentan la patria potestad compartida. En su defecto, el firmante declara bajo su
+                        responsabilidad que cuenta con el consentimiento del otro o posee la representación legal
+                        exclusiva.</p>
 
                     <div class="progenitor-firma">
-                        <h4>Progenitor 1</h4>
+                        <h4>Progenitor/Tutor 1</h4>
                         <div class="row">
                             <div class="contenedor_datos">
                                 <label for="nombreP1">Nombre y Apellidos:</label>
@@ -302,31 +305,23 @@
                         <button type="button" class="boton-limpiar" (click)="clearSignature('canvasP1')">Limpiar
                             firma</button>
                         @if(submitted && inscripcion.get('firmaP1')?.hasError('required')) {
-                        <p class="error">La firma del progenitor 1 es obligatoria</p>
+                        <p class="error">La firma del progenitor/tutor 1 es obligatoria</p>
                         }
                     </div>
 
                     <div class="progenitor-firma">
-                        <h4>Progenitor 2</h4>
+                        <h4>Progenitor/Tutor 2</h4>
                         <div class="row">
                             <div class="contenedor_datos">
                                 <label for="nombreP2">Nombre y Apellidos:</label>
                                 <input type="text" id="nombreP2" formControlName="nombreP2">
-                                @if((inscripcion.get('nombreP2')?.touched || submitted) &&
-                                inscripcion.get('nombreP2')?.hasError('required')) {
-                                <p class="error">El nombre es obligatorio</p>
-                                }
                                 @if(inscripcion.hasError('nombresDuplicados')) {
-                                <p class="error">No puede ser igual al Progenitor 1</p>
+                                <p class="error">No puede ser igual al Progenitor/tutor 1</p>
                                 }
                             </div>
                             <div class="contenedor_datos">
                                 <label for="dniP2">DNI / NIE:</label>
                                 <input type="text" id="dniP2" formControlName="dniP2" maxlength="9">
-                                @if((inscripcion.get('dniP2')?.touched || submitted) &&
-                                inscripcion.get('dniP2')?.hasError('required')) {
-                                <p class="error">El DNI es obligatorio</p>
-                                }
                                 @if(inscripcion.get('dniP2')?.hasError('invalidDni')) {
                                 <p class="error">DNI / NIE no válido</p>
                                 }
@@ -334,7 +329,7 @@
                                 <p class="error">No puede ser igual al del jugador</p>
                                 }
                                 @if(inscripcion.hasError('dniDuplicadoProgenitores')) {
-                                <p class="error">No puede ser igual al Progenitor 1</p>
+                                <p class="error">No puede ser igual al Progenitor/tutor 1</p>
                                 }
                             </div>
                         </div>
@@ -347,9 +342,6 @@
                         </div>
                         <button type="button" class="boton-limpiar" (click)="clearSignature('canvasP2')">Limpiar
                             firma</button>
-                        @if(submitted && inscripcion.get('firmaP2')?.hasError('required')) {
-                        <p class="error">La firma del progenitor 2 es obligatoria</p>
-                        }
                     </div>
                 </div>
                 }
