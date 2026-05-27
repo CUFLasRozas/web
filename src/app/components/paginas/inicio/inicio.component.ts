@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
+import { DATOS_CLUB } from '../../generales.constants';
 
 @Component({
   selector: 'cuflr-inicio',
@@ -9,5 +10,6 @@ import { NgOptimizedImage } from '@angular/common';
   styleUrl: './inicio.component.css'
 })
 export class InicioComponent {
+  datos_club = DATOS_CLUB;
 
 }
