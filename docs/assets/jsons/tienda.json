@@ -1,6 +1,6 @@
 {
     "rutaTienda": "assets/tienda/",
-    "otrosArticulosActive": false,
+    "otrosArticulosActive": true,
     "listaObjetos": [
         {
             "carpeta": "taza/",
