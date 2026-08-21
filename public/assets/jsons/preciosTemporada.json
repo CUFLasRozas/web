@@ -1,94 +1,94 @@
 {
-    "temporada": "2025/2026",
+    "temporada": "2026/2027",
     "instalaciones": 25,
     "tarifas": [
         {
             "id": "senior_masculino",
             "categoria": "Senior Masculino",
-            "seguroYtasas": 100,
+            "seguroYtasas": 103,
             "opciones": {
                 "mensual": {
-                    "precio": 36,
+                    "precio": 42,
                     "ahorro": 0
                 },
                 "anual": {
-                    "precio": 274,
-                    "ahorro": 50
+                    "precio": 308,
+                    "ahorro": 70
                 }
             }
         },
         {
             "id": "senior_femenino",
             "categoria": "Senior Femenino",
-            "seguroYtasas": 100,
+            "seguroYtasas": 103,
             "opciones": {
                 "mensual": {
-                    "precio": 36,
+                    "precio": 42,
                     "ahorro": 0
                 },
                 "anual": {
-                    "precio": 274,
-                    "ahorro": 50
+                    "precio": 308,
+                    "ahorro": 70
                 }
             }
         },
         {
             "id": "cadete",
             "categoria": "Cadete",
-            "seguroYtasas": 80,
+            "seguroYtasas": 103,
             "opciones": {
                 "mensual": {
-                    "precio": 31,
+                    "precio": 42,
                     "ahorro": 0
                 },
                 "anual": {
-                    "precio": 229,
-                    "ahorro": 50
+                    "precio": 308,
+                    "ahorro": 70
                 }
             }
         },
         {
             "id": "infantil",
             "categoria": "Infantil",
-            "seguroYtasas": 70,
+            "seguroYtasas": 73,
             "opciones": {
                 "mensual": {
-                    "precio": 30,
+                    "precio": 37,
                     "ahorro": 0
                 },
                 "anual": {
-                    "precio": 220,
-                    "ahorro": 50
+                    "precio": 263,
+                    "ahorro": 70
                 }
             }
         },
         {
             "id": "alevin",
             "categoria": "Alevín",
-            "seguroYtasas": 70,
+            "seguroYtasas": 73,
             "opciones": {
                 "mensual": {
-                    "precio": 30,
+                    "precio": 37,
                     "ahorro": 0
                 },
                 "anual": {
-                    "precio": 220,
-                    "ahorro": 50
+                    "precio": 263,
+                    "ahorro": 70
                 }
             }
         },
         {
             "id": "benjamin",
             "categoria": "Benjamín",
-            "seguroYtasas": 70,
+            "seguroYtasas": 73,
             "opciones": {
                 "mensual": {
-                    "precio": 30,
+                    "precio": 37,
                     "ahorro": 0
                 },
                 "anual": {
-                    "precio": 220,
-                    "ahorro": 50
+                    "precio": 263,
+                    "ahorro": 70
                 }
             }
         },
@@ -98,11 +98,11 @@
             "seguroYtasas": 0,
             "opciones": {
                 "mensual": {
-                    "precio": 25,
+                    "precio": 30,
                     "ahorro": 0
                 },
                 "anual": {
-                    "precio": 175,
+                    "precio": 220,
                     "ahorro": 50
                 }
             }

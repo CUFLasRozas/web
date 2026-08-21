@@ -3,14 +3,12 @@ import { FormBuilder, FormGroup, FormControl, FormArray, ReactiveFormsModule, Va
 import { UtilesService } from '../../../service/utiles/utiles.service';
 import { PreciosTemporada } from '../../../models/precios_temporada';
 import { PDFDocument, StandardFonts, rgb, PDFName, PDFBool } from 'pdf-lib';
-
-
-
+import { ModalInscripcionComponent } from './modal-inscripcion/modal-inscripcion.component';
 
 @Component({
   selector: 'cuflr-inscripcion',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, ModalInscripcionComponent],
   templateUrl: './inscripcion.component.html',
   styleUrl: './inscripcion.component.css',
 })
@@ -22,6 +20,11 @@ export class InscripcionComponent {
   regimenInternoChecked: boolean = false;
   precios_temporada?: PreciosTemporada;
   esMenor: boolean = false;
+
+  mostrarModal = false;
+  estadoModal: 'generando' | 'completado' = 'generando';
+  pdfBlobUrl: string | null = null;
+  nombreArchivoDescarga: string = '';
 
   private _canvasJugador?: ElementRef<HTMLCanvasElement>;
   private _canvasP1?: ElementRef<HTMLCanvasElement>;
@@ -219,7 +222,11 @@ export class InscripcionComponent {
     this.submitted = true;
     if (this.inscripcion.valid) {
       console.log(this.inscripcion.value);
-      this.generarPDF();
+      this.mostrarModal = true;
+      this.estadoModal = 'generando';
+      this.generarPDF().then(() => {
+        this.estadoModal = 'completado';
+      });
     } else {
       console.log('formulario invalido')
     }
@@ -382,10 +389,8 @@ export class InscripcionComponent {
 
       const pdfBytes = await pdfDoc.save();
       const blob = new Blob([pdfBytes.buffer as ArrayBuffer], { type: 'application/pdf' });
-      const link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
-      link.download = `Inscripcion_${formValue.nombrePpal}_${formValue.apellidosPpal}.pdf`;
-      link.click();
+      this.pdfBlobUrl = URL.createObjectURL(blob);
+      this.nombreArchivoDescarga = `Inscripcion_${formValue.nombrePpal}_${formValue.apellidosPpal}.pdf`;
 
     } catch (error) {
       console.error('Error generando el PDF:', error);
@@ -522,5 +527,15 @@ export class InscripcionComponent {
       this.ctx[id]!.clearRect(0, 0, canvas.width, canvas.height);
       this.inscripcion.get(controlName)?.setValue('');
     }
+  }
+
+  descargarFicha() {
+    if (this.pdfBlobUrl) {
+      window.open(this.pdfBlobUrl, '_blank');
+    }
+  }
+
+  cerrarModal() {
+    this.mostrarModal = false;
   }
 }

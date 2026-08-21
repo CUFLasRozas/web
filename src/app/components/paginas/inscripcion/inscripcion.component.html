@@ -365,4 +365,11 @@
             </div>
     </form>
 
+    <cuflr-modal-inscripcion 
+        [mostrar]="mostrarModal"
+        [estado]="estadoModal"
+        (descargarFicha)="descargarFicha()"
+        (cerrarModal)="cerrarModal()">
+    </cuflr-modal-inscripcion>
+
 </div>

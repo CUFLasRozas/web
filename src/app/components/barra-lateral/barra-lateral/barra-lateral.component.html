@@ -8,14 +8,14 @@
             @for (proximoPartido of this.infoBarraLateral.proximosPartidos.objects; track $index) {
             <li>
                 @if (proximoPartido.url && proximoPartido.url != "") {
-                    <a href="{{proximoPartido.url}}" target="_blank">
+                <a href="{{proximoPartido.url}}" target="{{proximoPartido.target}}">
                     <b>{{proximoPartido.titulo}}:</b><br>
                     {{proximoPartido.fecha}}
                 </a>
-                }                
+                }
                 @else {
-                    <b>{{proximoPartido.titulo}}:</b><br>
-                    {{proximoPartido.fecha}}
+                <b>{{proximoPartido.titulo}}:</b><br>
+                {{proximoPartido.fecha}}
                 }
             </li>
             }
@@ -34,8 +34,8 @@
         <ul>
             @for (documento of this.infoBarraLateral.documentos.objects; track $index) {
             <li>
-                <a href="{{documento.url}}" target="_blank">
-                   <b>{{documento.literal}}</b>
+                <a href="{{documento.url}}" target="{{documento.target}}">
+                    <b>{{documento.literal}}</b>
                 </a>
             </li>
             }

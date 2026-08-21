@@ -1,41 +1,43 @@
 export interface BarraLateral {
-    proximosPartidos:     ProximosPartidos;
-    documentos:           Documentos;
-    redes:            ImagenesEnlazadas;
+    proximosPartidos: ProximosPartidos;
+    documentos: Documentos;
+    redes: ImagenesEnlazadas;
 }
 
 export interface Documentos {
-    view:    boolean;
-    title:   string;
+    view: boolean;
+    title: string;
     objects: DocumentosObject[];
 }
 
 export interface DocumentosObject {
     literal: string;
-    url:     string;
+    url: string;
+    target: string;
 }
 
 export interface ImagenesEnlazadas {
-    view:    boolean;
-    title:   string;
+    view: boolean;
+    title: string;
     objects: ImagenEnlazadasObject[];
 }
 
 export interface ImagenEnlazadasObject {
-    url:    string;
+    url: string;
     imagen: string;
-    alt:    string;
+    alt: string;
 }
 
 export interface ProximosPartidos {
-    view:    boolean;
-    title:   string;
+    view: boolean;
+    title: string;
     objects: partidoObject[];
 }
 
 export interface partidoObject {
     titulo: string;
-    fecha:  string;
-    url:    string;
+    fecha: string;
+    url: string;
+    target: string;
 }
 
