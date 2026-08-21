@@ -1,0 +1,1 @@
+var o={movil:"652 957 154",email:"cuflasrozas@hotmail.com",temporada:"2026-2027"};export{o as a};

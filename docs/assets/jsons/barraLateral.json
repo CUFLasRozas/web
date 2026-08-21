@@ -2,25 +2,26 @@
     "proximosPartidos": {
         "view": true,
         "title": "Partidos y eventos",
-         "objects":  [
-        
-        ]
+        "objects": []
     },
     "documentos": {
         "view": true,
         "title": "Documentos",
         "objects": [
             {
-                "literal": "Ficha preinscripción",
-                "url": "/assets/documentos/preinscripcion_26-27.pdf"
+                "literal": "Ficha de inscripción",
+                "url": "/inscripcion",
+                "target": "_self"
             },
             {
                 "literal": "Reglamento régimen interno",
-                "url": "/assets/documentos/Reglamento_regimen_interno_CUF_LAS_ROZAS.pdf"
+                "url": "/assets/documentos/Reglamento_regimen_interno_CUF_LAS_ROZAS.pdf",
+                "target": "_blank"
             },
             {
                 "literal": "Como elegir palo",
-                "url": "/assets/documentos/como_elegir_palo.pdf"
+                "url": "/assets/documentos/como_elegir_palo.pdf",
+                "target": "_blank"
             }
         ]
     },
@@ -50,5 +51,4 @@
             }
         ]
     }
-
 }
