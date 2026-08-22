@@ -1,6 +1,140 @@
 {
     "rutaTienda": "assets/tienda/",
-    "otrosArticulosActive": true,
+    "activarRopa": true,
+    "listaRopa":[
+        {
+            "carpeta": "ropa_oficial/camiseta_jugador/",
+            "imagenPpal": "camiseta_jugador_naranja.png",
+            "nombrePpal": "Camiseta jugador",
+            "precio": 16.50,
+            "colores": [
+                "#F75A0B","blue"
+            ],
+            "ObjetosIndividual": [
+                {
+                    "img": ["camiseta_jugador_naranja.png"],
+                    "nombre": "Primera equipación",
+                    "precio": 16.50,
+                    "color": "white"
+                },
+                {
+                    "img": ["camiseta_jugador_azul.png"],
+                    "nombre": "Segunda equipación",
+                    "precio": 16.50,
+                    "color": "#F75A0B"
+                }                
+            ]
+        },
+        {
+            "carpeta": "ropa_oficial/pantalon/",
+            "imagenPpal": "pantalon.png",
+            "nombrePpal": "Pantalón jugador",
+            "precio": 6.50,
+            "colores": [
+                "black"
+            ],
+            "ObjetosIndividual": [
+                {
+                    "img": ["pantalon.png"],
+                    "nombre": "Pantalón jugador",
+                    "precio": 6.50,
+                    "color": "black"
+                }                
+            ]
+        },
+        {
+            "carpeta": "ropa_oficial/sudadera_negra/",
+            "imagenPpal": "sudadera_negra.png",
+            "nombrePpal": "Sudadera negra",
+            "precio": 15.50,
+            "colores": [
+                "black"
+            ],
+            "ObjetosIndividual": [
+                {
+                    "img": ["sudadera_negra.png"],
+                    "nombre": "Sudadera negra",
+                    "precio": 15.50,
+                    "color": "black"
+                }              
+            ]
+        },
+        {
+            "carpeta": "ropa_oficial/camiseta_entreno/",
+            "imagenPpal": "camiseta_entreno_amarilla.png",
+            "nombrePpal": "Camiseta de entrenamiento",
+            "precio": 7,
+            "colores": [
+                "yellow","blue"
+            ],
+            "ObjetosIndividual": [
+                {
+                    "img": ["camiseta_entreno_amarilla.png"],
+                    "nombre": "Camiseta amarilla de entrenamiento",
+                    "precio": 7,
+                    "color": "yellow"
+                },
+                {
+                    "img": ["camiseta_entreno_azul.png"],
+                    "nombre": "Camiseta azul de entrenamiento",
+                    "precio": 7,
+                    "color": "blue"
+                }                
+            ]
+        },
+        {
+            "carpeta": "ropa_oficial/sudadera_naranja/",
+            "imagenPpal": "sudadera_naranja.png",
+            "nombrePpal": "Sudadera naranja ",
+            "precio": 25.50,
+            "colores": [
+                "#F75A0B"
+            ],
+            "ObjetosIndividual": [
+                {
+                    "img": ["sudadera_naranja.png"],
+                    "nombre": "Sudadera naranja ",
+                    "precio": 25.50,
+                    "color": "#F75A0B"
+                }                
+            ]
+        },
+        {
+            "carpeta": "ropa_oficial/medias/",
+            "imagenPpal": "medias.png",
+            "nombrePpal": "Medias negras",
+            "precio": 3.50,
+            "colores": [
+                "black"
+            ],
+            "ObjetosIndividual": [
+                {
+                    "img": ["medias.png"],
+                    "nombre": "Medias negras",
+                    "precio": 3.50,
+                    "color": "black"
+                }                
+            ]
+        },
+        {
+            "carpeta": "ropa_oficial/cortavientos/",
+            "imagenPpal": "cortavientos.png",
+            "nombrePpal": "Cortavientos",
+            "precio": 25.50,
+            "colores": [
+                "black"
+            ],
+            "ObjetosIndividual": [
+                {
+                    "img": ["cortavientos.png"],
+                    "nombre": "Cortavientos",
+                    "precio": 25.50,
+                    "color": "black"
+                }                
+            ]
+        }
+    ],
+    "activarOtrosObjetos": true,
     "listaObjetos": [
         {
             "carpeta": "taza/",

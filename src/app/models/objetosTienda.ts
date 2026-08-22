@@ -1,5 +1,8 @@
 export interface ObjetosTienda {
-    rutaTienda: string
+    rutaTienda: string,
+    activarRopa: boolean,
+    activarOtrosObjetos: boolean,
+    listaRopa:ListaObjeto[],
     listaObjetos: ListaObjeto[]
   }
   

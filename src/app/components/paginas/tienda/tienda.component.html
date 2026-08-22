@@ -9,22 +9,51 @@
 
     <h1>Tienda CUF Las Rozas</h1>
     <h2>Equipaciones de jugador</h2>
-    <p>Las camisetas de jugador (primera y segunda) deberán ser solicitadas al club a traves de nuestro formulario:
+    <p>El pack de ropa oficial para jugadores consta de 2 camisetas de juego, pantalón, sudadera y 1 camiseta de
+        entrenamientoen color amarillo.
+        Para realizar tu solicitud, por favor completa el siguiente formulario:
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFLBlcVT04VuGmPdEV4aWvkjoItcxL4EWflEkhdWNYwsgKBg/viewform"
             target="_blank">ver Formulario</a>
     </p>
-    <p>Para el resto de la equipación (patalones, sudadera y camiseta entrenamiento) deberás ir al siguiente enlace donde
-        podrás adquirirlo:
-        <a href="https://cdeunihockey.luanviteam.club/PACK%20JUGADOR%20y%20PORTERO%2060487" target="_blank">pack
-            jugador</a>
-    </p>
-    <p>Además, si estás interesado en adquirir algún otro artículo, como medias o chubasquero,  o reponer alguna
+
+    <p><i><b>Nota importante:</b> El pack de ropa no incluye las medias negras, pero recuerda que son <b>obligatorias para los
+            partidos oficiales</b>. Puedes adquirirlas por separado o por tu cuenta.</i></p>
+    <p>Además del pack completo, también puedes adquirir prendas sueltas. A continuación, puedes revisar todo el
+        material deportivo disponible en el club:</p>
+
+
+    @if (this.objetoTienda?.activarRopa) {
+
+    <div class="galeria-articulos">
+
+        @if(objetoTienda){
+        @for (producto of objetoTienda.listaRopa; track $index) {
+        <div class="box">
+            <div class="sub-box">
+                <img (click)="abrirImagen(objetoTienda.rutaTienda, producto)"
+                    src={{objetoTienda.rutaTienda+producto.carpeta+producto.imagenPpal}}>
+            </div>
+            <span>{{producto.nombrePpal}} </span>
+            <span>{{producto.precio| number:'1.2-2'}}€</span>
+            <div class="colores">
+                @for (color of producto.colores; track $index) {
+                <div class="color" [ngStyle]="{'background-color': color}"></div>
+                }
+            </div>
+        </div>
+        }
+        }
+    </div>
+    }
+
+
+    <!-- <p>Además, si estás interesado en adquirir algún otro artículo, como medias o chubasquero,  o reponer alguna
         otra prenda de manera individual, no olvides visitar la tienda de la marca deportiva oficial del club:
         <a href="https://cdeunihockey.luanviteam.club/tienda-del-club-2" target="_blank">Tienda Luanvi</a>
-    </p>
+    </p> -->
     <!-- <p>IMPORTANTE, para iniciar sesion os solicitará el codigo de club, es CDEUNIHOCKEY24/25</p> -->
 
-    @if (otrosArticulosActive) {
+    @if (this.objetoTienda?.activarOtrosObjetos) {
     <hr>
     <h2>Otros Artículos</h2>
     <p>A continuación puedes consultar los objetos y merchandising del Club, suministrados por
@@ -45,7 +74,7 @@
                     src={{objetoTienda.rutaTienda+producto.carpeta+producto.imagenPpal}}>
             </div>
             <span>{{producto.nombrePpal}} </span>
-            <span>{{producto.precio}}€</span>
+            <span>{{producto.precio| number:'1.2-2'}}€</span>
             <div class="colores">
                 @for (color of producto.colores; track $index) {
                 <div class="color" [ngStyle]="{'background-color': color}"></div>

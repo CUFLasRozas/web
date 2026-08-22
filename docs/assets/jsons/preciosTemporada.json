@@ -4,7 +4,7 @@
     "tarifas": [
         {
             "id": "senior_masculino",
-            "categoria": "Senior Masculino",
+            "categoria": "Senior Masculino (hasta 2010)",
             "seguroYtasas": 103,
             "opciones": {
                 "mensual": {
@@ -19,7 +19,7 @@
         },
         {
             "id": "senior_femenino",
-            "categoria": "Senior Femenino",
+            "categoria": "Senior Femenino (hasta 2010)",
             "seguroYtasas": 103,
             "opciones": {
                 "mensual": {
@@ -34,7 +34,7 @@
         },
         {
             "id": "cadete",
-            "categoria": "Cadete",
+            "categoria": "Cadete (2011-2012)",
             "seguroYtasas": 103,
             "opciones": {
                 "mensual": {
@@ -49,7 +49,7 @@
         },
         {
             "id": "infantil",
-            "categoria": "Infantil",
+            "categoria": "Infantil (2013-2014)",
             "seguroYtasas": 73,
             "opciones": {
                 "mensual": {
@@ -64,7 +64,7 @@
         },
         {
             "id": "alevin",
-            "categoria": "Alevín",
+            "categoria": "Alevín (2015-2016)",
             "seguroYtasas": 73,
             "opciones": {
                 "mensual": {
@@ -79,7 +79,7 @@
         },
         {
             "id": "benjamin",
-            "categoria": "Benjamín",
+            "categoria": "Benjamín (desde 2017)",
             "seguroYtasas": 73,
             "opciones": {
                 "mensual": {

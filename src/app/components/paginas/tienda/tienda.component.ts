@@ -30,7 +30,6 @@ export class TiendaComponent {
     this.ultilesService.$modalTienda.subscribe((data: boolean) => this.openModal = data);
     this.ultilesService.obtenerJson('tienda.json').subscribe((data: any) => {
       this.objetoTienda = data;
-      this.otrosArticulosActive = _.get(this.objetoTienda, 'otrosArticulosActive', false);
     })
   }
 
