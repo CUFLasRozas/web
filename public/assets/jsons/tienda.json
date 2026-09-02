@@ -1,6 +1,6 @@
 {
     "rutaTienda": "assets/tienda/",
-    "activarRopa": false,
+    "activarRopa": true,
     "listaRopa":[
         {
             "carpeta": "ropa_oficial/camiseta_jugador/",

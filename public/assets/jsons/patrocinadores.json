@@ -11,7 +11,12 @@
                 "alt": "Logo colaborador Luanvi"
             },
             {
-                "url": "https://www.instagram.com/atlantia.visuals/",
+                "url": "https://www.atlantiavisuals.com/nexos/",
+                "imagen": "assets/image/patrocinadores/nexos.png",
+                "alt": "Logo colaborador Nexos"
+            },
+            {
+                "url": "https://www.atlantiavisuals.com/",
                 "imagen": "assets/image/patrocinadores/visuals_atlantia.png",
                 "alt": "Logo colaborador Visuals Atlantia"
             },
