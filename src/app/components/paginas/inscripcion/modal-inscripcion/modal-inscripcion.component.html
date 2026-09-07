@@ -1,0 +1,23 @@
+@if (mostrar) {
+<div class="modal-overlay">
+  <div class="modal-content">
+    @if (estado === 'generando') {
+    <div class="spinner"></div>
+    <p class="mensaje">Generando ficha de inscripción...</p>
+    } @else {
+    <div class="icono-completado">
+      <svg viewBox="0 0 24 24" width="48" height="48" stroke="#4CAF50" stroke-width="2" fill="none"
+        stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+    <p class="mensaje completado">Ficha generada correctamente</p>
+    <p>No olvides enviarnos la ficha generada así como el justificante de pago del seguro + tasas a nuestro correo:
+      <b>{{datos_club.email}}</b> para poder formalizar la inscripción</p>
+    <div class="acciones">
+      <button class="boton-descargar" type="button" (click)="onDescargarFicha()">Descargar ficha</button>
+    </div>
+    }
+  </div>
+</div>
+}

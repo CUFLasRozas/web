@@ -26,3 +26,15 @@
         width: 80%;
     }
 }
+
+.preinscripcion {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 900px;
+}
+
+.underline {
+    text-decoration: underline;
+}

@@ -1,0 +1,111 @@
+{
+    "temporada": "2026/2027",
+    "instalaciones": 25,
+    "tarifas": [
+        {
+            "id": "senior_masculino",
+            "categoria": "Senior Masculino (hasta 2010)",
+            "seguroYtasas": 103,
+            "opciones": {
+                "mensual": {
+                    "precio": 42,
+                    "ahorro": 0
+                },
+                "anual": {
+                    "precio": 308,
+                    "ahorro": 70
+                }
+            }
+        },
+        {
+            "id": "senior_femenino",
+            "categoria": "Senior Femenino (hasta 2010)",
+            "seguroYtasas": 103,
+            "opciones": {
+                "mensual": {
+                    "precio": 42,
+                    "ahorro": 0
+                },
+                "anual": {
+                    "precio": 308,
+                    "ahorro": 70
+                }
+            }
+        },
+        {
+            "id": "cadete",
+            "categoria": "Cadete (2011-2012)",
+            "seguroYtasas": 103,
+            "opciones": {
+                "mensual": {
+                    "precio": 42,
+                    "ahorro": 0
+                },
+                "anual": {
+                    "precio": 308,
+                    "ahorro": 70
+                }
+            }
+        },
+        {
+            "id": "infantil",
+            "categoria": "Infantil (2013-2014)",
+            "seguroYtasas": 73,
+            "opciones": {
+                "mensual": {
+                    "precio": 37,
+                    "ahorro": 0
+                },
+                "anual": {
+                    "precio": 263,
+                    "ahorro": 70
+                }
+            }
+        },
+        {
+            "id": "alevin",
+            "categoria": "Alevín (2015-2016)",
+            "seguroYtasas": 73,
+            "opciones": {
+                "mensual": {
+                    "precio": 37,
+                    "ahorro": 0
+                },
+                "anual": {
+                    "precio": 263,
+                    "ahorro": 70
+                }
+            }
+        },
+        {
+            "id": "benjamin",
+            "categoria": "Benjamín (desde 2017)",
+            "seguroYtasas": 73,
+            "opciones": {
+                "mensual": {
+                    "precio": 37,
+                    "ahorro": 0
+                },
+                "anual": {
+                    "precio": 263,
+                    "ahorro": 70
+                }
+            }
+        },
+        {
+            "id": "padres_veteranos",
+            "categoria": "Padres/Veteranos",
+            "seguroYtasas": 0,
+            "opciones": {
+                "mensual": {
+                    "precio": 30,
+                    "ahorro": 0
+                },
+                "anual": {
+                    "precio": 220,
+                    "ahorro": 50
+                }
+            }
+        }
+    ]
+}

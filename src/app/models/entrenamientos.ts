@@ -5,5 +5,11 @@ export interface Entrenamientos {
 
 export interface EntrenoEquipo {
     equipo: string;
-    dias: string[];
+    dias: Dias[];
+    camisetas: string[];
+}
+
+export interface Dias {
+    dia: string;
+    camiseta: string;
 }
