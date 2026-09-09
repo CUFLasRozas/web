@@ -18,3 +18,13 @@
 .cabecera_tabla {
     background-color: #F8F8F8;
 }
+
+.boton-enviar {
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}

@@ -1,0 +1,12 @@
+{
+    "listado": [
+        {
+            "titulo": "Senderismo",
+            "fecha": "2024-06-15",
+            "lugar": "Sierra de Guadarrama",
+            "nivel": "Intermedio",
+            "descripcion": "Explora los senderos de la Sierra de Guadarrama con nosotros. Una experiencia única para los amantes de la naturaleza.",
+            "imagen": "assets/image/senderismo/cascada-purgatorio.jpg"
+        }
+    ]
+}
