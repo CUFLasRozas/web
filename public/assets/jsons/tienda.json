@@ -1,12 +1,13 @@
 {
     "rutaTienda": "assets/tienda/",
+    "urlFormRopa": "https://docs.google.com/forms/d/e/1FAIpQLSeFLBlcVT04VuGmPdEV4aWvkjoItcxL4EWflEkhdWNYwsgKBg/viewform",
     "activarRopa": true,
     "listaRopa":[
         {
             "carpeta": "ropa_oficial/camiseta_jugador/",
             "imagenPpal": "camiseta_jugador_naranja.png",
             "nombrePpal": "Camiseta jugador",
-            "precio": 16.50,
+            "precio": 31,
             "colores": [
                 "#F75A0B","blue"
             ],
@@ -14,13 +15,13 @@
                 {
                     "img": ["camiseta_jugador_naranja.png"],
                     "nombre": "Primera equipación",
-                    "precio": 16.50,
+                    "precio": 31,
                     "color": "white"
                 },
                 {
                     "img": ["camiseta_jugador_azul.png"],
                     "nombre": "Segunda equipación",
-                    "precio": 16.50,
+                    "precio": 31,
                     "color": "#F75A0B"
                 }                
             ]
@@ -29,7 +30,7 @@
             "carpeta": "ropa_oficial/pantalon/",
             "imagenPpal": "pantalon.png",
             "nombrePpal": "Pantalón jugador",
-            "precio": 6.50,
+            "precio": 7,
             "colores": [
                 "black"
             ],
@@ -37,7 +38,7 @@
                 {
                     "img": ["pantalon.png"],
                     "nombre": "Pantalón jugador",
-                    "precio": 6.50,
+                    "precio": 7,
                     "color": "black"
                 }                
             ]
@@ -46,7 +47,7 @@
             "carpeta": "ropa_oficial/sudadera_negra/",
             "imagenPpal": "sudadera_negra.png",
             "nombrePpal": "Sudadera negra",
-            "precio": 15.50,
+            "precio": 16,
             "colores": [
                 "black"
             ],
@@ -54,7 +55,7 @@
                 {
                     "img": ["sudadera_negra.png"],
                     "nombre": "Sudadera negra",
-                    "precio": 15.50,
+                    "precio": 16,
                     "color": "black"
                 }              
             ]
@@ -86,7 +87,7 @@
             "carpeta": "ropa_oficial/sudadera_naranja/",
             "imagenPpal": "sudadera_naranja.png",
             "nombrePpal": "Sudadera naranja ",
-            "precio": 25.50,
+            "precio": 31,
             "colores": [
                 "#F75A0B"
             ],
@@ -94,7 +95,7 @@
                 {
                     "img": ["sudadera_naranja.png"],
                     "nombre": "Sudadera naranja ",
-                    "precio": 25.50,
+                    "precio": 31,
                     "color": "#F75A0B"
                 }                
             ]
@@ -103,7 +104,7 @@
             "carpeta": "ropa_oficial/medias/",
             "imagenPpal": "medias.png",
             "nombrePpal": "Medias negras",
-            "precio": 3.50,
+            "precio": 4.30,
             "colores": [
                 "black"
             ],
@@ -111,7 +112,7 @@
                 {
                     "img": ["medias.png"],
                     "nombre": "Medias negras",
-                    "precio": 3.50,
+                    "precio": 4.30,
                     "color": "black"
                 }                
             ]
@@ -120,7 +121,7 @@
             "carpeta": "ropa_oficial/cortavientos/",
             "imagenPpal": "cortavientos.png",
             "nombrePpal": "Cortavientos",
-            "precio": 25.50,
+            "precio": 31,
             "colores": [
                 "black"
             ],
@@ -128,7 +129,7 @@
                 {
                     "img": ["cortavientos.png"],
                     "nombre": "Cortavientos",
-                    "precio": 25.50,
+                    "precio": 31,
                     "color": "black"
                 }                
             ]

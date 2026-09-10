@@ -11,9 +11,11 @@
     <h2>Equipaciones de jugador</h2>
     <p>El pack de ropa oficial para jugadores consta de 2 camisetas de juego, pantalón, sudadera y 1 camiseta de
         entrenamientoen color amarillo.
-        Para realizar tu solicitud, por favor completa el siguiente formulario:
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFLBlcVT04VuGmPdEV4aWvkjoItcxL4EWflEkhdWNYwsgKBg/viewform"
+        @if (objetoTienda && objetoTienda.urlFormRopa) {
+            Para realizar tu solicitud, por favor completa el siguiente formulario:
+        <a href="{{objetoTienda.urlFormRopa}}"
             target="_blank">ver Formulario</a>
+        }        
     </p>
 
     <p><i><b>Nota importante:</b> El pack de ropa no incluye las medias negras, pero recuerda que son <b>obligatorias para los

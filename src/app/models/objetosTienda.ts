@@ -1,5 +1,6 @@
 export interface ObjetosTienda {
     rutaTienda: string,
+    urlFormRopa:string,
     activarRopa: boolean,
     activarOtrosObjetos: boolean,
     listaRopa:ListaObjeto[],
