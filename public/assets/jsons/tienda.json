@@ -7,7 +7,7 @@
             "carpeta": "ropa_oficial/camiseta_jugador/",
             "imagenPpal": "camiseta_jugador_naranja.png",
             "nombrePpal": "Camiseta jugador",
-            "precio": 31,
+            "precio": 0,
             "colores": [
                 "#F75A0B","blue"
             ],
@@ -15,14 +15,14 @@
                 {
                     "img": ["camiseta_jugador_naranja.png"],
                     "nombre": "Primera equipación",
-                    "precio": 31,
-                    "color": "white"
+                    "precio": 0,
+                    "color": "#F75A0B"
                 },
                 {
                     "img": ["camiseta_jugador_azul.png"],
                     "nombre": "Segunda equipación",
-                    "precio": 31,
-                    "color": "#F75A0B"
+                    "precio": 0,
+                    "color": "blue"
                 }                
             ]
         },
