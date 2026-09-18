@@ -261,7 +261,9 @@ export class InscripcionComponent {
 
   async generarPDF() {
     const formValue = this.inscripcion.value;
-    const templatePath = 'assets/documentos/ficha_inscripcion_CUF_LAS_ROZAS.pdf';
+    const templatePath = this.esSenderismo()
+      ? 'assets/documentos/ficha_senderismo_CUF_LAS_ROZAS.pdf'
+      : 'assets/documentos/ficha_inscripcion_CUF_LAS_ROZAS.pdf';
 
     try {
       const response = await fetch(templatePath);
@@ -332,22 +334,39 @@ export class InscripcionComponent {
         }
       }
 
-      // Datos del equipo
-      const categoriaLabel = this.precios_temporada?.tarifas.find(t => t.id === formValue.categoria)?.categoria || formValue.categoria;
-      setField('categoria', categoriaLabel);
-      setField('tipopago', formValue.pago);
+      if (this.esSenderismo()) {
+        // Datos de senderismo: tipo de socio y precio
+        const esFamiliar = formValue.socio === 'false'; // value="false" = Familiar
+        setField('tiposocio', esFamiliar ? 'Familiar' : 'General');
+        // Marcar el radio button en el PDF
+        try {
+          const radioField = form.getRadioGroup('socio');
+          radioField.select(esFamiliar ? 'familiar' : 'general');
+        } catch (e) {
+          // Si no existe como radio group, intentamos como campo de texto
+          const precioSenderismo = esFamiliar
+            ? this.precios_temporada?.senderismo?.anual?.familiar
+            : this.precios_temporada?.senderismo?.anual?.general;
+          setField('socio', esFamiliar ? `Familiar - ${precioSenderismo}€` : `General - ${precioSenderismo}€`);
+        }
+      } else {
+        // Datos del equipo (unihockey)
+        const categoriaLabel = this.precios_temporada?.tarifas.find(t => t.id === formValue.categoria)?.categoria || formValue.categoria;
+        setField('categoria', categoriaLabel);
+        setField('tipopago', formValue.pago);
 
-      const precio = this.detallePago?.precio;
-      if (precio !== undefined) {
-        setField('precio', `${precio}€ ${formValue.pago}`, true);
-      }
+        const precio = this.detallePago?.precio;
+        if (precio !== undefined) {
+          setField('precio', `${precio}€ ${formValue.pago}`, true);
+        }
 
-      if (this.seguroYtasasCategoria !== null) {
-        setField('seguroytasas', `${this.seguroYtasasCategoria}€`, true);
-      }
+        if (this.seguroYtasasCategoria !== null) {
+          setField('seguroytasas', `${this.seguroYtasasCategoria}€`, true);
+        }
 
-      if (this.precios_temporada && this.precios_temporada.instalaciones) {
-        setField('ayuntamiento', `${this.precios_temporada.instalaciones}€`, true);
+        if (this.precios_temporada && this.precios_temporada.instalaciones) {
+          setField('ayuntamiento', `${this.precios_temporada.instalaciones}€`, true);
+        }
       }
 
       setField('consentimiento', formValue.autFotos === 'true' ? 'SI' : 'NO');
@@ -417,7 +436,8 @@ export class InscripcionComponent {
       const pdfBytes = await pdfDoc.save();
       const blob = new Blob([pdfBytes.buffer as ArrayBuffer], { type: 'application/pdf' });
       this.pdfBlobUrl = URL.createObjectURL(blob);
-      this.nombreArchivoDescarga = `Inscripcion_${formValue.nombrePpal}_${formValue.apellidosPpal}.pdf`;
+      const prefijo = this.esSenderismo() ? 'Senderismo' : 'Inscripcion';
+      this.nombreArchivoDescarga = `${prefijo}_${formValue.nombrePpal}_${formValue.apellidosPpal}.pdf`;
 
     } catch (error) {
       console.error('Error generando el PDF:', error);
