@@ -1,14 +1,67 @@
 .senderismo-ppal {
         padding: 20px;
 }
-.actividad {
-    border: 1px solid black;
-    border-radius: 10px;
-    /* background-color: #f7d3c1; */
-    padding: 10px;
-    margin: 5px 0px;
-}
+
 
 h3{
     color:black;
 }
+
+.galeria-actividades {    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap:15px;
+}
+
+.actividad {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.foto-send {
+    position: relative;
+}
+
+img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.dificultad {
+    top: 0.30rem;
+    right: 0.30rem;
+    position: absolute;
+    background-color:white;
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.mas-detalles-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.mas-detalles-btn i {
+    margin-left: 5px;
+}
+
+.faq-btn {
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+

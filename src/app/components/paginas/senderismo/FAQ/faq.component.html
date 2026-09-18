@@ -1,1 +1,40 @@
-<p>faq works!</p>
+<div class="FAQSenderismo">
+
+    <a routerLink="/senderismo"><strong>Volver</strong></a> | <a routerLink="/">Inicio</a> > <a
+        routerLink="/senderismo">Senderismo</a> > <strong>FAQ</strong>
+
+    <h1>Preguntas Frecuentes</h1>
+
+    <p>¿Tienes dudas sobre cómo prepararte para tu próxima aventura? Aquí encontrarás respuestas rápidas sobre
+        equipamiento, seguridad, dificultad de las rutas y todo lo que necesitas saber antes de echarte la mochila al
+        hombro. ¡Explora los bloques de abajo y despeja tus dudas!</p>
+
+    @if (listadoFAQ.length > 0) {
+
+    @for (seccion of listadoFAQ; track $index) {
+    <h2>{{seccion.titulo}}</h2>
+
+
+    @for (pregunta of seccion.preguntas; track $index) {
+    
+        <details class="faq-accordion" name="faq-group">
+            <summary>{{pregunta.pregunta}}</summary>
+            <div class="faq-content">
+                <p>{{pregunta.respuesta}}</p>
+            </div>
+        </details>
+    
+    <!-- <div class="bloque-FAQ">
+                        <h3>{{pregunta.pregunta}}</h3>
+                        <p>{{pregunta.respuesta}}</p>
+                    </div> -->
+        }
+    }
+
+
+
+
+    }
+
+
+</div>

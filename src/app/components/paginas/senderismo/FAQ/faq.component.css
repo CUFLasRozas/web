@@ -1,0 +1,82 @@
+.FAQSenderismo {
+    padding: 20px;
+}
+
+h3 {
+    color: black
+}
+
+.faq-accordion {
+  margin-bottom: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #ffffff;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Efecto visual al pasar el ratón por encima */
+.faq-accordion:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* Cabecera interactiva de la pregunta (Reemplaza visualmente tu h3) */
+.faq-accordion summary {
+  padding: 16px;
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #000000;
+  cursor: pointer;
+  list-style: none; /* Oculta la flecha por defecto del navegador */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+/* Oculta la flecha por defecto específicamente en navegadores Safari */
+.faq-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Creamos el indicador dinámico (+) con tu color naranja */
+.faq-accordion summary::after {
+  content: "+";
+  color: #e65c00; /* Color naranja extraído de tu diseño */
+  font-size: 1.5rem;
+  font-weight: normal;
+  transition: transform 0.3s ease;
+}
+
+/* =======================================================
+   ESTADOS CUANDO EL ACORDEÓN ESTÁ ABIERTO
+   ======================================================= */
+
+/* Cambia el borde exterior a tu color naranja */
+.faq-accordion[open] {
+  border-color: #e65c00;
+}
+
+/* Destaca la pregunta activa con un fondo naranja muy suave */
+.faq-accordion[open] summary {
+  border-bottom: 1px solid #f0f0f0;
+  background-color: #fffaf7; 
+}
+
+/* Transforma el signo "+" en una "x" rotándolo 45 grados */
+.faq-accordion[open] summary::after {
+  transform: rotate(45deg);
+}
+
+/* Bloque contenedor del texto de la respuesta */
+.faq-content {
+  padding: 16px;
+  background-color: #ffffff;
+}
+
+/* Formato del texto largo interior */
+.faq-content p {
+  margin: 0;
+  color: #4a4a4a; /* Gris oscuro para una lectura cómoda */
+  line-height: 1.6;
+}

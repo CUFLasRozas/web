@@ -1,92 +1,106 @@
 <div class="socio">
 
-<a routerLink="/senderismo"><strong>Volver</strong></a> | <a routerLink="/">Inicio</a> > <a routerLink="/senderismo">Senderismo</a> > <a routerLink="/senderismo/socio"><strong>Socio</strong></a>
+    <a routerLink="/senderismo"><strong>Volver</strong></a> | <a routerLink="/">Inicio</a> > <a
+        routerLink="/senderismo">Senderismo</a> > <strong>Socio</strong>
 
-<h1>Socio Senderismo y Montaña</h1>
+    <h1>Socio Senderismo y Montaña</h1>
 
-<p>¡Únete a nuestro club y comparte tu pasión por la naturaleza! Al hacerte socio de la sección de Senderismo y Montaña del CUF Las Rozas, 
-    formas parte de una comunidad activa y disfrutas de beneficios exclusivos durante toda la temporada.</p>
+    <p>¡Únete a nuestro club y comparte tu pasión por la naturaleza! Al hacerte socio de la sección de Senderismo y
+        Montaña del CUF Las Rozas,
+        formas parte de una comunidad activa y disfrutas de beneficios exclusivos durante toda la temporada.</p>
 
-<h2>Ventajas exclusivas de ser socio:</h2>
+    <h2>Ventajas exclusivas de ser socio:</h2>
 
-<p><b>Ahorro en cada salida:</b> Organizamos al menos ocho actividades de senderismo durante la temporada (de octubre a junio). 
-    Las rutas tienen un precio general de 10€ para socios (en lugar de 15€ para no socios). 
-    ¡Si vienes a varias excursiones, amortizas la cuota enseguida!</p>
+    <p><b>Seguro y tasas:</b> Incluye cobertura de seguro para todas las actividades. Los invitados no socios deben
+        abonar {{preciosTemporada.senderismo.seguroNoSocio || 'N/A'}}€ por el seguro de un día o presentar un documento
+        válido de su propio seguro en vigor con coberturas equivalentes.</p>
 
-<p><b>Rutas exclusivas:</b> Acceso a actividades y escapadas especiales organizadas únicamente para miembros del club.</p>
+    <p><b>Ahorro en cada salida:</b> Organizamos al menos ocho actividades de senderismo durante la temporada (de
+        octubre a junio). Las rutas, por lo general, tienen un precio de {{preciosTemporada.senderismo.diario.socio || 'N/A'}}€ para socios (en
+        lugar de {{preciosTemporada.senderismo.diario.noSocio || 'N/A'}}€ para no socios).
+        ¡Si vienes a varias excursiones, amortizas la cuota enseguida!</p>
 
-<p><b>Boletines informativos:</b> Recibirás en tu correo información detallada de nuestras próximas rutas, consejos técnicos y novedades del mundo de la montaña.</p>
+    <p><b>Rutas exclusivas:</b> Acceso a actividades y escapadas especiales organizadas únicamente para miembros del
+        club.</p>
 
-<p><b>Prueba el Unihockey gratis:</b> Disfruta de una semana completa de entrenamiento con uno de nuestros equipos de unihockey (floorball) y descubre un deporte divertido y dinámico.</p>
+    <p><b>Boletines informativos:</b> Recibirás en tu correo información detallada de nuestras próximas rutas, consejos
+        técnicos y novedades del mundo de la montaña.</p>
 
+    <p><b>Prueba el Unihockey gratis:</b> Disfruta de una semana completa de entrenamiento con uno de nuestros equipos
+        de unihockey (floorball) y descubre un deporte divertido y dinámico.</p>
 
-<h2>¿Cómo hacerte socio? </h2>
-
-
-<p>Para darte de alta solo debes realizar el pago de la cuota anual. 
-    Esta cuota te dará derecho inmediato a los precios reducidos y a todas las ventajas de la sección.</p>
-
-<p><b>Duración de la temporada:</b> La condición de socio es válida desde octubre hasta junio del año siguiente, 
-    coincidiendo con el calendario de la temporada deportiva escolar y federada.</p>
-
-
-<table class="simple-table style-top">
-    <tbody>
-        <tr>
-            <td class="cell cabecera_tabla" style="width: 25%;">
-                <div style="text-align:left;"><strong>Tipo de socio</strong></div>
-            </td>
-            <td class="cell cabecera_tabla" style="width: 13%;">
-                <div><strong>Cuota anual</strong></div>
-            </td>
-            <td class="cell cabecera_tabla" style="width: 55%;">
-                <div><strong>Observaciones</strong></div>
-            </td>
-        </tr>
-        <tr>
-            <td class="cell">
-                <div class="paragraph" style="text-align:left;">Miembro de la sección unihockey</div>
-            </td>
-            <td class="cell">
-                <div class="paragraph">Gratis</div>
-            </td>
-            <td class="cell">
-                <div class="paragraph">Jugadores, entrenadores y miembros de la junta directiva del CUF Las Rozas.
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td class="cell">
-                <div class="paragraph" style="text-align:left;">Familiar de participante de la sección de unihockey
-                </div>
-            </td>
-            <td class="cell">
-                <div class="paragraph">20 €</div>
-            </td>
-            <td class="cell">
-                <div class="paragraph">Padres, hermanos o hijos de los participantes de la sección de unihockey.</div>
-            </td>
-        </tr>
-        <tr>
-            <td class="cell">
-                <div class="paragraph" style="text-align:left;">Público General (Otros)</div>
-            </td>
-            <td class="cell">
-                <div class="paragraph">40 €</div>
-            </td>
-            <td class="cell">
-                <div class="paragraph">Si no estás vinculado al unihockey, ¡estamos encantados de que te unas a la familia del CUF Las Rozas!</div>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-
-<h2>¿Todo listo para empezar? </h2>
     
 
-<p>¡Te esperamos en la montaña! Haz clic en el siguiente enlace para rellenar el formulario de inscripción y realizar el pago de la temporada:</p>
+    <h2>¿Cómo hacerte socio? </h2>
 
-<button class="boton-enviar">Formulario de inscripción</button>
+
+    <p>Para darte de alta solo debes realizar el pago de la cuota anual.
+        Esta cuota te dará derecho inmediato a los precios reducidos y a todas las ventajas de la sección.</p>
+
+    <p><b>Duración de la temporada:</b> La condición de socio es válida desde octubre hasta junio del año siguiente,
+        coincidiendo con el calendario de la temporada deportiva escolar y federada.</p>
+
+
+    <table class="simple-table style-top">
+        <tbody>
+            <tr>
+                <td class="cell cabecera_tabla" style="width: 25%;">
+                    <div style="text-align:left;"><strong>Tipo de socio</strong></div>
+                </td>
+                <td class="cell cabecera_tabla" style="width: 13%;">
+                    <div><strong>Cuota anual</strong></div>
+                </td>
+                <td class="cell cabecera_tabla" style="width: 55%;">
+                    <div><strong>Observaciones</strong></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="cell">
+                    <div class="paragraph" style="text-align:left;">Miembro de la sección unihockey</div>
+                </td>
+                <td class="cell">
+                    <div class="paragraph">Gratis</div>
+                </td>
+                <td class="cell">
+                    <div class="paragraph">Jugadores, entrenadores y miembros de la junta directiva del CUF Las Rozas.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="cell">
+                    <div class="paragraph" style="text-align:left;">Familiar de participante de la sección de unihockey
+                    </div>
+                </td>
+                <td class="cell">
+                    <div class="paragraph">{{preciosTemporada.senderismo.anual.familiar || 'N/A'}} €</div>
+                </td>
+                <td class="cell">
+                    <div class="paragraph">Padres, hermanos o hijos de los participantes de la sección de unihockey.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="cell">
+                    <div class="paragraph" style="text-align:left;">Público General (Otros)</div>
+                </td>
+                <td class="cell">
+                    <div class="paragraph">{{preciosTemporada.senderismo.anual.general || 'N/A'}} €</div>
+                </td>
+                <td class="cell">
+                    <div class="paragraph">Si no estás vinculado al unihockey, ¡estamos encantados de que te unas a la
+                        familia del CUF Las Rozas!</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <h2>¿Todo listo para empezar? </h2>
+
+
+    <p>¡Te esperamos en la montaña! Haz clic en el siguiente enlace para rellenar el formulario de inscripción y
+        realizar el pago de la temporada:</p>
+
+    <button class="boton-enviar" routerLink="/senderismo/inscripcion">!Hazte socio!</button>
 
 </div>

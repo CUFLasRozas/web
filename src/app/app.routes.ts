@@ -10,6 +10,8 @@ import { InscripcionComponent } from './components/paginas/inscripcion/inscripci
 import { PromosComponent } from './components/paginas/promos/promos.component';
 import { SenderismoPpalComponent } from './components/paginas/senderismo/senderismo-ppal/senderismo-ppal.component';
 import { HazteSocioComponent } from './components/paginas/senderismo/hazte-socio/hazte-socio.component';
+import { FAQComponent } from './components/paginas/senderismo/FAQ/faq.component';
+import { VisorSalidaComponent } from './components/paginas/senderismo/visor-salida/visor-salida.component';
 
 export const routes: Routes = [
     { path: '', component: InicioComponent },
@@ -25,7 +27,10 @@ export const routes: Routes = [
         path: 'senderismo',
         children: [
             { path: '', component: SenderismoPpalComponent },
-            { path: 'socio', component: HazteSocioComponent }
+            { path: 'socio', component: HazteSocioComponent },
+            { path: 'faq', component: FAQComponent },
+            { path: 'excursion', component: VisorSalidaComponent },
+            { path: 'inscripcion', component: InscripcionComponent },
         ]
     },
     { path: '**', component: NotFoundComponent },

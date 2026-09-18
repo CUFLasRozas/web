@@ -3,6 +3,10 @@
     "src": "assets/image/Logo_CUF_Las_Rozas.webp",
     "alt": "Logo CUF Las Rozas"
   },
+  "logoSend": {
+    "src": "assets/image/Logo_CUF_Las_Rozas_Send.webp",
+    "alt": "Logo CUF Las Rozas Senderismo"
+  },
   "menu": [
     {
       "link": "/historia",

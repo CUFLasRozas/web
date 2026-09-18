@@ -1,0 +1,11 @@
+<div class="contenedor-excursion">
+
+    <a routerLink="/senderismo"><strong>Volver</strong></a> | <a routerLink="/">Inicio</a> > <a
+        routerLink="/senderismo">Senderismo</a> > <strong>Info excursión</strong>
+
+  @if (htmlContenido) {
+    <div [innerHTML]="htmlContenido"></div>
+  } @else {
+    <p>Cargando los detalles de la ruta...</p>
+  }
+</div>

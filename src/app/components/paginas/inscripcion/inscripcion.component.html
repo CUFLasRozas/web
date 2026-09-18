@@ -1,14 +1,14 @@
 <div class="inscripcion">
-    @if (precios_temporada) {
+    @if (precios_temporada && !esSenderismo()) {
     <h1>Inscripción temporada {{precios_temporada.temporada}}</h1>
     } @else {
-    <h1>Inscripción</h1>
+    <h1>Inscripción Senderismo y Naturaleza</h1>
     }
 
     <p>¡Bienvenido al Club! Necesitamos que nos rellenes los siguientes datos para poder inscribirte como miembro.</p>
 
     <form [formGroup]="inscripcion" (ngSubmit)="onSubmit()">
-        <h3>Datos del jugador</h3>
+        <h3>Datos del participante</h3>
         <p> En el caso de los menores de edad, los campos teléfono y email serán los del menor y no serán obligatorios.
         </p>
         <div class="row">
@@ -107,7 +107,7 @@
 
 
         <h3>Datos de persona de contacto</h3>
-        <p>Todo jugador debe tener al menos una persona de contacto.</p>
+        <p>Todo participante debe tener al menos una persona de contacto.</p>
         <p>En el caso de los menores de edad dicha persona de contacto ha de ser padre, madre o tutor legal.</p>
 
 
@@ -163,6 +163,27 @@
             [disabled]="contactos.at(contactos.length - 1).invalid">Añadir otro contacto</button>
             }
 
+            @if(esSenderismo()) {
+            <h3>Tipo de socio</h3>
+
+            <div class="">
+                <label for="radioSocio">Soy familiar de participante de la sección de senderismo y naturaleza:</label>
+                <div class="contenedor-radioPadron">
+                    <input class="inputPadron" formControlName="socio" type="radio" name="socio" id="si" value="false">
+                    Si {{precios_temporada.senderismo.anual.familiar}}€
+                    <input class="inputPadron" formControlName="socio" type="radio" name="socio" id="no" value="true">
+                    No {{precios_temporada.senderismo.anual.general}}€
+                </div>
+                @if((inscripcion.controls['socio'].touched || submitted) &&
+                inscripcion.controls['socio'].hasError('required')) {
+                <p class="error">Debe seleccionar una opción</p>
+                }
+            </div>
+
+            <p>(Se consideran familiares los padres, hermanos e hijos de jugadores, entrenadores o miembros de la junta
+                directiva de la sección de unihockey)</p>
+
+            }@else {
             <h3>Datos del equipo</h3>
             <div class="row" id="datosEquipo">
                 <div class="contenedor_datos">
@@ -226,6 +247,9 @@
                 }
             </div>
             }
+            }
+
+
 
             <div class="contenedor_autorizacion">
                 <label for="radioFotos">Autorizo a la publicación de imágenes:</label>
@@ -365,10 +389,7 @@
             </div>
     </form>
 
-    <cuflr-modal-inscripcion 
-        [mostrar]="mostrarModal"
-        [estado]="estadoModal"
-        (descargarFicha)="descargarFicha()"
+    <cuflr-modal-inscripcion [mostrar]="mostrarModal" [estado]="estadoModal" (descargarFicha)="descargarFicha()"
         (cerrarModal)="cerrarModal()">
     </cuflr-modal-inscripcion>
 

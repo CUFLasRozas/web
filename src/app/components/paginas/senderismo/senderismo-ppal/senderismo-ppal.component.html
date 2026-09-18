@@ -1,9 +1,9 @@
 <div class="senderismo-ppal">
-<h1>Senderismo y Montaña CUF Las Rozas</h1>
+<h1>Senderismo y Naturaleza CUF Las Rozas</h1>
 
 <h2>¡Bienvenido!</h2>
 
-<p>En la sección de Senderismo y Montaña CUF Las Rozas te invitamos a descubrir rutas de gran belleza en nuestro entorno. 
+<p>En la sección de Senderismo y Naturaleza CUF Las Rozas te invitamos a descubrir rutas de gran belleza en nuestro entorno. 
     Diseñamos excursiones pensadas para disfrutar en familia, con amigos y adaptadas a diferentes edades y condiciones físicas. 
     ¡Hay una ruta ideal para ti!</p>
 
@@ -26,40 +26,58 @@
 <!-- <hr> -->
 <h2>Proximas actividades</h2>
 
-@if (true) {
-    <div class="actividad">  
-        <img src="assets/image/senderismo/cascada-purgatorio.jpg" alt="Cascada del Purgatorio" class="actividad-img"> 
-    <h5>📅 Domingo 20 de febrero. Sierra de Guadarrama (Dif. Alta-Solo Socios)</h5>
-    <h3>Cascada del Purgatorio</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, habitasse cursus turpis feugiat lectus augue hac, nulla
-        potenti tincidunt litora pretium penatibus. Sociosqu nec senectus rutrum nostra id aliquet, inceptos eleifend
-        malesuada fringilla risus etiam enim, fusce ad ridiculus cum libero.</p>
-    <hr>
-    inscribirme->
+@if (listadoSalidas.length > 0) {
 
-</div>
-
-<div class="actividad">
-        <img src="assets/image/senderismo/cascada-purgatorio.jpg" alt="Cresterío de Siete Picos" class="actividad-img"> 
-    <h3>Cascadas del Purgatorio</h3>
-    <h5>Domingo 27 de febrero. Sierra de Guadarrama (Dif. Baja-Socios y no Socios)</h5>
-    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, habitasse cursus turpis feugiat lectus augue hac, nulla
-        potenti tincidunt litora pretium penatibus. Sociosqu nec senectus rutrum nostra id aliquet, inceptos eleifend
-        malesuada fringilla risus etiam enim, fusce ad ridiculus cum libero.</p>
-</div>
-
-
-<div class="actividad">
-        <img src="assets/image/senderismo/cascada-purgatorio.jpg" alt="Cresterío de Siete Picos" class="actividad-img"> 
-    <h3>Circular a la Pedriza</h3>
-    <h5>Domingo 04 de Marzo. Sierra de Guadarrama (Dif. Alta-Socios y no Socios)</h5>
-    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, habitasse cursus turpis feugiat lectus augue hac, nulla
-        potenti tincidunt litora pretium penatibus. Sociosqu nec senectus rutrum nostra id aliquet, inceptos eleifend
-        malesuada fringilla risus etiam enim, fusce ad ridiculus cum libero.</p>
-</div>
-}@else {
-    <p>Estamos preparando nuestro calendario de próximas salidas para la temporada. ¡Muy pronto publicaremos las fechas y destinos!</p>
-}
  
+
+<div class="galeria-actividades">
+
+    @for (salida of listadoSalidas; track $index) {
+        <div class="actividad">
+        <div class="foto-send">
+            <img  src="{{salida.imagen}}" alt="{{salida.alt}}">
+            <div class="dificultad">
+                <span [style.color]="salida.color">(Dif. {{salida.dificultad}})</span>
+            </div>
+        </div>
+        
+        <h3>{{salida.titulo}}</h3>
+
+        <h5>📅 {{salida.fecha}}. {{salida.lugar}}</h5>
+        
+        
+        <p>{{salida.descripcion}}</p>
+        <hr>
+        <button class="mas-detalles-btn" routerLink="/senderismo/excursion" [queryParams]="{ archivo: salida.urlDetalles }">
+            <span>Más detalles</span>
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </div>    
+ }   
+
+</div>
+
+
+
+}@else {
+<p>Estamos preparando nuestro calendario de próximas salidas para la temporada. ¡Muy pronto publicaremos las fechas y
+    destinos!</p>
+}
+
+
+<h1>Preguntas Frecuentes</h1>
+
+@if (listadoFAQ.length > 0) {
+    @for (seccion of listadoFAQ; track $index) {
+        <h3>{{seccion.preguntas[0].pregunta}}</h3>
+        <p>{{seccion.preguntas[0].respuesta}}</p>
+        <h3>{{seccion.preguntas[1].pregunta}}</h3>
+        <p>{{seccion.preguntas[1].respuesta}}</p>
+    }
+}
+
+<button class="faq-btn" routerLink="/senderismo/faq">
+    ver todas las preguntas frecuentes
+</button>
 
 </div>
