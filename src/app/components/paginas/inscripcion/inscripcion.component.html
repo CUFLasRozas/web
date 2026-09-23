@@ -2,7 +2,9 @@
     @if (precios_temporada && !esSenderismo()) {
     <h1>Inscripción temporada {{precios_temporada.temporada}}</h1>
     } @else {
-    <h1>Inscripción Senderismo y Naturaleza</h1>
+        <a routerLink="/senderismo"><strong>Volver</strong></a> | <a routerLink="/">Inicio</a> > <a
+        routerLink="/senderismo">Senderismo</a> > <strong>Inscripción</strong>
+        <h1>Inscripción Senderismo y Naturaleza</h1>
     }
 
     <p>¡Bienvenido al Club! Necesitamos que nos rellenes los siguientes datos para poder inscribirte como miembro.</p>
@@ -170,9 +172,9 @@
                 <label for="radioSocio">Soy familiar de participante de la sección de senderismo y naturaleza:</label>
                 <div class="contenedor-radioPadron">
                     <input class="inputPadron" formControlName="socio" type="radio" name="socio" id="si" value="false">
-                    Si {{precios_temporada.senderismo.anual.familiar}}€
+                    Si {{precios_temporada.senderismo.anual.familiar || 'N/A'}}€
                     <input class="inputPadron" formControlName="socio" type="radio" name="socio" id="no" value="true">
-                    No {{precios_temporada.senderismo.anual.general}}€
+                    No {{precios_temporada.senderismo.anual.general || 'N/A'}}€
                 </div>
                 @if((inscripcion.controls['socio'].touched || submitted) &&
                 inscripcion.controls['socio'].hasError('required')) {

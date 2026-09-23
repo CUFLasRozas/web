@@ -335,19 +335,24 @@ export class InscripcionComponent {
       }
 
       if (this.esSenderismo()) {
-        // Datos de senderismo: tipo de socio y precio
-        const esFamiliar = formValue.socio === 'false'; // value="false" = Familiar
-        setField('tiposocio', esFamiliar ? 'Familiar' : 'General');
-        // Marcar el radio button en el PDF
-        try {
-          const radioField = form.getRadioGroup('socio');
-          radioField.select(esFamiliar ? 'familiar' : 'general');
-        } catch (e) {
-          // Si no existe como radio group, intentamos como campo de texto
-          const precioSenderismo = esFamiliar
-            ? this.precios_temporada?.senderismo?.anual?.familiar
-            : this.precios_temporada?.senderismo?.anual?.general;
-          setField('socio', esFamiliar ? `Familiar - ${precioSenderismo}€` : `General - ${precioSenderismo}€`);
+        // Evaluamos si el usuario seleccionó la opción Familiar
+        const esFamiliar = formValue.socio === 'false';
+
+        // 1. Obtenemos los precios desde tu objeto estructurado PreciosTemporada
+        const precioFamiliar = this.precios_temporada?.senderismo?.anual?.familiar;
+        const precioGeneral = this.precios_temporada?.senderismo?.anual?.general;
+
+        // 2. Volcamos los precios en sus respectivos campos de texto del PDF
+        setField('precio_fam_socio_si', precioFamiliar !== undefined ? `${precioFamiliar}€` : '');
+        setField('precio_fam_socio_no', precioGeneral !== undefined ? `${precioGeneral}€` : '');
+
+        // 3. Marcamos con una 'X' la opción elegida en el formulario y vaciamos la otra
+        if (esFamiliar) {
+          setField('radio_fam_socio_si', 'X');
+          setField('radio_fam_socio_no', '');
+        } else {
+          setField('radio_fam_socio_si', '');
+          setField('radio_fam_socio_no', 'X');
         }
       } else {
         // Datos del equipo (unihockey)

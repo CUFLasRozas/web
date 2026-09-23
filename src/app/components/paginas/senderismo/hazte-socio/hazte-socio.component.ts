@@ -12,7 +12,7 @@ import { UtilesService } from '../../../../service/utiles/utiles.service';
 })
 export class HazteSocioComponent {
   
-    preciosTemporada!: PreciosTemporada;
+    preciosTemporada: PreciosTemporada | undefined = undefined;
 
       constructor(
         private ultilesService: UtilesService

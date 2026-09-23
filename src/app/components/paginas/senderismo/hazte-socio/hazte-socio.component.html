@@ -12,12 +12,12 @@
     <h2>Ventajas exclusivas de ser socio:</h2>
 
     <p><b>Seguro y tasas:</b> Incluye cobertura de seguro para todas las actividades. Los invitados no socios deben
-        abonar {{preciosTemporada.senderismo.seguroNoSocio || 'N/A'}}€ por el seguro de un día o presentar un documento
+        abonar {{preciosTemporada?.senderismo?.seguroNoSocio || 'N/A'}}€ por el seguro de un día o presentar un documento
         válido de su propio seguro en vigor con coberturas equivalentes.</p>
 
     <p><b>Ahorro en cada salida:</b> Organizamos al menos ocho actividades de senderismo durante la temporada (de
-        octubre a junio). Las rutas, por lo general, tienen un precio de {{preciosTemporada.senderismo.diario.socio || 'N/A'}}€ para socios (en
-        lugar de {{preciosTemporada.senderismo.diario.noSocio || 'N/A'}}€ para no socios).
+        octubre a junio). Las rutas, por lo general, tienen un precio de {{preciosTemporada?.senderismo?.diario?.socio || 'N/A'}}€ para socios (en
+        lugar de {{preciosTemporada?.senderismo?.diario?.noSocio || 'N/A'}}€ para no socios).
         ¡Si vienes a varias excursiones, amortizas la cuota enseguida!</p>
 
     <p><b>Rutas exclusivas:</b> Acceso a actividades y escapadas especiales organizadas únicamente para miembros del
@@ -72,7 +72,7 @@
                     </div>
                 </td>
                 <td class="cell">
-                    <div class="paragraph">{{preciosTemporada.senderismo.anual.familiar || 'N/A'}} €</div>
+                    <div class="paragraph">{{preciosTemporada?.senderismo?.anual?.familiar || 'N/A'}} €</div>
                 </td>
                 <td class="cell">
                     <div class="paragraph">Padres, hermanos o hijos de los participantes de la sección de unihockey.
@@ -84,7 +84,7 @@
                     <div class="paragraph" style="text-align:left;">Público General (Otros)</div>
                 </td>
                 <td class="cell">
-                    <div class="paragraph">{{preciosTemporada.senderismo.anual.general || 'N/A'}} €</div>
+                    <div class="paragraph">{{preciosTemporada?.senderismo?.anual?.general || 'N/A'}} €</div>
                 </td>
                 <td class="cell">
                     <div class="paragraph">Si no estás vinculado al unihockey, ¡estamos encantados de que te unas a la
