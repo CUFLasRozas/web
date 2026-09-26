@@ -4,11 +4,12 @@ import { UtilesService } from '../../../service/utiles/utiles.service';
 import { PreciosTemporada } from '../../../models/precios_temporada';
 import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 import { ModalInscripcionComponent } from './modal-inscripcion/modal-inscripcion.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'cuflr-inscripcion',
   standalone: true,
-  imports: [ReactiveFormsModule, ModalInscripcionComponent],
+  imports: [ReactiveFormsModule, ModalInscripcionComponent,RouterLink],
   templateUrl: './inscripcion.component.html',
   styleUrl: './inscripcion.component.css',
 })

@@ -1,83 +1,83 @@
 <div class="senderismo-ppal">
-<h1>Senderismo y Naturaleza CUF Las Rozas</h1>
+    <div class="hero-card">
+        <span class="section-badge">CUF Las Rozas</span>
+        <h1>Senderismo y Naturaleza</h1>
+        <h2>¡Bienvenido!</h2>
+        <p>En la sección de Senderismo y Naturaleza CUF Las Rozas te invitamos a descubrir rutas de gran belleza en nuestro entorno. 
+            Diseñamos excursiones pensadas para disfrutar en familia, con amigos y adaptadas a diferentes edades y condiciones físicas. 
+            ¡Hay una ruta ideal para ti!</p>
+        <p>Más que caminar, nuestro objetivo es compartir. En cada salida fomentamos el compañerismo, la vida sana y el respeto absoluto 
+            por el medio ambiente, siempre en un ambiente cercano y divertido.</p>
+    </div>
 
-<h2>¡Bienvenido!</h2>
-
-<p>En la sección de Senderismo y Naturaleza CUF Las Rozas te invitamos a descubrir rutas de gran belleza en nuestro entorno. 
-    Diseñamos excursiones pensadas para disfrutar en familia, con amigos y adaptadas a diferentes edades y condiciones físicas. 
-    ¡Hay una ruta ideal para ti!</p>
-
-<p>Más que caminar, nuestro objetivo es compartir. En cada salida fomentamos el compañerismo, la vida sana y el respeto absoluto 
-    por el medio ambiente, siempre en un ambiente cercano y divertido.</p>
-
-<!-- <hr> -->
-
-<h2>¿Quieres sumarte al Club? ¡Hazte Socio! </h2>
-
-<p>Cualquiera puede participar en nuestras excursiones, pero si te haces miembro del Club disfrutarás de grandes ventajas:<br><br>
-    - Descuentos exclusivos en los precios de todas las salidas y excursiones.<br>
-    - Prioridad de reserva en rutas con plazas limitadas.<br>
-    - Actividades y escapadas exclusivas solo para socios durante el año.<br>
-    - Acceso a ventajas y descuentos con Nexos.</p>
-
-<p>Puedes ver toda la información en el siguiente enlace <a routerLink="./socio"><strong>ver Hazte Socio</strong></a>
-</p>
-
-<!-- <hr> -->
-<h2>Proximas actividades</h2>
-
-@if (listadoSalidas.length > 0) {
-
- 
-
-<div class="galeria-actividades">
-
-    @for (salida of listadoSalidas; track $index) {
-        <div class="actividad">
-        <div class="foto-send">
-            <img  src="{{salida.imagen}}" alt="{{salida.alt}}">
-            <div class="dificultad">
-                <span [style.color]="salida.color">(Dif. {{salida.dificultad}})</span>
+    <div class="socio-banner-card">
+        <div class="socio-banner-content">
+            <h2>¿Quieres sumarte al Club? ¡Hazte Socio! </h2>
+            <p>Cualquiera puede participar en nuestras excursiones, pero si te haces miembro del Club disfrutarás de grandes ventajas:<br><br>
+                - Descuentos exclusivos en los precios de todas las salidas y excursiones.<br>
+                - Prioridad de reserva en rutas con plazas limitadas.<br>
+                - Actividades y escapadas exclusivas solo para socios durante el año.<br>
+                - Acceso a ventajas y descuentos con Nexos.</p>
+            <div class="socio-action">
+                <a class="boton-socio-link" routerLink="./socio"><strong>Ver Hazte Socio &rarr;</strong></a>
             </div>
         </div>
-        
-        <h3>{{salida.titulo}}</h3>
+    </div>
 
-        <h5>📅 {{salida.fecha}}. {{salida.lugar}}</h5>
-        
-        
-        <p>{{salida.descripcion}}</p>
-        <hr>
-        <button class="mas-detalles-btn" routerLink="/senderismo/excursion" [queryParams]="{ archivo: salida.urlDetalles }">
-            <span>Más detalles</span>
-            <i class="fa-solid fa-arrow-right"></i>
-        </button>
-    </div>    
- }   
+    <div class="actividades-section">
+        <h2>Próximas actividades</h2>
 
-</div>
+        @if (listadoSalidas.length > 0) {
+        <div class="galeria-actividades">
+            @for (salida of listadoSalidas; track $index) {
+            <div class="actividad">
+                <div class="foto-send">
+                    <img src="{{salida.imagen}}" alt="{{salida.alt}}">
+                    <div class="dificultad">
+                        <span [style.color]="salida.color">(Dif. {{salida.dificultad}})</span>
+                    </div>
+                </div>
+                <div class="actividad-info">
+                    <h3>{{salida.titulo}}</h3>
+                    <h5>📅 {{salida.fecha}}. {{salida.lugar}}</h5>
+                    <p>{{salida.descripcion}}</p>
+                </div>
+                <div class="actividad-footer">
+                    <button class="mas-detalles-btn" routerLink="/senderismo/excursion" [queryParams]="{ archivo: salida.urlDetalles }">
+                        <span>Más detalles</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>    
+            }   
+        </div>
+        } @else {
+        <div class="empty-state">
+            <p>En estos momentos estamos trabajando para tener el calendario de próximas actividades para la temporada. ¡Muy pronto publicaremos las fechas y destinos!</p>
+        </div>
+        }
+    </div>
 
+    <div class="faq-preview-card">
+        <h2>Preguntas Frecuentes</h2>
 
+        @if (listadoFAQ.length > 0) {
+            @for (seccion of listadoFAQ; track $index) {
+                <div class="faq-preview-item">
+                    <h3>{{seccion.preguntas[0].pregunta}}</h3>
+                    <p>{{seccion.preguntas[0].respuesta}}</p>
+                </div>
+                <div class="faq-preview-item">
+                    <h3>{{seccion.preguntas[1].pregunta}}</h3>
+                    <p>{{seccion.preguntas[1].respuesta}}</p>
+                </div>
+            }
+        }
 
-}@else {
-<p>Estamos preparando nuestro calendario de próximas salidas para la temporada. ¡Muy pronto publicaremos las fechas y
-    destinos!</p>
-}
-
-
-<h1>Preguntas Frecuentes</h1>
-
-@if (listadoFAQ.length > 0) {
-    @for (seccion of listadoFAQ; track $index) {
-        <h3>{{seccion.preguntas[0].pregunta}}</h3>
-        <p>{{seccion.preguntas[0].respuesta}}</p>
-        <h3>{{seccion.preguntas[1].pregunta}}</h3>
-        <p>{{seccion.preguntas[1].respuesta}}</p>
-    }
-}
-
-<button class="faq-btn" routerLink="/senderismo/faq">
-    ver todas las preguntas frecuentes
-</button>
-
+        <div class="faq-action">
+            <button class="faq-btn" routerLink="/senderismo/faq">
+                Ver todas las preguntas frecuentes &rarr;
+            </button>
+        </div>
+    </div>
 </div>

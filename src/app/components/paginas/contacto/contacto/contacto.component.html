@@ -1,23 +1,25 @@
 <div class="contacto-general">
-    <div class="contacta">
+    <div class="contacto-card contacta">
         <h1>Contacta con nosotros</h1>
         <p>Si estás interesado en ponerte en contacto con nosotros no dudes en escribirnos un correo electrónico,
             llamarnos o enviarnos un Whatsapp:</p>
 
-        <div class="telefono">
-            <i class="fa-solid fa-phone fa-xl"></i><a href="tel:{{datos_club.movil}}"> {{datos_club.movil}}</a>
-        </div>
+        <div class="metodos-contacto">
+            <div class="metodo-item telefono">
+                <i class="fa-solid fa-phone fa-xl"></i><a href="tel:{{datos_club.movil}}"> {{datos_club.movil}}</a>
+            </div>
 
-        <div class="whatsapp">
-            <i class="fa-brands fa-whatsapp fa-xl"></i><a href="tel:{{datos_club.movil}}"> {{datos_club.movil}}</a> 
-        </div>
+            <div class="metodo-item whatsapp">
+                <i class="fa-brands fa-whatsapp fa-xl"></i><a href="tel:{{datos_club.movil}}"> {{datos_club.movil}}</a> 
+            </div>
 
-        <div class="email">
-            <i class="fa-regular fa-envelope fa-xl"></i><a href="mailto:{{datos_club.email}}"> {{datos_club.email}}</a>
+            <div class="metodo-item email">
+                <i class="fa-regular fa-envelope fa-xl"></i><a href="mailto:{{datos_club.email}}"> {{datos_club.email}}</a>
+            </div>
         </div>
     </div>
 
-    <div class="encuentranos">
+    <div class="contacto-card encuentranos">
         <h1>Encuéntranos</h1>
         <div class="contenedor-iframe-map">
             <iframe
@@ -25,6 +27,5 @@
            class="iframe-map" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        
     </div>
 </div>

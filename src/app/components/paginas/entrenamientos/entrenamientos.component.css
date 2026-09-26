@@ -1,52 +1,214 @@
+/* ==========================================================================
+   ENTRENAMIENTOS COMPONENT STYLES - Mobile-First UI/UX
+   ========================================================================== */
+
+:host {
+  --primary: #F75A0B;
+  --primary-hover: #d94800;
+  --primary-light: rgba(247, 90, 11, 0.08);
+  --dark: #111827;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-subtle: #f1f5f9;
+  --border-color: #e2e8f0;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --transition: all 0.22s ease;
+}
+
 .entrenamientos {
-    padding: 20px;
-
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px 12px;
+  background-color: var(--bg-page);
+  min-height: 100vh;
+  animation: pageFade 0.4s ease-out;
+  box-sizing: border-box;
 }
 
-.mapas-entrenamientos { 
-    display: flex;   
-    flex-wrap: wrap;
-    justify-content: space-evenly; 
+@keyframes pageFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-a {
-  font-weight: bold;
+.entrenos-header {
+  background: var(--bg-card);
+  padding: 24px 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
 }
 
-.olivos, .entremontes {
-    width: 40%;
+.entrenos-header h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 0 0 12px;
+  line-height: 1.25;
 }
 
-.iframe-olivos, .iframe-entremontes {
-    width:100%;
-     height:300px
+.entrenos-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.entrenos-card {
+  background: var(--bg-card);
+  padding: 24px 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+}
+
+.grid-equipos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.equipo-card {
+  background-color: var(--bg-subtle);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--primary);
+  transition: var(--transition);
+}
+
+.equipo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
 }
 
 .li-entrenos {
-    margin-top: 15px;
-    display: flex;
-    align-items: center;
+  font-size: 1.05rem;
+  color: var(--dark);
+  margin: 0 0 10px;
 }
 
 .ul-dias {
-    list-style-type: none;
-    margin: 5px;
-    padding: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ul-dias li {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
 }
 
 .logo-camiseta {
-    width: 14px;
-    height: 14px;
-    margin-left: 5px;
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
 }
 
-@media (max-width: 768px) {
-    .olivos, .entremontes {
-        width: 100%;
-    }
-  
-    .iframe-olivos, .iframe-entremontes {
-         height:250px
-    }
-  }
+.contacto-banner {
+  background: linear-gradient(135deg, #fff7ed 0%, #ffffff 100%);
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid #ffedd5;
+  border-left: 5px solid var(--primary);
+  margin-bottom: 24px;
+}
 
+.contacto-banner p {
+  margin: 0;
+  color: #7c2d12;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btn-contacto-link {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: var(--transition);
+}
+
+.btn-contacto-link:hover {
+  color: var(--primary-hover);
+}
+
+.mapas-card {
+  background: var(--bg-card);
+  padding: 24px 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.mapas-card h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mapas-card h2::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 20px;
+  background-color: var(--primary);
+  border-radius: 4px;
+}
+
+.mapas-entrenamientos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.olivos h3, .entremontes h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 10px;
+}
+
+.map-wrapper {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.iframe-olivos, .iframe-entremontes {
+  width: 100%;
+  height: 280px;
+  border: 0;
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .entrenamientos { padding: 24px 20px; }
+  .entrenos-header, .entrenos-card, .mapas-card { padding: 28px 24px; }
+  .grid-equipos { grid-template-columns: repeat(2, 1fr); }
+  .mapas-entrenamientos { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .entrenamientos { padding: 36px 32px; }
+  .grid-equipos { grid-template-columns: repeat(3, 1fr); }
+}

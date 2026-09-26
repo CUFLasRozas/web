@@ -1,11 +1,17 @@
 <div class="contenedor-excursion">
+    <div class="excursion-nav">
+        <a routerLink="/senderismo"><strong>Volver</strong></a> | <a routerLink="/">Inicio</a> &gt; <a
+            routerLink="/senderismo">Senderismo</a> &gt; <strong>Info actividad</strong>
+    </div>
 
-    <a routerLink="/senderismo"><strong>Volver</strong></a> | <a routerLink="/">Inicio</a> > <a
-        routerLink="/senderismo">Senderismo</a> > <strong>Info excursión</strong>
-
-  @if (htmlContenido) {
-    <div [innerHTML]="htmlContenido"></div>
-  } @else {
-    <p>Cargando los detalles de la ruta...</p>
-  }
+    <div class="excursion-card">
+        @if (htmlContenido) {
+        <div class="excursion-body" [innerHTML]="htmlContenido"></div>
+        } @else {
+        <div class="excursion-loading">
+            <div class="spinner"></div>
+            <p>Cargando los detalles de la ruta...</p>
+        </div>
+        }
+    </div>
 </div>

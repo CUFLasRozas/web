@@ -1,45 +1,143 @@
+/* ==========================================================================
+   HISTORIA COMPONENT STYLES - Mobile-First UI/UX
+   ========================================================================== */
+
+:host {
+  --primary: #F75A0B;
+  --dark: #111827;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-subtle: #f1f5f9;
+  --border-color: #e2e8f0;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --transition: all 0.22s ease;
+}
+
 .historia {
-    padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px 12px;
+  background-color: var(--bg-page);
+  min-height: 100vh;
+  animation: pageFade 0.4s ease-out;
+  box-sizing: border-box;
 }
 
-h1 {    
-    text-align: center;
+@keyframes pageFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-p {
-    padding: 0px 5%;
+.historia-card, .seccion-junta-card {
+  background: var(--bg-card);
+  padding: 24px 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
 }
 
-.contenedor-junta{
-    display: flex;
-    justify-content: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+.historia-card h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 0 0 16px;
+  line-height: 1.25;
+}
+
+.historia-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin: 0 0 14px;
+  padding: 0;
+}
+
+.seccion-junta-card h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.seccion-junta-card h2::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 20px;
+  background-color: var(--primary);
+  border-radius: 4px;
+}
+
+/* Contenedor flexible centrado para que las tarjetas de miembros se centren cuando no llenen la fila */
+.contenedor-junta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
 }
 
 .miembro {
-    width: 28%;
-    height: auto;
-    background-color: rgba(255, 255, 255, 0.2) ;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 1%;
-    margin: 10px;
-    text-align: center;
+  flex: 0 1 260px;
+  width: 100%;
+  max-width: 300px;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 20px 16px;
+  margin: 0;
+  text-align: center;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
 }
 
-h4 {
-    color: #444444;
+.miembro:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  border-color: #cbd5e1;
 }
 
 .img-junta {
-    width: 150px;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-@media (max-width: 768px) {
-    .miembro {
-        width: 100%;
-        padding: 5%;
-    }
+.miembro h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 4px;
 }
 
+.miembro h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0;
+}
+
+@media (min-width: 640px) {
+  .historia { padding: 24px 20px; }
+  .historia-card, .seccion-junta-card { padding: 32px 24px; }
+  .historia-card h1 { font-size: 1.9rem; }
+}
+
+@media (min-width: 900px) {
+  .historia { padding: 36px 32px; }
+}

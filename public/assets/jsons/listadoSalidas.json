@@ -7,7 +7,7 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipiscing elit, habitasse cursus turpis feugiat lectus augue hac, nulla potenti tincidunt litora pretium penatibus.",
         "imagen": "assets/image/senderismo/cascada-purgatorio.jpg",
         "alt": "Circular cerro del Puerco",
-        "urlDetalles": "siete_picos"
+        "urlDetalles": "plantilla"
     },
     {
         "titulo": "Antiguos decorados de cine golden city",
@@ -18,7 +18,7 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipiscing elit, habitasse cursus turpis feugiat lectus augue hac, nulla potenti tincidunt litora pretium penatibus.",
         "imagen": "assets/image/senderismo/cascada-purgatorio.jpg",
         "alt": "Circular cerro del Puerco",
-        "urlDetalles": "siete_picos"
+        "urlDetalles": "plantilla"
     },
     {
         "titulo": "Cascada del Purgatorio",
@@ -29,7 +29,7 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipiscing elit, habitasse cursus turpis feugiat lectus augue hac, nulla potenti tincidunt litora pretium penatibus.",
         "imagen": "assets/image/senderismo/cascada-purgatorio.jpg",
         "alt": "Cascada del Purgatorio",
-        "urlDetalles": "siete_picos"
+        "urlDetalles": "plantilla"
     },
     {
         "titulo": "Circular a la Pedriza",
@@ -40,7 +40,7 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipiscing elit, habitasse cursus turpis feugiat lectus augue hac, nulla potenti tincidunt litora pretium penatibus.",
         "imagen": "assets/image/senderismo/cascada-purgatorio.jpg",
         "alt": "Circular a la Pedriza",
-        "urlDetalles": "siete_picos"
+        "urlDetalles": "plantilla"
     },
     {
         "titulo": "Circular cerro del Puerco",
@@ -51,27 +51,27 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipiscing elit, habitasse cursus turpis feugiat lectus augue hac, nulla potenti tincidunt litora pretium penatibus.",
         "imagen": "assets/image/senderismo/cascada-purgatorio.jpg",
         "alt": "Circular cerro del Puerco",
-        "urlDetalles": "siete_picos"
+        "urlDetalles": "plantilla"
     },{
         "titulo": "Pesquerías Reales",
         "fecha": "Sabado 20 de mayo",
         "lugar": "Sierra de Guadarrama",
         "dificultad": "Baja-Socios y no Socios",
-        "color": "verde",
+        "color": "green",
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipiscing elit, habitasse cursus turpis feugiat lectus augue hac, nulla potenti tincidunt litora pretium penatibus.",
         "imagen": "assets/image/senderismo/cascada-purgatorio.jpg",
         "alt": "Pesquerías Reales",
-        "urlDetalles": "siete_picos"
+        "urlDetalles": "plantilla"
     },
     {
         "titulo": "Laguna del Campillo",
         "fecha": "Junio 04 de Marzo",
         "lugar": "Rivas Vaciamadrid",
         "dificultad": "Baja-Socios y no Socios",
-        "color": "verde",
+        "color": "green",
         "descripcion": "Lorem ipsum dolor sit amet consectetur adipiscing elit, habitasse cursus turpis feugiat lectus augue hac, nulla potenti tincidunt litora pretium penatibus.",
         "imagen": "assets/image/senderismo/cascada-purgatorio.jpg",
-        "alt": "Circular a la Pedriza",
-        "urlDetalles": "siete_picos"
+        "alt": "Laguna del Campillo",
+        "urlDetalles": "plantilla"
     }
 ]

@@ -1,40 +1,165 @@
-.titulo_inicial {
-    display: flex;
-    justify-content: center;
-    font-size: 25px;
-    text-align: center;
+/* ==========================================================================
+   INICIO COMPONENT STYLES - Mobile-First UI/UX
+   ========================================================================== */
+
+:host {
+  --primary: #F75A0B;
+  --primary-hover: #d94800;
+  --primary-light: rgba(247, 90, 11, 0.08);
+  --dark: #111827;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --border-color: #e2e8f0;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --transition: all 0.22s ease;
+}
+
+.inicio-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px 12px;
+  background-color: var(--bg-page);
+  min-height: 100vh;
+  animation: pageFade 0.4s ease-out;
+  box-sizing: border-box;
+}
+
+@keyframes pageFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-header {
+  text-align: center;
+  margin-bottom: 24px;
+  padding: 24px 16px;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.club-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary);
+  background-color: var(--primary-light);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.hero-header h1 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin: 4px 0 0;
+  line-height: 1.3;
+}
+
+.preinscripcion-card {
+  background: linear-gradient(135deg, #ffffff 0%, #fff7ed 100%);
+  padding: 24px 18px;
+  margin: 0 0 28px;
+  border-radius: var(--radius-lg);
+  border: 1px solid #ffedd5;
+  border-left: 5px solid var(--primary);
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.preinscripcion-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: var(--primary);
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.preinscripcion-card h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #9a3412;
+  margin: 0 0 12px;
+  line-height: 1.35;
+}
+
+.preinscripcion-card p {
+  color: #7c2d12;
+  font-size: 0.925rem;
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+
+.pasos-inscripcion {
+  padding-left: 20px;
+  margin: 12px 0 16px;
+  color: #7c2d12;
+}
+
+.pasos-inscripcion li {
+  margin-bottom: 8px;
+  font-size: 0.925rem;
+  line-height: 1.5;
+}
+
+.link-ficha {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: var(--transition);
+}
+
+.link-ficha:hover {
+  color: var(--primary-hover);
+}
+
+.nota-final {
+  font-size: 0.875rem !important;
+  font-style: italic;
+  margin-bottom: 0 !important;
 }
 
 .imagen_central {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0 32px;
 }
 
 .logo_principal {
-    width: 50%;
-    height: auto;
-    object-fit: contain;
+  width: 60%;
+  max-width: 360px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
+  transition: transform 0.3s ease;
 }
 
-
-@media (max-width: 768px) {
-    .titulo_inicial {
-        font-size: 20px;
-    }
-
-    .logo_principal {
-        width: 80%;
-    }
+.logo_principal:hover {
+  transform: scale(1.03);
 }
 
-.preinscripcion {
-    background-color: #f0f0f0;
-    padding: 20px;
-    margin: 20px auto;
-    border-radius: 10px;
-    max-width: 900px;
+@media (min-width: 640px) {
+  .inicio-container { padding: 24px 20px; }
+  .hero-header { padding: 32px 24px; }
+  .hero-header h1 { font-size: 1.8rem; }
+  .preinscripcion-card { padding: 32px 28px; }
+  .preinscripcion-card h2 { font-size: 1.45rem; }
 }
 
-.underline {
-    text-decoration: underline;
+@media (min-width: 900px) {
+  .inicio-container { padding: 36px 32px; }
+  .hero-header h1 { font-size: 2.1rem; }
 }

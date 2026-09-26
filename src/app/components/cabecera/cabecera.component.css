@@ -1,130 +1,165 @@
+/* ==========================================================================
+   CABECERA COMPONENT STYLES - Mobile-First UI/UX
+   ========================================================================== */
+
+:host {
+  --primary: #F75A0B;
+  --dark: #0f172a;
+  --text-light: #f8fafc;
+  --header-bg: #111827;
+  --transition: all 0.22s ease;
+}
+
 .cabecera {
-    font-size: 30px;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    color: white;
-    padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--header-bg);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  padding: 8px 16px;
+  box-sizing: border-box;
+}
+
+.conjunto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .logo_cabecera {
-    position: relative;
-    float: left;
-    margin-left: 50px;
+  display: flex;
+  align-items: center;
+  margin: 0;
 }
 
 .img_logo_cabecera {
-    width: 100px;
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  transition: var(--transition);
 }
 
-.menu_cabecera{
-    margin-left: auto;    
-    margin-right: auto;
-
-}
-.ul_principal {
-  display: flex;
-  justify-content: center;
-  flex-wrap:wrap;
-}
-
-.li_principal { 
-    list-style: none;
-    overflow: hidden; 
-    float: left;
-}
-
-a {
-    padding:10px;
-    color: white;
-    text-decoration: none;
-    display: inline-block;
-}
-
-a:hover {    
-    color: #F75A0B;
+.img_logo_cabecera:hover {
+  transform: scale(1.04);
 }
 
 .menu-toggle {
-    display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  background: transparent;
+  color: #ffffff;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: var(--transition);
+  border-radius: 8px;
 }
 
+.menu-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--primary);
+}
+
+.menu_cabecera {
+  width: 100%;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+  background-color: var(--header-bg);
+}
+
+.mostrar_menu_cabecera {
+  max-height: 600px;
+  opacity: 1;
+}
+
+.ul_principal {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0 16px;
+  margin: 0;
+  list-style: none;
+  gap: 4px;
+}
+
+.li_principal {
+  width: 100%;
+}
+
+.li_principal a {
+  display: block;
+  padding: 12px 16px;
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: var(--transition);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.li_principal a:hover {
+  color: var(--primary);
+  background-color: rgba(247, 90, 11, 0.1);
+}
+
+/* Desktop View */
 @media screen and (min-width: 768px) {
-    .menu_cabecera {
-        display: block;
-    }
-}
+  .cabecera {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+  }
 
+  .conjunto {
+    width: auto;
+  }
 
-@media only screen and (max-width: 768px){
+  .img_logo_cabecera {
+    height: 60px;
+  }
 
-    .cabecera {
-        padding: 5px;
-        font-size: 20px;
-    }
+  .menu-toggle {
+    display: none;
+  }
 
-    .logo_cabecera {
-        margin-top: 10px;
-        margin-left: 30px;
-    }
-    
-    .img_logo_cabecera {
-        width: 75px;
-    }
+  .menu_cabecera {
+    display: block !important;
+    max-height: none !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+    width: auto;
+    margin-left: auto;
+  }
 
-    .conjunto {
-        display: flex;
-    }
-    
-    .cabecera {
-        display: block;
-        position: relative;
-    }
+  .ul_principal {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+    gap: 4px 8px;
+  }
 
-    .menu-toggle {
-        display: block;
-        background-color: inherit;
-        color: white;
-        font-size: 35px;  
-        width: 50%;  
-        border: 0;
-    }
+  .li_principal {
+    width: auto;
+  }
 
-    .logo_cabecera {
-        width: 50%;
-    }
+  .li_principal a {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+  }
 
-    .menu_cabecera {
-        width: 100%;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: black;
-        z-index: 99;
-        overflow: hidden;
-        max-height: 0;
-        transition: max-height 0.3s ease-out;
-    }
-
-    .ul_principal {
-        flex-direction: column;
-        padding-left: 0;
-        margin: 0;
-    }
-
-    .li_principal {
-        width: 100%;
-    }
-
-    .li_principal a {
-        display: block;
-        padding: 15px;
-        text-align: center;
-    }
-
-   .mostrar_menu_cabecera {
-        max-height: 500px;
-   }
-
- 
+  .li_principal a:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
 }

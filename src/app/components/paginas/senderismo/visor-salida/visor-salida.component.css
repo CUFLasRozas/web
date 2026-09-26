@@ -1,3 +1,117 @@
+/* ==========================================================================
+   VISOR SALIDA COMPONENT STYLES - Mobile-First UI/UX
+   ========================================================================== */
+
+:host {
+  --primary: #F75A0B;
+  --dark: #111827;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --border-color: #e2e8f0;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .contenedor-excursion {
-  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px 12px;
+  background-color: var(--bg-page);
+  min-height: 100vh;
+  animation: pageFade 0.4s ease-out;
+  box-sizing: border-box;
+}
+
+@keyframes pageFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.excursion-nav {
+  margin-bottom: 16px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.excursion-nav a {
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.excursion-nav a:hover {
+  color: var(--primary);
+}
+
+.excursion-nav strong {
+  color: var(--primary);
+}
+
+.excursion-card {
+  background: var(--bg-card);
+  padding: 24px 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.excursion-body {
+  color: var(--text-main);
+  line-height: 1.65;
+  font-size: 1rem;
+}
+
+.excursion-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  margin: 16px 0;
+}
+
+.excursion-body h1,
+.excursion-body h2,
+.excursion-body h3 {
+  color: var(--primary);
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+.excursion-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 16px;
+  gap: 16px;
+  color: var(--text-muted);
+}
+
+.spinner {
+  border: 4px solid #f1f5f9;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border-left-color: var(--primary);
+  border-top-color: var(--primary);
+  animation: spin 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (min-width: 640px) {
+  .contenedor-excursion { padding: 24px 20px; }
+  .excursion-card { padding: 32px 28px; }
+}
+
+@media (min-width: 900px) {
+  .contenedor-excursion { padding: 36px 32px; }
 }

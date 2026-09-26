@@ -11,3 +11,45 @@ a {
 a:hover {
     color: #F75A0B;
 }
+
+.centrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Forzar la columna y reajustar el alineado */
+.forzar-columna {
+  flex-direction: column;
+}
+
+.alinear_izda_decha {
+  display: flex;
+  width: 100%;
+  gap: 16px;  
+  flex-direction: column;   
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.img_responsive {   
+  display: block;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+    .alinear_izda_decha {
+    flex-direction: row;
+    justify-content: space-between;
+    }   
+}
+
+@media (max-width: 767px) {
+  .img_responsive {
+    width: 100% !important;      /* Ocupa todo el ancho del contenedor */
+    max-width: 100% !important;  /* Elimina cualquier límite estático */
+    height: auto !important;     /* Mantiene la proporción para que no se deformen */
+    margin: 0 auto;              /* Las mantiene centradas */
+  }
+}

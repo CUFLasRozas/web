@@ -1,28 +1,33 @@
 {
     "rutaTienda": "assets/tienda/",
     "activarRopa": true,
-    "listaRopa":[
+    "listaRopa": [
         {
             "carpeta": "ropa_oficial/camiseta_jugador/",
             "imagenPpal": "camiseta_jugador_naranja.png",
             "nombrePpal": "Camiseta jugador",
             "precio": 16.50,
             "colores": [
-                "#F75A0B","blue"
+                "#F75A0B",
+                "blue"
             ],
             "ObjetosIndividual": [
                 {
-                    "img": ["camiseta_jugador_naranja.png"],
+                    "img": [
+                        "camiseta_jugador_naranja.png"
+                    ],
                     "nombre": "Primera equipación",
                     "precio": 16.50,
                     "color": "white"
                 },
                 {
-                    "img": ["camiseta_jugador_azul.png"],
+                    "img": [
+                        "camiseta_jugador_azul.png"
+                    ],
                     "nombre": "Segunda equipación",
                     "precio": 16.50,
                     "color": "#F75A0B"
-                }                
+                }
             ]
         },
         {
@@ -35,11 +40,13 @@
             ],
             "ObjetosIndividual": [
                 {
-                    "img": ["pantalon.png"],
+                    "img": [
+                        "pantalon.png"
+                    ],
                     "nombre": "Pantalón jugador",
                     "precio": 6.50,
                     "color": "black"
-                }                
+                }
             ]
         },
         {
@@ -52,11 +59,13 @@
             ],
             "ObjetosIndividual": [
                 {
-                    "img": ["sudadera_negra.png"],
+                    "img": [
+                        "sudadera_negra.png"
+                    ],
                     "nombre": "Sudadera negra",
                     "precio": 15.50,
                     "color": "black"
-                }              
+                }
             ]
         },
         {
@@ -65,21 +74,26 @@
             "nombrePpal": "Camiseta de entrenamiento",
             "precio": 7,
             "colores": [
-                "yellow","blue"
+                "yellow",
+                "blue"
             ],
             "ObjetosIndividual": [
                 {
-                    "img": ["camiseta_entreno_amarilla.png"],
+                    "img": [
+                        "camiseta_entreno_amarilla.png"
+                    ],
                     "nombre": "Camiseta amarilla de entrenamiento",
                     "precio": 7,
                     "color": "yellow"
                 },
                 {
-                    "img": ["camiseta_entreno_azul.png"],
+                    "img": [
+                        "camiseta_entreno_azul.png"
+                    ],
                     "nombre": "Camiseta azul de entrenamiento",
                     "precio": 7,
                     "color": "blue"
-                }                
+                }
             ]
         },
         {
@@ -92,11 +106,13 @@
             ],
             "ObjetosIndividual": [
                 {
-                    "img": ["sudadera_naranja.png"],
+                    "img": [
+                        "sudadera_naranja.png"
+                    ],
                     "nombre": "Sudadera naranja ",
                     "precio": 25.50,
                     "color": "#F75A0B"
-                }                
+                }
             ]
         },
         {
@@ -109,11 +125,13 @@
             ],
             "ObjetosIndividual": [
                 {
-                    "img": ["medias.png"],
+                    "img": [
+                        "medias.png"
+                    ],
                     "nombre": "Medias negras",
                     "precio": 3.50,
                     "color": "black"
-                }                
+                }
             ]
         },
         {
@@ -126,15 +144,17 @@
             ],
             "ObjetosIndividual": [
                 {
-                    "img": ["cortavientos.png"],
+                    "img": [
+                        "cortavientos.png"
+                    ],
                     "nombre": "Cortavientos",
                     "precio": 25.50,
                     "color": "black"
-                }                
+                }
             ]
         }
     ],
-    "activarOtrosObjetos": false,
+    "activarOtrosObjetos": true,
     "listaObjetos": [
         {
             "carpeta": "taza/",
@@ -142,23 +162,31 @@
             "nombrePpal": "Taza",
             "precio": 10,
             "colores": [
-                "white","#F75A0B","black"
+                "white",
+                "#F75A0B",
+                "black"
             ],
             "ObjetosIndividual": [
                 {
-                    "img": ["taza_blanca.webp"],
+                    "img": [
+                        "taza_blanca.webp"
+                    ],
                     "nombre": "Taza",
                     "precio": 10,
                     "color": "white"
                 },
                 {
-                    "img": ["taza_naranja.webp"],
+                    "img": [
+                        "taza_naranja.webp"
+                    ],
                     "nombre": "Taza",
                     "precio": 10,
                     "color": "#F75A0B"
                 },
                 {
-                    "img": ["taza_negra.webp"],
+                    "img": [
+                        "taza_negra.webp"
+                    ],
                     "nombre": "Taza",
                     "precio": 10,
                     "color": "black"
@@ -166,28 +194,36 @@
             ]
         },
         {
-           "carpeta": "taza_personalizada/",
+            "carpeta": "taza_personalizada/",
             "imagenPpal": "taza_personalizada_principal.webp",
             "nombrePpal": "Taza Personalizada",
             "precio": 10,
             "colores": [
-                "white","#F75A0B","black"
+                "white",
+                "#F75A0B",
+                "black"
             ],
             "ObjetosIndividual": [
                 {
-                    "img": ["taza_personalizada_blanca.webp"],
+                    "img": [
+                        "taza_personalizada_blanca.webp"
+                    ],
                     "nombre": "Taza",
                     "precio": 10,
                     "color": "white"
                 },
                 {
-                    "img": ["taza_personalizada_naranja.webp"],
+                    "img": [
+                        "taza_personalizada_naranja.webp"
+                    ],
                     "nombre": "Taza",
                     "precio": 10,
                     "color": "#F75A0B"
                 },
                 {
-                    "img": ["taza_personalizada_negra.webp"],
+                    "img": [
+                        "taza_personalizada_negra.webp"
+                    ],
                     "nombre": "Taza",
                     "precio": 10,
                     "color": "black"
@@ -204,7 +240,11 @@
             ],
             "ObjetosIndividual": [
                 {
-                    "img": ["bufanda_completa.webp","bufanda_detalle.webp","bufanda_doblada.webp"],
+                    "img": [
+                        "bufanda_completa.webp",
+                        "bufanda_detalle.webp",
+                        "bufanda_doblada.webp"
+                    ],
                     "nombre": "Bufanda",
                     "precio": 10,
                     "color": "#F75A0B"
@@ -221,7 +261,10 @@
             ],
             "ObjetosIndividual": [
                 {
-                    "img": ["pegatina.webp","pegatinas.webp"],
+                    "img": [
+                        "pegatina.webp",
+                        "pegatinas.webp"
+                    ],
                     "nombre": "Pegatina",
                     "precio": 1,
                     "color": "#F75A0B"
@@ -238,7 +281,10 @@
             ],
             "ObjetosIndividual": [
                 {
-                    "img": ["pegatina.webp","pegatinas.webp"],
+                    "img": [
+                        "pegatina.webp",
+                        "pegatinas.webp"
+                    ],
                     "nombre": "Pack 3 pegatinas",
                     "precio": 2,
                     "color": "#F75A0B"
@@ -255,7 +301,11 @@
             ],
             "ObjetosIndividual": [
                 {
-                    "img": ["llavero1.webp","llavero2.webp","llavero3.webp"],
+                    "img": [
+                        "llavero1.webp",
+                        "llavero2.webp",
+                        "llavero3.webp"
+                    ],
                     "nombre": "Llavero",
                     "precio": 2,
                     "color": "#F75A0B"
@@ -272,7 +322,9 @@
             ],
             "ObjetosIndividual": [
                 {
-                    "img": ["libro-solidario.webp"],
+                    "img": [
+                        "libro-solidario.webp"
+                    ],
                     "nombre": "Libro Solidario",
                     "precio": 10,
                     "color": "#92c686"

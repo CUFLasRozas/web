@@ -1,82 +1,202 @@
-.FAQSenderismo {
-    padding: 20px;
+/* ==========================================================================
+   FAQ SENDERISMO COMPONENT STYLES - Mobile-First UI/UX
+   ========================================================================== */
+
+:host {
+  --primary: #F75A0B;
+  --primary-hover: #d94800;
+  --primary-light: rgba(247, 90, 11, 0.08);
+  --dark: #111827;
+  --dark-hover: #1f2937;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-subtle: #f1f5f9;
+  --border-color: #e2e8f0;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-h3 {
-    color: black
+.FAQSenderismo {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px 12px;
+  background-color: var(--bg-page);
+  min-height: 100vh;
+  animation: pageFade 0.4s ease-out;
+  box-sizing: border-box;
+}
+
+@keyframes pageFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.faq-nav {
+  margin-bottom: 12px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.faq-nav a {
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.faq-nav a:hover {
+  color: var(--primary);
+}
+
+.faq-nav strong {
+  color: var(--primary);
+}
+
+.faq-header {
+  background: var(--bg-card);
+  padding: 24px 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+}
+
+.faq-header h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 8px 0 12px;
+  line-height: 1.25;
+}
+
+.faq-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.faq-card-section {
+  background: var(--bg-card);
+  padding: 24px 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+}
+
+.faq-card-section h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.faq-card-section h2::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 20px;
+  background-color: var(--primary);
+  border-radius: 4px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .faq-accordion {
-  margin-bottom: 12px;
-  border: 1px solid #e0e0e0;
-  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
   overflow: hidden;
   background-color: #ffffff;
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: var(--transition);
 }
 
-/* Efecto visual al pasar el ratón por encima */
 .faq-accordion:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-sm);
+  border-color: #cbd5e1;
 }
 
-/* Cabecera interactiva de la pregunta (Reemplaza visualmente tu h3) */
 .faq-accordion summary {
-  padding: 16px;
-  font-size: 1.15rem;
-  font-weight: bold;
-  color: #000000;
+  padding: 14px 16px;
+  min-height: 48px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--dark);
   cursor: pointer;
-  list-style: none; /* Oculta la flecha por defecto del navegador */
+  list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
   user-select: none;
+  box-sizing: border-box;
+  transition: var(--transition);
 }
 
-/* Oculta la flecha por defecto específicamente en navegadores Safari */
 .faq-accordion summary::-webkit-details-marker {
   display: none;
 }
 
-/* Creamos el indicador dinámico (+) con tu color naranja */
 .faq-accordion summary::after {
   content: "+";
-  color: #e65c00; /* Color naranja extraído de tu diseño */
+  color: var(--primary);
   font-size: 1.5rem;
-  font-weight: normal;
-  transition: transform 0.3s ease;
+  font-weight: 400;
+  transition: transform 0.25s ease;
+  line-height: 1;
 }
 
-/* =======================================================
-   ESTADOS CUANDO EL ACORDEÓN ESTÁ ABIERTO
-   ======================================================= */
-
-/* Cambia el borde exterior a tu color naranja */
 .faq-accordion[open] {
-  border-color: #e65c00;
+  border-color: var(--primary);
+  box-shadow: var(--shadow-sm);
 }
 
-/* Destaca la pregunta activa con un fondo naranja muy suave */
 .faq-accordion[open] summary {
-  border-bottom: 1px solid #f0f0f0;
-  background-color: #fffaf7; 
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--primary-light);
+  color: var(--primary);
 }
 
-/* Transforma el signo "+" en una "x" rotándolo 45 grados */
 .faq-accordion[open] summary::after {
   transform: rotate(45deg);
 }
 
-/* Bloque contenedor del texto de la respuesta */
 .faq-content {
   padding: 16px;
   background-color: #ffffff;
+  animation: slideD 0.2s ease-out;
 }
 
-/* Formato del texto largo interior */
+@keyframes slideD {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .faq-content p {
   margin: 0;
-  color: #4a4a4a; /* Gris oscuro para una lectura cómoda */
+  color: var(--text-muted);
   line-height: 1.6;
+  font-size: 0.925rem;
+}
+
+@media (min-width: 640px) {
+  .FAQSenderismo { padding: 24px 20px; }
+  .faq-header, .faq-card-section { padding: 28px 24px; }
+  .faq-header h1 { font-size: 1.9rem; }
+}
+
+@media (min-width: 900px) {
+  .FAQSenderismo { padding: 36px 32px; }
+  .faq-header h1 { font-size: 2.2rem; }
 }

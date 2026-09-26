@@ -1,67 +1,359 @@
+/* ==========================================================================
+   SENDERISMO PPAL COMPONENT STYLES - Mobile-First UI/UX
+   ========================================================================== */
+
+:host {
+  --primary: #F75A0B;
+  --primary-hover: #d94800;
+  --primary-light: rgba(247, 90, 11, 0.08);
+  --dark: #111827;
+  --dark-hover: #1f2937;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-subtle: #f1f5f9;
+  --border-color: #e2e8f0;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .senderismo-ppal {
-        padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px 12px;
+  background-color: var(--bg-page);
+  min-height: 100vh;
+  animation: pageFade 0.4s ease-out;
+  box-sizing: border-box;
 }
 
-
-h3{
-    color:black;
+@keyframes pageFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.galeria-actividades {    
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap:15px;
+.hero-card {
+  background: var(--bg-card);
+  padding: 24px 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+}
+
+.section-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary);
+  background-color: var(--primary-light);
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.hero-card h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 4px 0 12px;
+  line-height: 1.25;
+}
+
+.hero-card h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 8px;
+}
+
+.hero-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+
+.hero-card p:last-child {
+  margin-bottom: 0;
+}
+
+.socio-banner-card {
+  background: linear-gradient(135deg, #fff7ed 0%, #ffffff 100%);
+  border: 1px solid #ffedd5;
+  border-left: 5px solid var(--primary);
+  border-radius: var(--radius-lg);
+  padding: 24px 18px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 28px;
+}
+
+.socio-banner-content h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #9a3412;
+  margin: 0 0 10px;
+}
+
+.socio-banner-content p {
+  color: #7c2d12;
+  font-size: 0.925rem;
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+
+.socio-action {
+  margin-top: 14px;
+}
+
+.boton-socio-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 20px;
+  background-color: var(--primary);
+  color: #ffffff !important;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.925rem;
+  box-shadow: 0 4px 12px rgba(247, 90, 11, 0.3);
+  transition: var(--transition);
+}
+
+.boton-socio-link:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(247, 90, 11, 0.4);
+}
+
+.actividades-section {
+  margin-bottom: 32px;
+}
+
+.actividades-section h2,
+.faq-preview-card h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.actividades-section h2::before,
+.faq-preview-card h2::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 20px;
+  background-color: var(--primary);
+  border-radius: 4px;
+}
+
+.galeria-actividades {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
 .actividad {
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.actividad:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: #cbd5e1;
 }
 
 .foto-send {
-    position: relative;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #e2e8f0;
+  overflow: hidden;
 }
 
-img {
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
+.foto-send img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.actividad:hover .foto-send img {
+  transform: scale(1.03);
 }
 
 .dificultad {
-    top: 0.30rem;
-    right: 0.30rem;
-    position: absolute;
-    background-color:white;
-    border-radius: 5px;
-    padding: 3px;
-    font-size: 0.8rem;
-    font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(4px);
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.actividad-info {
+  padding: 16px 16px 8px;
+  flex: 1;
+}
+
+.actividad-info h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 6px;
+  line-height: 1.35;
+}
+
+.actividad-info h5 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0 0 10px;
+}
+
+.actividad-info p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.actividad-footer {
+  padding: 12px 16px 16px;
+  margin-top: auto;
 }
 
 .mas-detalles-btn {
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+  width: 100%;
+  min-height: 46px;
+  background-color: var(--dark);
+  color: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.mas-detalles-btn:hover {
+  background-color: var(--dark-hover);
 }
 
 .mas-detalles-btn i {
-    margin-left: 5px;
+  transition: transform 0.2s ease;
+}
+
+.mas-detalles-btn:hover i {
+  transform: translateX(4px);
+}
+
+.empty-state {
+  background: var(--bg-card);
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.faq-preview-card {
+  background: var(--bg-card);
+  padding: 24px 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+}
+
+.faq-preview-item {
+  background-color: var(--bg-subtle);
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  margin-bottom: 12px;
+}
+
+.faq-preview-item h3 {
+  font-size: 0.975rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 6px;
+}
+
+.faq-preview-item p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.faq-action {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
 }
 
 .faq-btn {
-    margin-top: 20px;
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 5px;
-    cursor: pointer;
+  width: 100%;
+  min-height: 48px;
+  background-color: var(--dark);
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.925rem;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.faq-btn:hover {
+  background-color: var(--dark-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+@media (min-width: 640px) {
+  .senderismo-ppal { padding: 24px 20px; }
+  .hero-card, .socio-banner-card, .faq-preview-card { padding: 28px 24px; }
+  .hero-card h1 { font-size: 1.9rem; }
+  .galeria-actividades { grid-template-columns: repeat(2, 1fr); }
+  .faq-btn { width: auto; }
+}
+
+@media (min-width: 900px) {
+  .senderismo-ppal { padding: 36px 32px; }
+  .hero-card h1 { font-size: 2.2rem; }
+  .galeria-actividades { grid-template-columns: repeat(3, 1fr); }
+}

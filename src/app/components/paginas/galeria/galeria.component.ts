@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { UtilesService } from '../../../service/utiles/utiles.service';
 import { ControlGaleria, Imagenes } from '../../../models/galeria';
 
@@ -11,8 +11,11 @@ import { ControlGaleria, Imagenes } from '../../../models/galeria';
 export class GaleriaComponent {
   controlGaleria!: ControlGaleria;
   filtroActived: boolean = false;
-  galeria!:Imagenes[];
+  galeria!: Imagenes[];
   anioSelected! : string;
+
+  imagenAmpliada: Imagenes | null = null;
+  mostrarModalImagen: boolean = false;
 
   constructor(
     private utilesService: UtilesService
@@ -23,7 +26,6 @@ export class GaleriaComponent {
       this.controlGaleria = data;
       this.cargarGaleria( this.controlGaleria.mostrarAnyo);
     });
-     
   }
 
   anioElegido(evento : Event){
@@ -38,5 +40,22 @@ export class GaleriaComponent {
     this.utilesService.obtenerJson(archivo).subscribe((data : any) =>{
       this.galeria = data;
     })
-  }  
+  }
+
+  abrirImagenModal(imagen: Imagenes) {
+    this.imagenAmpliada = imagen;
+    this.mostrarModalImagen = true;
+  }
+
+  cerrarImagenModal() {
+    this.mostrarModalImagen = false;
+    this.imagenAmpliada = null;
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscape() {
+    if (this.mostrarModalImagen) {
+      this.cerrarImagenModal();
+    }
+  }
 }
