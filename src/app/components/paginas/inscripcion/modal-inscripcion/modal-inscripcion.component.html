@@ -13,7 +13,13 @@
     </div>
     <p class="mensaje completado">Ficha generada correctamente</p>
     <p>No olvides enviarnos la ficha generada así como el justificante de pago a nuestro correo:
-      <b>{{datos_club.email}}</b> para poder formalizar la inscripción</p>
+      <b style="white-space: nowrap;">
+          @if(esSenderismo()) {
+          {{datos_club.emailsend}}
+        } @else {
+          {{datos_club.email}}
+        }         
+        </b> para poder formalizar la inscripción</p>
     <div class="acciones">
       <button class="boton-descargar" type="button" (click)="onDescargarFicha()">Descargar ficha</button>
     </div>

@@ -3,11 +3,12 @@ import { RouterLink } from '@angular/router';
 import { UtilesService } from '../../../../service/utiles/utiles.service';
 import { Salida } from '../../../../models/listadoSalidas';
 import { FAQSenderismo } from '../../../../models/FAQSenderismo';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'cuflr-senderismo-ppal',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink,NgOptimizedImage],
   templateUrl: './senderismo-ppal.component.html',
   styleUrl: './senderismo-ppal.component.css'
 })

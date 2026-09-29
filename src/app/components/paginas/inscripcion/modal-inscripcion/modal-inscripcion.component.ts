@@ -1,5 +1,6 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, inject } from '@angular/core';
 import { DATOS_CLUB } from '../../../generales.constants';
+import { UtilesService } from '../../../../service/utiles/utiles.service';
 
 @Component({
   selector: 'cuflr-modal-inscripcion',
@@ -10,6 +11,8 @@ import { DATOS_CLUB } from '../../../generales.constants';
 })
 export class ModalInscripcionComponent {
   datos_club = DATOS_CLUB;
+    private utilesService = inject(UtilesService);
+    public esSenderismo = this.utilesService.esSenderismo;
   @Input() mostrar: boolean = false;
   @Input() estado: 'generando' | 'completado' = 'generando';
 

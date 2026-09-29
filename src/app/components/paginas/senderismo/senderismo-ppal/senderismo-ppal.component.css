@@ -31,6 +31,22 @@
   box-sizing: border-box;
 }
 
+.imagen_central {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0 32px;
+}
+
+.logo_principal {
+  width: 60%;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
+  transition: transform 0.3s ease;
+}
+
 @keyframes pageFade {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
