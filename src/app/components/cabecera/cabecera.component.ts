@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { UtilesService } from '../../service/utiles/utiles.service';
 
@@ -13,9 +13,10 @@ import { UtilesService } from '../../service/utiles/utiles.service';
 export class CabeceraComponent {
   cabecera: any;
   menuChequed = false;
+  private utilesService = inject(UtilesService);
+  public esSenderismo = this.utilesService.esSenderismo;
 
   constructor(
-    private utilesService: UtilesService
   ) { }
 
   ngOnInit() {

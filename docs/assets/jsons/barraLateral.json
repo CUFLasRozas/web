@@ -2,7 +2,14 @@
     "proximosPartidos": {
         "view": true,
         "title": "Partidos y eventos",
-        "objects": []
+        "objects": [
+            {
+                "titulo": "Senior - Las Rozas",
+                "fecha": "18:15 - Domingo 4 Octubre",
+                "url": "https://www.unihockey.es/liga_plata_26_27/resumen",
+                "target": "blank"
+            }
+        ]
     },
     "documentos": {
         "view": true,

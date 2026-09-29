@@ -3,9 +3,17 @@
     <div class="conjunto">
 
         <div class="logo_cabecera">
-            <a routerLink="">
-                <img class="img_logo_cabecera" alt={{cabecera.logo.alt}} src={{cabecera.logo.src}}>
-            </a>
+            
+                @if (esSenderismo()) {
+                    <a routerLink="/senderismo">
+                        <img class="img_logo_cabecera" alt={{cabecera.logoSend.alt}} src={{cabecera.logoSend.src}}>
+                    </a>                
+                }
+                @else {
+                    <a routerLink="">
+                        <img class="img_logo_cabecera" alt={{cabecera.logo.alt}} src={{cabecera.logo.src}}>
+                    </a>                
+                }
         </div>
 
         <button id="menu-toggle" class="menu-toggle" (click)="abrirMenu()" aria-label="Abrir menú de navegación" [attr.aria-expanded]="menuChequed">

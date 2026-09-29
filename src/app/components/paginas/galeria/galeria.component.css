@@ -1,63 +1,255 @@
+/* ==========================================================================
+   GALERIA COMPONENT STYLES - Mobile-First UI/UX
+   ========================================================================== */
+
+:host {
+  --primary: #F75A0B;
+  --primary-hover: #d94800;
+  --primary-light: rgba(247, 90, 11, 0.08);
+  --dark: #111827;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-subtle: #f1f5f9;
+  --border-color: #e2e8f0;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --transition: all 0.22s ease;
+}
+
+.fotos-principal {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px 12px;
+  background-color: var(--bg-page);
+  min-height: 100vh;
+  animation: pageFade 0.4s ease-out;
+  box-sizing: border-box;
+}
+
+@keyframes pageFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cabecera_galeria_card {
+  background: var(--bg-card);
+  padding: 24px 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+}
+
 .cabecera_galeria {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.cabecera_galeria h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 0;
 }
 
 .div_temporadas {
-    margin-right: 30px;
+  margin: 0;
 }
 
 .select_temp {
-    border: 1px solid black;
-    border-radius: 5px;
-    padding:5px;
-    background-color: white;
-    font-size: medium;
+  min-height: 48px;
+  padding: 10px 16px;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--dark);
+  cursor: pointer;
+  outline: none;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
 }
 
-.option_temp {
-    border: 2px solid black;
-    font-size: medium;
-
+.select_temp:hover, .select_temp:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-light);
 }
 
+.galeria-section {
+  background: var(--bg-card);
+  padding: 24px 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
 
-.fotos-principal {
-    padding: 20px;
+.galeria-section h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.galeria-section h2::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 20px;
+  background-color: var(--primary);
+  border-radius: 4px;
 }
 
 .galeria {
-    display: flex;
-    justify-content: space-evenly; 
-    align-items: center;
-    flex-wrap:wrap;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
 .foto {
-    width: 30%;
-    margin: 10px 0px;
+  margin: 0;
+  background: var(--bg-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+  position: relative;
+}
+
+.foto:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: #cbd5e1;
+}
+
+.foto img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.foto img.img-zoomable {
+  cursor: zoom-in;
+}
+
+.foto:hover img {
+  transform: scale(1.03);
 }
 
 .pie-foto {
-    text-align: center;
+  padding: 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--dark);
+  text-align: center;
+  background-color: #ffffff;
+  border-top: 1px solid var(--border-color);
 }
 
-img {
-    width: 100%;
+/* Lightbox Modal de Imagen Ampliada */
+.galeria-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 16px;
+  box-sizing: border-box;
+  animation: fadeIn 0.25s ease-out;
 }
 
-@media (max-width: 768px) {
-    .foto {
-        width: 48%;
-    }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
+.galeria-modal-content {
+  position: relative;
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: modalZoomIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-sizing: border-box;
+}
 
-@media (max-width: 480px) {
-    .foto {
-        width: 100%;
-    }
+@keyframes modalZoomIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.btn-cerrar-modal {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: rgba(15, 23, 42, 0.7);
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  font-size: 1.6rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  z-index: 10;
+}
+
+.btn-cerrar-modal:hover {
+  background-color: var(--primary);
+  transform: scale(1.1);
+}
+
+.img-modal-ampliada {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  display: block;
+}
+
+.modal-pie-foto {
+  margin: 12px 0 0 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--dark);
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .fotos-principal { padding: 24px 20px; }
+  .cabecera_galeria_card, .galeria-section { padding: 28px 24px; }
+  .galeria { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .fotos-principal { padding: 36px 32px; }
+  .galeria { grid-template-columns: repeat(3, 1fr); }
 }

@@ -18,9 +18,22 @@ interface TarifaCategoria {
 
 }
 
+interface Senderismo {
+    anual: {
+        familiar: number;
+        general: number;
+    };
+    diario: {
+        socio: number;
+        noSocio: number;
+    };
+    seguroNoSocio: number;
+}
+
 // Interfaz principal que representa el JSON completo
 export interface PreciosTemporada {
     temporada: string;
     tarifas: TarifaCategoria[];
     instalaciones: number;
+    senderismo: Senderismo;
 }

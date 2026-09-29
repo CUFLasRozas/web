@@ -1,0 +1,104 @@
+[
+    {
+        "titulo": "Sobre el club, los socios, el seguro y los pagos",
+        "preguntas": [
+            {
+                "pregunta": "¿Cuáles son los requisitos y ventajas de hacerse socio del club?",
+                "respuesta": "Ser socio requiere rellenar la ficha de inscripción y abonar la cuota anual. Las ventajas incluyen prioridad de reserva de plazas, precios especiales, actividades exclusivas para socios y una semana de entrenamiento con un de nuestros equipos de unihockey."
+            },
+            {
+                "pregunta": "¿Puedo participar en una salida si voy solo y no conozco a nadie?",
+                "respuesta": "Sí, la mayoría de los asistentes acuden de forma individual o en pequeños grupos y se integran fácilmente en las dinámicas del club."
+            },
+            {
+                "pregunta": "¿Cómo y cuándo se realizan los pagos de las inscripciones?",
+                "respuesta": "Los pagos de las actividades se efectúan  por transferencia bancaria en los plazos fijados en la convocatoria. No se aceptan pagos en efectivo el día de la salida."
+            },
+            {
+                "pregunta": "¿Cuál es la política de cancelación y devolución de dinero?",
+                "respuesta": "Si cancelas con la antelación mínima estipulada en la convocatoria (generalmente 48-72 horas para rutas de un día), se reembolsará el importe o se guardará como saldo para futuras actividades. Si la cancelación se produce fuera de plazo, se perderá la reserva para cubrir los gastos fijos ya comprometidos."
+            },
+            {
+                "pregunta": "¿Qué pasa si el club cancela una salida contratada?",
+                "respuesta": "Si el club suspende la actividad por motivos de fuerza mayor o meteorología adversa, se ofrecerá la devolución íntegra del importe pagado o la reubicación en la fecha alternativa propuesta."
+            },
+            {
+                "pregunta": "¿Puedo acudir a una ruta como invitado de prueba sin hacerme socio?",
+                "respuesta": "Sí, se permite la asistencia de invitados en salidas seleccionadas abonando el importe de no-socio y la tramitación del seguro diario correspondiente."
+            },
+            {
+                "pregunta": "¿Pueden acudir los menores de edad?",
+                "respuesta": "Sí, los menores de edad pueden acudir a las salidas siempre que estén acompañados por un adulto responsable y se cumplan las condiciones establecidas en la convocatoria."
+            },
+            {
+                "pregunta": "¿Las excursiones están aseguradas?",
+                "respuesta":" Sí, todas las actividades cuentan con un seguro de accidentes y responsabilidad civil que cubre a los participantes durante la ruta."
+            },
+            {
+                "pregunta": "¿Qué cubre el seguro de accidentes y responsabilidad civil?",
+                "respuesta": "El seguro cubre accidentes personales durante la actividad, incluyendo gastos médicos y hospitalarios, así como responsabilidad civil frente a terceros. No cubre actividades fuera del horario o lugar de la ruta ni daños a bienes personales."
+            }
+            
+        ]
+    },
+    {
+        "titulo": "Sobre las salidas y la logística de las rutas",
+        "preguntas": [
+            {
+                "pregunta": "¿Cómo sé si una ruta es adecuada para mí?",
+                "respuesta": "Cada actividad incluye una ficha donde se detalla la distancia (km), el desnivel acumulado (positivo y negativo), la dificultad técnica y la condición física requerida. Si tienes dudas sobre tu nivel, consulta con el coordinador de la salida antes de inscribirte."
+            },
+            {
+                "pregunta": "¿Qué material mínimo debo llevar?",
+                "respuesta": "Calzado cómodo con buena suela (ideal botas o zapatillas de trail/senderismo), ropa por capas acorde al clima, mochila de 20-30 litros, mínimo 1 litro de agua, comida para la jornada, chubasquero o cortavientos, gorro/a y crema solar."
+            },
+            {
+                "pregunta": "¿Cómo se organiza el transporte hasta el punto de inicio?",
+                "respuesta": "Se fomenta el uso compartido de vehículos particulares. Cuando sea posible, se facilitará una alternativa en transporte público. Si la salida incluye autobús contratado por el club, se especificará en la convocatoria junto al coste de la plaza."
+            },
+            {
+                "pregunta": "¿Qué ocurre si llego tarde al punto de encuentro?",
+                "respuesta": "Se establece un margen de cortesía de máximo 10-15 minutos por respeto al grupo. Pasado ese tiempo, la ruta comenzará sin los participantes ausentes."
+            },
+            {
+                "pregunta": "¿Se puede acortar o abandonar la ruta a la mitad?",
+                "respuesta": "No. Salvo emergencia médica o fuerza mayor gestionada por el guía/coordinador, el grupo debe permanecer unido desde el inicio hasta la conclusión del itinerario por motivos de seguridad."
+            },
+            {
+                "pregunta": "¿Qué sucede con la lluvia o las malas condiciones meteorológicas?",
+                "respuesta": "Las salidas no se cancelan por lluvia moderada salvo que implique un riesgo (niebla densa, tormenta eléctrica, fuerte nevada o viento extremo). Si las condiciones aconsejan la suspensión, se notificará a los inscritos lo antes posible."
+            },
+            {
+                "pregunta": "¿Qué ocurre con las fotos y vídeos que se realizan durante la actividad?",
+                "respuesta": "Al inscribirte aceptas la toma de imágenes grupales para los canales de comunicación o redes del club. Si no deseas figurar en el material fotográfico, debes comunicarlo explícitamente al coordinador al inicio de la jornada."
+            },
+            {
+                "pregunta": "¿Qué debo hacer si tengo alguna alergia, lesión o condición médica?",
+                "respuesta": "Debes comunicarlo de forma confidencial al coordinador de la ruta antes del inicio de la marcha para coordinar las medidas de actuación en caso de requerirse asistencias."
+            },
+            {
+                "pregunta": "¿Qué pasa si me lesiono y no puedo continuar la ruta?",
+                "respuesta": "Si sufres una lesión que te impida continuar, el guía o coordinador evaluará la situación y tomará las medidas necesarias, que pueden incluir asistencia médica, transporte de regreso o acompañamiento hasta un punto seguro."
+            },
+            {
+                "pregunta": "¿Qué ocurre si pierdo algún objeto personal durante la actividad?",
+                "respuesta": "El club no se hace responsable de la pérdida o daño de objetos personales. Se recomienda llevar solo lo necesario y asegurarse de que los objetos de valor estén bien guardados."
+            },{
+                "pregunta": "¿Se permite la participación de mascotas en las rutas?",
+                "respuesta": "No, las actividades del club son exclusivas para personas. Aunque nos encantan los animales, no se permite su asistencia para garantizar la seguridad de todos los senderistas, la fluidez del grupo y el cumplimiento de las normativas de los espacios naturales que visitamos."
+            },{
+                "pregunta": "¿Qué debo hacer si me encuentro con un animal salvaje durante la ruta?",
+                "respuesta": "Mantén la calma, no te acerques ni intentes alimentarlo. Retrocede lentamente y sigue las indicaciones del guía o coordinador. Evita hacer ruido o movimientos bruscos que puedan asustar al animal."
+            },{
+                "pregunta": "¿Qué medidas de seguridad se toman en caso de emergencia durante la ruta?",
+                "respuesta": "El guía o coordinador está capacitado en primeros auxilios y cuenta con un plan de emergencia. Se dispone de un botiquín básico y se establecen puntos de contacto para asistencia médica si es necesario."
+            },{
+                "pregunta": "¿Se realizan paradas para descansar y comer durante la ruta?",
+                "respuesta": "Sí, se planifican paradas estratégicas para descansar, hidratarse y comer. La duración y frecuencia de las paradas dependerá de la longitud y dificultad de la ruta."
+            },{
+                "pregunta": "¿Se permite el uso de dispositivos electrónicos durante la ruta?",
+                "respuesta": "Sí, pero se recomienda limitar su uso para disfrutar del entorno y mantener la atención en la seguridad del grupo. Se deben seguir las indicaciones del guía respecto al uso de dispositivos."
+            }
+        ]
+    }
+]

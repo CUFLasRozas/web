@@ -1,14 +1,15 @@
-import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, FormArray, ReactiveFormsModule, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import { Component, ElementRef, ViewChild, AfterViewInit, inject } from '@angular/core';
+import { FormBuilder, FormGroup, FormArray, ReactiveFormsModule, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { UtilesService } from '../../../service/utiles/utiles.service';
 import { PreciosTemporada } from '../../../models/precios_temporada';
-import { PDFDocument, StandardFonts, rgb, PDFName, PDFBool } from 'pdf-lib';
+// import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 import { ModalInscripcionComponent } from './modal-inscripcion/modal-inscripcion.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'cuflr-inscripcion',
   standalone: true,
-  imports: [ReactiveFormsModule, ModalInscripcionComponent],
+  imports: [ReactiveFormsModule, ModalInscripcionComponent,RouterLink],
   templateUrl: './inscripcion.component.html',
   styleUrl: './inscripcion.component.css',
 })
@@ -18,13 +19,18 @@ export class InscripcionComponent {
   submitted: boolean = false;
   hoy: string = "2024-12-12";
   regimenInternoChecked: boolean = false;
-  precios_temporada?: PreciosTemporada;
+  precios_temporada!: PreciosTemporada;
   esMenor: boolean = false;
 
   mostrarModal = false;
   estadoModal: 'generando' | 'completado' = 'generando';
   pdfBlobUrl: string | null = null;
   nombreArchivoDescarga: string = '';
+
+  private ctx: { [key: string]: CanvasRenderingContext2D | null } = {};
+  private drawing = false;
+  private utilesService = inject(UtilesService);
+  public esSenderismo = this.utilesService.esSenderismo;
 
   private _canvasJugador?: ElementRef<HTMLCanvasElement>;
   private _canvasP1?: ElementRef<HTMLCanvasElement>;
@@ -49,12 +55,9 @@ export class InscripcionComponent {
     }
   }
 
-  private ctx: { [key: string]: CanvasRenderingContext2D | null } = {};
-  private drawing = false;
-
   constructor(
-    private utilesService: UtilesService,
-    private fb: FormBuilder) { }
+    private fb: FormBuilder
+  ) { }
 
   ngOnInit() {
     this.utilesService.obtenerJson("preciosTemporada.json").subscribe((data: any) =>
@@ -71,8 +74,9 @@ export class InscripcionComponent {
       alergias: [''],
       padron: ['', Validators.required],
       contactos: this.fb.array([this.crearContacto()]),
-      categoria: ['', Validators.required],
-      pago: ['', Validators.required],
+      socio: [''],
+      categoria: [''],
+      pago: [''],
       autFotos: ['', Validators.required],
       firmaJugador: ['', []],
       firmaP1: ['', []],
@@ -82,6 +86,10 @@ export class InscripcionComponent {
       nombreP2: ['', []],
       dniP2: ['', []]
     }, { validators: [this.uniquenessValidator] });
+
+    // Validaciones condicionales según sección (senderismo vs unihockey)
+    this.updateSectionValidators();
+
     this.inscripcion.get('nacimiento')?.valueChanges.subscribe(() => this.updateAgeDependentValidators());
 
     this.inscripcion.get('categoria')?.valueChanges.subscribe(() => {
@@ -186,6 +194,26 @@ export class InscripcionComponent {
     [emailControl, telefonoControl, firmaJugador, firmaP1, nombreP1, dniP1, firmaP2, nombreP2, dniP2].forEach(c => c?.updateValueAndValidity({ emitEvent: false }));
   }
 
+  private updateSectionValidators(): void {
+    const socioControl = this.inscripcion.get('socio');
+    const categoriaControl = this.inscripcion.get('categoria');
+    const pagoControl = this.inscripcion.get('pago');
+
+    if (this.esSenderismo()) {
+      // Senderismo: socio es obligatorio, categoría y pago no aplican
+      socioControl?.setValidators([Validators.required]);
+      categoriaControl?.clearValidators();
+      pagoControl?.clearValidators();
+    } else {
+      // Unihockey: categoría y pago son obligatorios, socio no aplica
+      socioControl?.clearValidators();
+      categoriaControl?.setValidators([Validators.required]);
+      pagoControl?.setValidators([Validators.required]);
+    }
+
+    [socioControl, categoriaControl, pagoControl].forEach(c => c?.updateValueAndValidity({ emitEvent: false }));
+  }
+
   private uniquenessValidator = (group: AbstractControl): ValidationErrors | null => {
     const dniPpal = group.get('dni')?.value?.toUpperCase().trim();
     const dniP1 = group.get('dniP1')?.value?.toUpperCase().trim();
@@ -234,9 +262,13 @@ export class InscripcionComponent {
 
   async generarPDF() {
     const formValue = this.inscripcion.value;
-    const templatePath = 'assets/documentos/ficha_inscripcion_CUF_LAS_ROZAS.pdf';
+    const templatePath = this.esSenderismo()
+      ? 'assets/documentos/ficha_senderismo_CUF_LAS_ROZAS.pdf'
+      : 'assets/documentos/ficha_inscripcion_CUF_LAS_ROZAS.pdf';
 
     try {
+      const { PDFDocument, StandardFonts, rgb } = await import('pdf-lib');
+      
       const response = await fetch(templatePath);
       const existingPdfBytes = await response.arrayBuffer();
 
@@ -305,22 +337,44 @@ export class InscripcionComponent {
         }
       }
 
-      // Datos del equipo
-      const categoriaLabel = this.precios_temporada?.tarifas.find(t => t.id === formValue.categoria)?.categoria || formValue.categoria;
-      setField('categoria', categoriaLabel);
-      setField('tipopago', formValue.pago);
+      if (this.esSenderismo()) {
+        // Evaluamos si el usuario seleccionó la opción Familiar
+        const esFamiliar = formValue.socio === 'false';
 
-      const precio = this.detallePago?.precio;
-      if (precio !== undefined) {
-        setField('precio', `${precio}€ ${formValue.pago}`, true);
-      }
+        // 1. Obtenemos los precios desde tu objeto estructurado PreciosTemporada
+        const precioFamiliar = this.precios_temporada?.senderismo?.anual?.familiar;
+        const precioGeneral = this.precios_temporada?.senderismo?.anual?.general;
 
-      if (this.seguroYtasasCategoria !== null) {
-        setField('seguroytasas', `${this.seguroYtasasCategoria}€`, true);
-      }
+        // 2. Volcamos los precios en sus respectivos campos de texto del PDF
+        setField('precio_fam_socio_si', precioFamiliar !== undefined ? `${precioFamiliar}€` : '');
+        setField('precio_fam_socio_no', precioGeneral !== undefined ? `${precioGeneral}€` : '');
 
-      if (this.precios_temporada && this.precios_temporada.instalaciones) {
-        setField('ayuntamiento', `${this.precios_temporada.instalaciones}€`, true);
+        // 3. Marcamos con una 'X' la opción elegida en el formulario y vaciamos la otra
+        if (esFamiliar) {
+          setField('radio_fam_socio_si', 'X');
+          setField('radio_fam_socio_no', '');
+        } else {
+          setField('radio_fam_socio_si', '');
+          setField('radio_fam_socio_no', 'X');
+        }
+      } else {
+        // Datos del equipo (unihockey)
+        const categoriaLabel = this.precios_temporada?.tarifas.find(t => t.id === formValue.categoria)?.categoria || formValue.categoria;
+        setField('categoria', categoriaLabel);
+        setField('tipopago', formValue.pago);
+
+        const precio = this.detallePago?.precio;
+        if (precio !== undefined) {
+          setField('precio', `${precio}€ ${formValue.pago}`, true);
+        }
+
+        if (this.seguroYtasasCategoria !== null) {
+          setField('seguroytasas', `${this.seguroYtasasCategoria}€`, true);
+        }
+
+        if (this.precios_temporada && this.precios_temporada.instalaciones) {
+          setField('ayuntamiento', `${this.precios_temporada.instalaciones}€`, true);
+        }
       }
 
       setField('consentimiento', formValue.autFotos === 'true' ? 'SI' : 'NO');
@@ -390,7 +444,8 @@ export class InscripcionComponent {
       const pdfBytes = await pdfDoc.save();
       const blob = new Blob([pdfBytes.buffer as ArrayBuffer], { type: 'application/pdf' });
       this.pdfBlobUrl = URL.createObjectURL(blob);
-      this.nombreArchivoDescarga = `Inscripcion_${formValue.nombrePpal}_${formValue.apellidosPpal}.pdf`;
+      const prefijo = this.esSenderismo() ? 'Senderismo' : 'Inscripcion';
+      this.nombreArchivoDescarga = `${prefijo}_${formValue.nombrePpal}_${formValue.apellidosPpal}.pdf`;
 
     } catch (error) {
       console.error('Error generando el PDF:', error);

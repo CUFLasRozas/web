@@ -1,6 +1,19 @@
 {
     "temporada": "2026/2027",
     "instalaciones": 25,
+    "senderismo": {
+        "anual": {
+            "familiar":20,
+            "general":40
+        },
+        "diario": {
+            "socio":10,
+            "noSocio":15
+        },
+        "seguroNoSocio": 5
+
+        
+    },
     "tarifas": [
         {
             "id": "senior_masculino",

@@ -1,57 +1,53 @@
 <div class="fotos-principal">
-    <div class="cabecera_galeria">
-        <div>
-
-            <h1>Galería de fotos</h1>
-        </div>
-        <div class="div_temporadas">
-            @if(controlGaleria){
-
-            <select class="select_temp" name="temporadas" (change)="anioElegido($event)">
-                @for (control of controlGaleria.temporadas; track $index) {
-                    @if (control.value != "") {
-                    <option class="option_temp" value="{{control.value}}">{{control.literal}}</option>
-                    } @else {
-                    <option value="option_temp" selected disabled hidden>{{control.literal}}</option>
+    <div class="cabecera_galeria_card">
+        <div class="cabecera_galeria">
+            <div>
+                <h1>Galería de fotos</h1>
+            </div>
+            <div class="div_temporadas">
+                @if(controlGaleria){
+                <select class="select_temp" name="temporadas" (change)="anioElegido($event)">
+                    @for (control of controlGaleria.temporadas; track $index) {
+                        @if (control.value != "") {
+                        <option class="option_temp" value="{{control.value}}">{{control.literal}}</option>
+                        } @else {
+                        <option value="option_temp" selected disabled hidden>{{control.literal}}</option>
+                        }
                     }
+                </select>
                 }
-            </select>
-            }
+            </div>
         </div>
-
-
     </div>
-
-    <!-- @if (controlGaleria && controlGaleria.filtroActived) {
-    <div class="filtro">
-        <button class="filtro-btn active" data-categoria="todas">Todas</button>
-        <button class="filtro-btn" data-categoria="entrenamientos">Entrenamientos</button>
-        <button class="filtro-btn" data-categoria="partidos">Partidos</button>
-        <button class="filtro-btn" data-categoria="eventos">Eventos</button>
-        <select name="equipos">
-            <option value="todos">todos</option>
-            <option value="srmasc">Senior Masculino</option>
-            <option value="srfem">Senior Femenino</option>
-        </select>
-    </div>
-    } -->
-
 
     @if (controlGaleria && controlGaleria.mostrarAnyo) {
-    <h2>Temporada: {{anioSelected}}</h2>
-    <div class="galeria">
-        @for (imagen of galeria; track $index) {
-        <figure class="foto">
-            @if (imagen.navigateTo && imagen.navigateTo != "") {
-            <a href="{{imagen.navigateTo}}" target="_blank"><img src="{{imagen.url}}" alt="{{imagen.alt}}"></a>
-            <figcaption class="pie-foto">{{imagen.pie}}</figcaption>
-            } @else {
-            <img src="{{imagen.url}}" alt="{{imagen.alt}}">
-            <figcaption class="pie-foto">{{imagen.pie}}</figcaption>
+    <div class="galeria-section">
+        <h2>Temporada: {{anioSelected}}</h2>
+        <div class="galeria">
+            @for (imagen of galeria; track $index) {
+            <figure class="foto">
+                @if (imagen.navigateTo && imagen.navigateTo != "") {
+                <a href="{{imagen.navigateTo}}" target="_blank"><img src="{{imagen.url}}" alt="{{imagen.alt}}"></a>
+                <figcaption class="pie-foto">{{imagen.pie}}</figcaption>
+                } @else {
+                <img src="{{imagen.url}}" alt="{{imagen.alt}}" class="img-zoomable" (click)="abrirImagenModal(imagen)">
+                <figcaption class="pie-foto">{{imagen.pie}}</figcaption>
+                }
+            </figure>
             }
-        </figure>
-        }
+        </div>
     </div>
     }
 
+    @if (mostrarModalImagen && imagenAmpliada) {
+    <div class="galeria-modal-overlay" (click)="cerrarImagenModal()">
+        <div class="galeria-modal-content" (click)="$event.stopPropagation()">
+            <button type="button" class="btn-cerrar-modal" (click)="cerrarImagenModal()" aria-label="Cerrar">&times;</button>
+            <img src="{{imagenAmpliada.url}}" alt="{{imagenAmpliada.alt}}" class="img-modal-ampliada">
+            @if (imagenAmpliada.pie) {
+            <p class="modal-pie-foto">{{imagenAmpliada.pie}}</p>
+            }
+        </div>
+    </div>
+    }
 </div>
