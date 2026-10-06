@@ -33,6 +33,15 @@ a:hover {
   box-sizing: border-box;
 }
 
+.alinear_foto_texto {
+  display: flex;
+  width: 100%;
+  gap: 16px;  
+  flex-direction: column;   
+  align-items: center;
+  box-sizing: border-box;
+}
+
 .img_responsive {   
   display: block;
   max-width: 100%;
@@ -42,7 +51,11 @@ a:hover {
     .alinear_izda_decha {
     flex-direction: row;
     justify-content: space-between;
-    }   
+    }  
+    .alinear_foto_texto {
+    flex-direction: row;
+    justify-content: space-between;
+    }  
 }
 
 @media (max-width: 767px) {

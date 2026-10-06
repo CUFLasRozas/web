@@ -1,1 +1,23 @@
-[]
+[{
+        "titulo": "Navalagamella y Senda del Río Perales",
+        "fecha": "Sábado 17 de Octubre",
+        "lugar": "Navalagamella",
+        "dificultad": "Baja-Socios y no Socios",
+        "color": "green",
+        "descripcion": "Ruta circular por Navalagamella siguiendo el curso del río Perales, combinando el patrimonio industrial de sus antiguos molinos harineros con vestigios históricos de la Guerra Civil en plena Sierra Oeste.",
+        "imagen": "assets/image/senderismo/molinos_rio_perales.jpg",
+        "alt": "Navalagamella y Senda del Río Perales",
+        "urlDetalles": "molinos_rio_perales"
+    },
+    {
+        "titulo": "Fiesta de la bicicleta",
+        "fecha": "Domingo 24 de Octubre",
+        "lugar": "Las Rozas",
+        "dificultad": "Baja-Socios y no Socios",
+        "color": "green",
+        "descripcion": "Súbete a la bici, ven a probar el floorball y conoce la nueva sección de montaña. ¡Te esperamos el 24 de octubre en Camilo José Cela!.",
+        "imagen": "assets/image/senderismo/fiesta_bicicleta.jpg",
+        "alt": "Fiesta de la bicicleta",
+        "urlDetalles": "fiesta_bicicleta"
+    }
+]
