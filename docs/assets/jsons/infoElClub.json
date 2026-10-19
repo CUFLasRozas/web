@@ -1,7 +1,7 @@
 {
     "secciones": [
     {
-        "title": "Junta Directiva",
+        "title": "Estructura Organizativa",
         "listadoMiembros": [
             {
                 "nombre": "Nicolás Sanchez-Ferragut Gajate",
@@ -19,9 +19,9 @@
                 "urlfoto": "assets/image/staff/nuno.webp" 
             },
             {
-                "nombre": "David Mulero Arias",
-                "cargo": "Área de comunicación y publicidad",
-                "urlfoto": "assets/image/staff/david.webp"
+                "nombre": "Johjan Hernández",
+                "cargo": "Área de publicidad y redes",
+                "urlfoto": "assets/image/staff/johjan.webp"
             }
         ]
     },
@@ -39,9 +39,14 @@
                 "urlfoto": "assets/image/staff/rodrigo.webp"
             },
             {
-                "nombre": "Elena Marín Cabello",
-                "cargo": "Benjamines y Alevines",
-                "urlfoto": "assets/image/staff/elena.webp"
+                "nombre": "Bruno Cañizo",
+                "cargo": "Benjamines",
+                "urlfoto": "assets/image/staff/bruno.webp"
+            },
+            {
+                "nombre": "Daniel Carbajo",
+                "cargo": "Alevines",
+                "urlfoto": "assets/image/staff/dani.webp"
             },
             {
                 "nombre": "Alejandro Carbajo",
