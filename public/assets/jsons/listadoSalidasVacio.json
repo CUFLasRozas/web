@@ -1,1 +1,12 @@
-[]
+[
+    {
+        "titulo": "Mirador de los Poetas por la senda Victory",
+        "fecha": "Sábado 13 de diciembre",
+        "lugar": "Valle de la Fuenfría",
+        "dificultad": "Baja-Socios y no Socios",
+        "color": "green",
+        "descripcion": "Ruta circular por Cercedilla a través del Valle de la Fuenfría, siguiendo el trazado de la Senda Victory hasta el Mirador de los Poetas en un recorrido rodeado de naturaleza e historia montañera.",
+        "imagen": "assets/image/senderismo/mirador_poetas.jpeg",
+        "alt": "Mirador de los Poetas por la senda Victory",
+        "urlDetalles": "mirador_poetas"
+    }]
